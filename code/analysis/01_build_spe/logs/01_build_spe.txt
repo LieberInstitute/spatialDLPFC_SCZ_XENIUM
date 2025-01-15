@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Jan 15 04:08:44 PM EST 2025
+Wed Jan 15 05:18:21 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 11987935
+Job id: 11988423
 Job name: 01_build_spe
 Hostname: jhpce3
 Task id: 
@@ -308,6 +308,5 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 'sample_id's are duplicated across 'SpatialExperiment' objects to cbind; appending sample indices.
-sstat: fatal: Bad job/step specified: S
 **** Job ends ****
-Wed Jan 15 04:12:11 PM EST 2025
+Wed Jan 15 05:21:38 PM EST 2025
