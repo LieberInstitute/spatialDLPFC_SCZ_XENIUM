@@ -11,7 +11,8 @@ brnums <- unique(spe$BrNum)
 for (i in 1:length(brnums)){
     spe_sub <- spe[, spe$BrNum == brnums[i]]
     p <- make_escheR(spe_sub) %>%
-        add_fill("total_counts")
+        add_fill("total_counts")+
+        ggtitle(brnums[i])
     print(p)
 }
 dev.off()
