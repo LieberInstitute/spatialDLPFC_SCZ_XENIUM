@@ -14,6 +14,8 @@ for(i in 1:nrow(sample_paths)){
     sample_path <- sample_paths$path[i]
     brnum <- sample_paths$BrNum[i]
 
+    print(sprintf("----------%s----------", brnum))
+
     counts_path <- here(sample_path, "cell_feature_matrix.h5")
     cell_info_path <- here(sample_path, "cells.csv.gz")
 
@@ -27,6 +29,7 @@ for(i in 1:nrow(sample_paths)){
     rownames(spe) <- rowData(spe)$Symbol # change rownames to gene symbol
 
     colnames(spe) <- paste(brnum, rownames(cell_info), sep = "_") # assign donor-specific colnames
+    spe$BrNum <- brnum
 
     all_spes[[brnum]] <- spe
     
