@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Jan 15 05:18:21 PM EST 2025
+Thu Jan 16 11:52:50 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 11988423
+Job id: 11993047
 Job name: 01_build_spe
 Hostname: jhpce3
 Task id: 
@@ -91,80 +91,31 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
-[1] "----------Br5400----------"
-Rows: 46917 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5622----------"
-Rows: 71389 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br6437----------"
-Rows: 59787 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5314----------"
-Rows: 48542 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5588----------"
-Rows: 62396 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5746----------"
-Rows: 45675 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5639----------"
-Rows: 63221 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br8433----------"
-Rows: 61932 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br8772----------"
-Rows: 56956 Columns: 14
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ lubridate::%within%() masks IRanges::%within%()
+✖ dplyr::collapse()     masks IRanges::collapse()
+✖ dplyr::combine()      masks Biobase::combine(), BiocGenerics::combine()
+✖ dplyr::count()        masks matrixStats::count()
+✖ dplyr::desc()         masks IRanges::desc()
+✖ tidyr::expand()       masks S4Vectors::expand()
+✖ dplyr::filter()       masks stats::filter()
+✖ dplyr::first()        masks S4Vectors::first()
+✖ dplyr::lag()          masks stats::lag()
+✖ ggplot2::Position()   masks BiocGenerics::Position(), base::Position()
+✖ purrr::reduce()       masks GenomicRanges::reduce(), IRanges::reduce()
+✖ dplyr::rename()       masks S4Vectors::rename()
+✖ lubridate::second()   masks S4Vectors::second()
+✖ lubridate::second<-() masks S4Vectors::second<-()
+✖ dplyr::slice()        masks IRanges::slice()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+[1] "----------Br1113----------"
+Rows: 57508 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
 chr  (2): cell_id, segmentation_method
@@ -181,44 +132,8 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5973----------"
-Rows: 44655 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br8667----------"
-Rows: 68976 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5436----------"
-Rows: 46286 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br5931----------"
-Rows: 45793 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br6496----------"
-Rows: 59438 Columns: 14
+[1] "----------Br2039----------"
+Rows: 45898 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
 chr  (2): cell_id, segmentation_method
@@ -235,33 +150,6 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br6032----------"
-Rows: 47384 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br6389----------"
-Rows: 53201 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br2039----------"
-Rows: 45898 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 [1] "----------Br2719----------"
 Rows: 61222 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
@@ -271,17 +159,8 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br6432----------"
-Rows: 41266 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (2): cell_id, segmentation_method
-dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-[1] "----------Br1113----------"
-Rows: 57508 Columns: 14
+[1] "----------Br5314----------"
+Rows: 48542 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
 chr  (2): cell_id, segmentation_method
@@ -298,6 +177,33 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5400----------"
+Rows: 46917 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5436----------"
+Rows: 46286 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5588----------"
+Rows: 62396 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 [1] "----------Br5590----------"
 Rows: 56715 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
@@ -307,6 +213,13 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-'sample_id's are duplicated across 'SpatialExperiment' objects to cbind; appending sample indices.
-**** Job ends ****
-Wed Jan 15 05:21:38 PM EST 2025
+[1] "----------Br5622----------"
+Rows: 71389 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5639----------"

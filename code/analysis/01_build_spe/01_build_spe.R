@@ -24,6 +24,8 @@ for(i in 1:nrow(sample_paths)){
     sample_path <- sample_paths$path[i]
     brnum <- sample_paths$BrNum[i]
 
+    sample_paths_use <- sample_paths[i,]
+
     print(sprintf("----------%s----------", brnum))
 
     counts_path <- here(sample_path, "cell_feature_matrix.h5")
@@ -42,12 +44,12 @@ for(i in 1:nrow(sample_paths)){
     
     # Add in some relevant metadata from the sample info excel file
     spe$BrNum <- brnum
-    spe$Dx <- sample_paths$Dx
-    spe$CaptureArea<- sample_paths$CaptureArea
-    spe$PNN <- sample_paths$PNN
-    spe$tear <- sample_paths$tear
-    spe$Age <- sample_paths$AGE
-    spe$Sex <- sample_paths$SEX
+    spe$Dx <- sample_paths_use$Dx
+    spe$CaptureArea<- sample_paths_use$CaptureArea
+    spe$PNN <- sample_paths_use$PNN
+    spe$tear <- sample_paths_use$tear
+    spe$Age <- sample_paths_use$AGE
+    spe$Sex <- sample_paths_use$SEX
 
     all_spes[[brnum]] <- spe
     
