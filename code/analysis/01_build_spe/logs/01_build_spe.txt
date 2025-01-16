@@ -223,3 +223,113 @@ dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 [1] "----------Br5639----------"
+Rows: 63221 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5746----------"
+Rows: 45675 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5931----------"
+Rows: 45793 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br5973----------"
+Rows: 44655 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6032----------"
+Rows: 47384 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6389----------"
+Rows: 53201 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6432----------"
+Rows: 41266 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6437----------"
+Rows: 59787 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br6496----------"
+Rows: 59438 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br8433----------"
+Rows: 61932 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br8667----------"
+Rows: 68976 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] "----------Br8772----------"
+Rows: 56956 Columns: 14
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): cell_id, segmentation_method
+dbl (12): x_centroid, y_centroid, transcript_counts, control_probe_counts, g...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+'sample_id's are duplicated across 'SpatialExperiment' objects to cbind; appending sample indices.
+**** Job ends ****
+Thu Jan 16 11:55:45 AM EST 2025
