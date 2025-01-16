@@ -1,6 +1,8 @@
 library(here)
 library(SpatialExperiment)
 library(SingleCellExperiment)
+library(readxl)
+library(tidyverse)
 
 
 ########################################################
@@ -8,6 +10,14 @@ library(SingleCellExperiment)
 #######################################################
 
 sample_paths <- read.csv(here("raw-data", "experiment_info", "sample_paths.csv"))
+sample_info <- read_excel(here("raw-data", "experiment_info", "PNN_64_collection_Summary_final.xlsx"))
+
+
+sample_info <- sample_info %>%
+    filter(Brnumbr %in% sample_paths$BrNum) %>%
+    rename(BrNum=Brnumbr)
+
+sample_paths <- merge(sample_paths, sample_info, by = "BrNum")
 
 all_spes <- list()
 for(i in 1:nrow(sample_paths)){
@@ -29,7 +39,15 @@ for(i in 1:nrow(sample_paths)){
     rownames(spe) <- rowData(spe)$Symbol # change rownames to gene symbol
 
     colnames(spe) <- paste(brnum, rownames(cell_info), sep = "_") # assign donor-specific colnames
+    
+    # Add in some relevant metadata from the sample info excel file
     spe$BrNum <- brnum
+    spe$Dx <- sample_paths$Dx
+    spe$CaptureArea<- sample_paths$CaptureArea
+    spe$PNN <- sample_paths$PNN
+    spe$tear <- sample_paths$tear
+    spe$Age <- sample_paths$AGE
+    spe$Sex <- sample_paths$SEX
 
     all_spes[[brnum]] <- spe
     
