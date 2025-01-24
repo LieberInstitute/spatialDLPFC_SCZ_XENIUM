@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Jan 20 02:51:39 PM EST 2025
+Thu Jan 23 05:25:47 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 12056454
+Job id: 12332741
 Job name: 01_threshold_outliers
 Hostname: jhpce3
 Task id: 
@@ -158,9 +158,896 @@ The following object is masked from ‘package:dplyr’:
 
     combine
 
+[1] "------------Br1113------------"
+      99% 
+0.6024096 
+     99% 
+0.456621 
+      99% 
+0.3937008 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
 [1] "Proportion of negative probe outliers:"
-[1] 16580
+[1] 0.01003339
+[1] "Proportion of unassigned outliers:"
+[1] 0.01005078
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01013772
+[1] "Proportion of mito outliers:"
+[1] 0.0003303888
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02310983
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 `geom_smooth()` using formula = 'y ~ x'
 `geom_smooth()` using formula = 'y ~ x'
 `geom_smooth()` using formula = 'y ~ x'
 `geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05082771
+[1] 2923
+[1] "------------Br1139------------"
+     99% 
+1.342282 
+    99% 
+1.06383 
+     99% 
+0.617284 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01003969
+[1] "Proportion of unassigned outliers:"
+[1] 0.01007305
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01018979
+[1] "Proportion of mito outliers:"
+[1] 0.0004836396
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02803442
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05578533
+[1] 3345
+[1] "------------Br2039------------"
+     99% 
+1.834862 
+      99% 
+0.7352941 
+      99% 
+0.6025922 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01008803
+[1] "Proportion of unassigned outliers:"
+[1] 0.01000087
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01006624
+[1] "Proportion of mito outliers:"
+[1] 0
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.0754532
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.1044753
+[1] 4795
+[1] "------------Br2421------------"
+      99% 
+0.5979555 
+      99% 
+0.5732248 
+      99% 
+0.3891051 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01000415
+[1] "Proportion of unassigned outliers:"
+[1] 0.01006343
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01000415
+[1] "Proportion of mito outliers:"
+[1] 0.003290254
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.05129535
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.08001838
+[1] 5399
+[1] "------------Br2719------------"
+      99% 
+0.6872145 
+      99% 
+0.3154574 
+      99% 
+0.5235602 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01001519
+[1] "Proportion of unassigned outliers:"
+[1] 0.01011322
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01006421
+[1] "Proportion of mito outliers:"
+[1] 3.2676e-05
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02447432
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05322921
+[1] 3258
+[1] "------------Br5314------------"
+      99% 
+0.7462687 
+      99% 
+0.4496829 
+      99% 
+0.4651163 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01005377
+[1] "Proportion of unassigned outliers:"
+[1] 0.01009498
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01001257
+[1] "Proportion of mito outliers:"
+[1] 0.002472239
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.03199489
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.06085828
+[1] 2954
+[1] "------------Br5373------------"
+      99% 
+0.5586592 
+      99% 
+0.2573477 
+     99% 
+0.390625 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01012693
+[1] "Proportion of unassigned outliers:"
+[1] 0.01005146
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01000619
+[1] "Proportion of mito outliers:"
+[1] 0.0005131378
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.007017915
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.03573854
+[1] 2368
+[1] "------------Br5400------------"
+      99% 
+0.4366812 
+      99% 
+0.1778854 
+      99% 
+0.3355705 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01006032
+[1] "Proportion of unassigned outliers:"
+[1] 0.01003901
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01001769
+[1] "Proportion of mito outliers:"
+[1] 0.008888036
+[1] "Proportion of detected outliers:"
+[1] 8.525694e-05
+[1] "Proportion of total counts outliers:"
+[1] 0.02713302
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.0561417
+[1] 2634
+[1] "------------Br5436------------"
+      99% 
+0.4761905 
+      99% 
+0.3279496 
+      99% 
+0.3811848 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01002463
+[1] "Proportion of unassigned outliers:"
+[1] 0.01000302
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01000302
+[1] "Proportion of mito outliers:"
+[1] 0.0001296288
+[1] "Proportion of detected outliers:"
+[1] 2.16048e-05
+[1] "Proportion of total counts outliers:"
+[1] 0.01285486
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.04009852
+[1] 1856
+[1] "------------Br5588------------"
+      99% 
+0.4926717 
+      99% 
+0.3571429 
+      99% 
+0.3030303 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01000064
+[1] "Proportion of unassigned outliers:"
+[1] 0.01006475
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01003269
+[1] "Proportion of mito outliers:"
+[1] 0.0001762934
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.01453619
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.04330406
+[1] 2702
+[1] "------------Br5590------------"
+     99% 
+1.098901 
+      99% 
+0.5714286 
+      99% 
+0.5319149 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.0100864
+[1] "Proportion of unassigned outliers:"
+[1] 0.01012167
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01006877
+[1] "Proportion of mito outliers:"
+[1] 0
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02636219
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05524599
+[1] 3133
+[1] "------------Br5622------------"
+      99% 
+0.6549006 
+      99% 
+0.4739336 
+      99% 
+0.4043127 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01000294
+[1] "Proportion of unassigned outliers:"
+[1] 0.01001695
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01004497
+[1] "Proportion of mito outliers:"
+[1] 0.0007985542
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.01636336
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.04403256
+[1] 3143
+[1] "------------Br5639------------"
+     99% 
+1.111111 
+      99% 
+0.7042254 
+      99% 
+0.4347826 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01017083
+[1] "Proportion of unassigned outliers:"
+[1] 0.01006011
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01012338
+[1] "Proportion of mito outliers:"
+[1] 7.90889e-05
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.03883265
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.06713065
+[1] 4244
+[1] "------------Br5746------------"
+     99% 
+1.030928 
+      99% 
+0.5548162 
+      99% 
+0.3804309 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.0100716
+[1] "Proportion of unassigned outliers:"
+[1] 0.01000591
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01000591
+[1] "Proportion of mito outliers:"
+[1] 0.003722112
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02861647
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05797736
+[1] 2648
+[1] "------------Br5931------------"
+     99% 
+0.591716 
+      99% 
+0.4944865 
+      99% 
+0.4451039 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.0100452
+[1] "Proportion of unassigned outliers:"
+[1] 0.01002337
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01000153
+[1] "Proportion of mito outliers:"
+[1] 0.0003712358
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02227415
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.04959273
+[1] 2271
+[1] "------------Br5973------------"
+      99% 
+0.6802721 
+      99% 
+0.6410256 
+      99% 
+0.4878049 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.0100327
+[1] "Proportion of unassigned outliers:"
+[1] 0.0100327
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01009988
+[1] "Proportion of mito outliers:"
+[1] 0.0003359162
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.03379317
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.06178618
+[1] 2759
+[1] "------------Br6032------------"
+ 99% 
+0.25 
+      99% 
+0.1988072 
+      99% 
+0.3355705 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01006754
+[1] "Proportion of unassigned outliers:"
+[1] 0.01004643
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01002533
+[1] "Proportion of mito outliers:"
+[1] 0.008991136
+[1] "Proportion of detected outliers:"
+[1] 0.0006542845
+[1] "Proportion of total counts outliers:"
+[1] 0.0280076
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05721824
+[1] 2711
+[1] "------------Br6389------------"
+      99% 
+0.6802721 
+      99% 
+0.5747126 
+      99% 
+0.5347594 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01003741
+[1] "Proportion of unassigned outliers:"
+[1] 0.01001861
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.010075
+[1] "Proportion of mito outliers:"
+[1] 0.0005451025
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.04061954
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.0687769
+[1] 3659
+[1] "------------Br6432------------"
+      99% 
+0.7042254 
+      99% 
+0.3484321 
+      99% 
+0.4987531 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01010517
+[1] "Proportion of unassigned outliers:"
+[1] 0.01003247
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01005671
+[1] "Proportion of mito outliers:"
+[1] 0.001914409
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.03804585
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.06681045
+[1] 2757
+[1] "------------Br6437------------"
+      99% 
+0.9803922 
+      99% 
+0.5964215 
+      99% 
+0.4694836 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01006908
+[1] "Proportion of unassigned outliers:"
+[1] 0.0100858
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.0100189
+[1] "Proportion of mito outliers:"
+[1] 0.001455166
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.03843645
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.06713834
+[1] 4014
+[1] "------------Br6496------------"
+     99% 
+0.955414 
+     99% 
+0.591716 
+      99% 
+0.5319149 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01002742
+[1] "Proportion of unassigned outliers:"
+[1] 0.01004425
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.0100779
+[1] "Proportion of mito outliers:"
+[1] 0.000689806
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.02589296
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.05424231
+[1] 3224
+[1] "------------Br8433------------"
+      99% 
+0.6410256 
+      99% 
+0.4761905 
+      99% 
+0.4590579 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01007504
+[1] "Proportion of unassigned outliers:"
+[1] 0.01001035
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01002652
+[1] "Proportion of mito outliers:"
+[1] 0.001487806
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.03043535
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.0588007
+[1] 3636
+[1] "------------Br8667------------"
+      99% 
+0.4784689 
+      99% 
+0.4854369 
+      99% 
+0.5662514 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01003277
+[1] "Proportion of unassigned outliers:"
+[1] 0.01001827
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01004726
+[1] "Proportion of mito outliers:"
+[1] 0
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.01261345
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.04073999
+[1] 2810
+[1] "------------Br8772------------"
+     99% 
+0.921659 
+      99% 
+0.4474209 
+      99% 
+0.5181347 
+[1] "any NAs in unassigned_percent?"
+[1] FALSE
+[1] "any NAs in neg_codeword?"
+[1] FALSE
+[1] "Proportion of negative probe outliers:"
+[1] 0.01007866
+[1] "Proportion of unassigned outliers:"
+[1] 0.01004355
+[1] "Proportion of neagtive codeword outliers:"
+[1] 0.01000843
+[1] "Proportion of mito outliers:"
+[1] 0.0004038489
+[1] "Proportion of detected outliers:"
+[1] 0
+[1] "Proportion of total counts outliers:"
+[1] 0.01517067
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+[1] "Proportion of total outliers:"
+[1] 0.04382638
+[1] 2496
+[1] "Br2039_2819"  "Br2039_2820"  "Br2719_12713" "Br2719_12715" "Br2719_12719"
+[6] "Br2719_13129"
+[1] 76186
+**** Job ends ****
+Thu Jan 23 05:39:37 PM EST 2025
