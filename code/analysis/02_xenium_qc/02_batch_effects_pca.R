@@ -36,11 +36,26 @@ set.seed(1742)
 spe_pseudo <- scater::runPCA(spe_pseudo, ncomponents = 10)
 
 
+# Get the spe's slide and run date info
+slide_id <- unlist(lapply(strsplit(spe_pseudo$Sample, split="/"), "[", 9))
+slide_id <- unlist(lapply(strsplit(slide_id, split="__Br"), "[", 1))
+
+spe_pseudo$slide_id <- slide_id
+
+run_date <- unlist(lapply(strsplit(spe_pseudo$Sample, split="/"), "[", 7))
+spe_pseudo$run_date <- run_date
+
 pdf(here("plots", "02_xenium_qc", "02_batch_effects_pca", "batch_effects_pca.pdf"), width = 10, height = 10)
 scater::plotPCA(spe_pseudo, colour_by = "Dx", ncomponents=4)+
     geom_scattermore()
 scater::plotPCA(spe_pseudo, colour_by="PNN", ncomponents=4)
 scater::plotPCA(spe_pseudo, colour_by="BrNum", ncomponents=4)
 scater::plotPCA(spe_pseudo, colour_by="Sex", ncomponents=4)
+scater::plotPCA(spe_pseudo, colour_by="Age", ncomponents=4)
+scater::plotPCA(spe_pseudo, colour_by="slide_id", ncomponents=4)
+scater::plotPCA(spe_pseudo, colour_by="run_date", ncomponents=4)
 dev.off()
  
+
+
+
