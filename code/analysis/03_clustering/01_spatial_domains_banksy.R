@@ -53,7 +53,7 @@ cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
 
 
 # split the spe again and plot each one 
-pdf(here("plots", "03_clustering", "banksy_clustering_lambda%s_res%s.pdf", lambda, res))
+pdf(here(sprintf("plots", "03_clustering", "banksy_clustering_lambda%s_res%s.pdf", lambda, res)))
 for (i in 1:length(brnums)){
     sub_spe <- spe[, spe$BrNum == brnums[i]]
 
