@@ -6,6 +6,8 @@ library(scater)
 library(cowplot)
 library(ggplot2)
 library(here)
+library(tidyverse)
+library(escheR)
 
 
 ##########################################################################################
@@ -17,12 +19,15 @@ spe <- readRDS(here("processed-data", "01_build_spe", "raw_spe_N24.RDS"))
 outlier_ids <- read.csv(here("processed-data", "02_xenium_qc", "outlier_ids.csv"))$x
 spe <- spe[, -which(colnames(spe) %in% outlier_ids)]
 rm (outlier_ids)
-
-spe <- scuttle::logNormCounts(spe)
+lambda <- 0.8
+res <- 0.7
+brnums <- unique(spe$BrNum)
+if(!file.exists(here("processed-data", "03_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))){
+  spe <- scuttle::logNormCounts(spe)
 
 # Create a list of each of the SPEs
 spe_list <- list()
-brnums <- unique(spe$BrNum)
+
 for (i in 1:length(brnums)) {
   spe_list[[i]] <- spe[, spe$BrNum == brnums[i]]
 }
@@ -51,15 +56,31 @@ res <- 0.7
 spe_joint <- clusterBanksy(spe_joint, use_agf = use_agf, lambda = lambda, resolution = res, seed = 1000)
 cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
 
+clusts <- cbind(colData(spe_joint)[, cnm], rownames(colData(spe_joint)))
+print(head(clusts))
+write.csv(clusts, here("processed-data", "03_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))
 
-# split the spe again and plot each one 
-pdf(here(sprintf("plots", "03_clustering", "banksy_clustering_lambda%s_res%s.pdf", lambda, res)))
-for (i in 1:length(brnums)){
-    sub_spe <- spe[, spe$BrNum == brnums[i]]
+} else{
+  clusts <- read.csv(here("processed-data", "03_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))
+  print(head(clusts))
+  colData(spe)[["Banksy"]] <- as.character(clusts$V1)
 
-    make_escheR(sub_spe) %>%
-        add_fill(cnm)+
-        ggtitle(paste(br_use, unique(spe_sub$Dx)[[1]]))
-    
+
+
+  # split the spe again and plot each one 
+  pdf(here("plots", "03_clustering", "banksy_clustering.pdf"))
+  for (i in 1:length(brnums)){
+      sub_spe <- spe[, spe$BrNum == brnums[i]]
+
+      print(head(colData(sub_spe)))
+
+      p <- make_escheR(sub_spe) %>%
+          add_ground("Banksy")+
+          ggtitle(paste(brnums[[i]], unique(sub_spe$Dx)[[1]]))
+      print(p)
+
+    }
+  dev.off()
 }
-dev.off()
+
+
