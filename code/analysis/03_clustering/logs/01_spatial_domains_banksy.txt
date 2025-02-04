@@ -1,8 +1,8 @@
 **** Job starts ****
-Tue Jan 28 08:06:32 PM EST 2025
+Tue Feb  4 01:59:27 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 12694915
+Job id: 13272277
 Job name: 01_spatial_domains_banksy
 Hostname: jhpce3
 Task id: 
@@ -162,13 +162,26 @@ here() starts at /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatia
 ✖ dplyr::slice()        masks IRanges::slice()
 ✖ lubridate::stamp()    masks cowplot::stamp()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+class: SpatialExperiment 
+dim: 300 1262965 
+metadata(24): Samples Samples ... Samples Samples
+assays(1): counts
+rownames(300): A2M ABCA2 ... ZNF804A ZP3
+rowData names(3): ID Symbol Type
+colnames(1262965): Br1113_1 Br1113_2 ... Br8772_56955 Br8772_56956
+colData names(22): Sample Barcode ... Age Sex
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_centroid y_centroid
+imgData names(1): sample_id
   X V1       V2
-1 1  8 Br1113_1
-2 2  7 Br1113_2
-3 3  8 Br1113_3
-4 4  4 Br1113_4
-5 5  4 Br1113_5
-6 6  7 Br1113_6
+1 1  7 Br1113_1
+2 2  6 Br1113_2
+3 3  7 Br1113_3
+4 4  6 Br1113_4
+5 5  6 Br1113_5
+6 6  6 Br1113_6
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -212,12 +225,12 @@ Br1113_5  sample01.1      Br1113         NTC          A1        high
 Br1113_6  sample01.1      Br1113         NTC          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br1113_1         yes       51.91           F           8
-Br1113_2         yes       51.91           F           7
-Br1113_3         yes       51.91           F           8
-Br1113_4         yes       51.91           F           4
-Br1113_5         yes       51.91           F           4
-Br1113_6         yes       51.91           F           7
+Br1113_1         yes       51.91           F           7
+Br1113_2         yes       51.91           F           6
+Br1113_3         yes       51.91           F           7
+Br1113_4         yes       51.91           F           6
+Br1113_5         yes       51.91           F           6
+Br1113_6         yes       51.91           F           6
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -261,12 +274,12 @@ Br1139_5  sample01.2      Br1139         SCZ          A1        high
 Br1139_6  sample01.2      Br1139         SCZ          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br1139_1          no       44.86           F           1
-Br1139_2          no       44.86           F          10
-Br1139_3          no       44.86           F          10
-Br1139_4          no       44.86           F           1
-Br1139_5          no       44.86           F           1
-Br1139_6          no       44.86           F           1
+Br1139_1          no       44.86           F           2
+Br1139_2          no       44.86           F           9
+Br1139_3          no       44.86           F           9
+Br1139_4          no       44.86           F           2
+Br1139_5          no       44.86           F           2
+Br1139_6          no       44.86           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -310,12 +323,12 @@ Br2039_5  sample01.3      Br2039         SCZ          C1        high
 Br2039_6  sample01.3      Br2039         SCZ          C1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br2039_1          no       40.96           M           3
-Br2039_2          no       40.96           M           3
-Br2039_3          no       40.96           M           1
-Br2039_4          no       40.96           M           8
-Br2039_5          no       40.96           M           8
-Br2039_6          no       40.96           M           8
+Br2039_1          no       40.96           M           1
+Br2039_2          no       40.96           M           1
+Br2039_3          no       40.96           M           2
+Br2039_4          no       40.96           M           7
+Br2039_5          no       40.96           M           7
+Br2039_6          no       40.96           M           7
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -359,12 +372,12 @@ Br2421_6  sample01.4      Br2421         SCZ          D1        high
 Br2421_7  sample01.4      Br2421         SCZ          D1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br2421_2          no       57.58           M           5
-Br2421_3          no       57.58           M           5
-Br2421_4          no       57.58           M          10
-Br2421_5          no       57.58           M           2
-Br2421_6          no       57.58           M           5
-Br2421_7          no       57.58           M          10
+Br2421_2          no       57.58           M           4
+Br2421_3          no       57.58           M           4
+Br2421_4          no       57.58           M           9
+Br2421_5          no       57.58           M           3
+Br2421_6          no       57.58           M           4
+Br2421_7          no       57.58           M           9
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -408,12 +421,12 @@ Br2719_5  sample01.5      Br2719         NTC          A1        high
 Br2719_6  sample01.5      Br2719         NTC          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br2719_1          no        36.6           F           4
-Br2719_2          no        36.6           F          10
-Br2719_3          no        36.6           F           3
-Br2719_4          no        36.6           F           3
-Br2719_5          no        36.6           F           3
-Br2719_6          no        36.6           F           6
+Br2719_1          no        36.6           F           5
+Br2719_2          no        36.6           F           1
+Br2719_3          no        36.6           F           1
+Br2719_4          no        36.6           F           1
+Br2719_5          no        36.6           F           1
+Br2719_6          no        36.6           F           1
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -457,12 +470,12 @@ Br5314_5  sample01.6      Br5314         NTC          C1        high
 Br5314_6  sample01.6      Br5314         NTC          C1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5314_1          no       48.69           F           9
-Br5314_2          no       48.69           F           1
-Br5314_3          no       48.69           F           1
-Br5314_4          no       48.69           F          10
-Br5314_5          no       48.69           F           4
-Br5314_6          no       48.69           F           1
+Br5314_1          no       48.69           F           8
+Br5314_2          no       48.69           F           2
+Br5314_3          no       48.69           F           2
+Br5314_4          no       48.69           F           9
+Br5314_5          no       48.69           F           5
+Br5314_6          no       48.69           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -506,12 +519,12 @@ Br5373_5  sample01.7      Br5373         SCZ          A1        high
 Br5373_6  sample01.7      Br5373         SCZ          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5373_1          no       47.75           M           4
-Br5373_2          no       47.75           M           9
-Br5373_3          no       47.75           M           4
-Br5373_4          no       47.75           M           8
-Br5373_5          no       47.75           M           8
-Br5373_6          no       47.75           M           8
+Br5373_1          no       47.75           M           5
+Br5373_2          no       47.75           M           8
+Br5373_3          no       47.75           M           5
+Br5373_4          no       47.75           M           7
+Br5373_5          no       47.75           M           7
+Br5373_6          no       47.75           M           7
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -555,12 +568,12 @@ Br5400_5  sample01.8      Br5400         NTC          A1        high
 Br5400_6  sample01.8      Br5400         NTC          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5400_1          no       52.69           F           1
-Br5400_2          no       52.69           F          10
-Br5400_3          no       52.69           F           1
-Br5400_4          no       52.69           F           1
-Br5400_5          no       52.69           F           9
-Br5400_6          no       52.69           F           1
+Br5400_1          no       52.69           F           2
+Br5400_2          no       52.69           F           9
+Br5400_3          no       52.69           F           2
+Br5400_4          no       52.69           F           2
+Br5400_5          no       52.69           F           8
+Br5400_6          no       52.69           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -604,12 +617,12 @@ Br5436_5  sample01.9      Br5436         NTC          D1         low
 Br5436_6  sample01.9      Br5436         NTC          D1         low
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5436_1          no       50.17           M           4
-Br5436_2          no       50.17           M           4
-Br5436_3          no       50.17           M           4
-Br5436_4          no       50.17           M           3
-Br5436_5          no       50.17           M           3
-Br5436_6          no       50.17           M           4
+Br5436_1          no       50.17           M           5
+Br5436_2          no       50.17           M           5
+Br5436_3          no       50.17           M           5
+Br5436_4          no       50.17           M           1
+Br5436_5          no       50.17           M           1
+Br5436_6          no       50.17           M           5
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -653,12 +666,12 @@ Br5588_5 sample01.10      Br5588         SCZ          C1        high
 Br5588_6 sample01.10      Br5588         SCZ          C1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5588_1          no       40.43           F           1
-Br5588_2          no       40.43           F           1
-Br5588_3          no       40.43           F           1
-Br5588_4          no       40.43           F           4
-Br5588_5          no       40.43           F           1
-Br5588_6          no       40.43           F           4
+Br5588_1          no       40.43           F           2
+Br5588_2          no       40.43           F           2
+Br5588_3          no       40.43           F           2
+Br5588_4          no       40.43           F           5
+Br5588_5          no       40.43           F           2
+Br5588_6          no       40.43           F           5
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -702,12 +715,12 @@ Br5590_5 sample01.11      Br5590         SCZ          A1        high
 Br5590_6 sample01.11      Br5590         SCZ          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5590_1          no       51.95           F           4
-Br5590_2          no       51.95           F           1
-Br5590_3          no       51.95           F           4
-Br5590_4          no       51.95           F           1
-Br5590_5          no       51.95           F           1
-Br5590_6          no       51.95           F           1
+Br5590_1          no       51.95           F           5
+Br5590_2          no       51.95           F           2
+Br5590_3          no       51.95           F           6
+Br5590_4          no       51.95           F           2
+Br5590_5          no       51.95           F           2
+Br5590_6          no       51.95           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -751,12 +764,12 @@ Br5622_5 sample01.12      Br5622         NTC          A1        high
 Br5622_6 sample01.12      Br5622         NTC          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5622_1          no       23.16           F           1
-Br5622_2          no       23.16           F           1
-Br5622_3          no       23.16           F           1
-Br5622_4          no       23.16           F           1
-Br5622_5          no       23.16           F           1
-Br5622_6          no       23.16           F           1
+Br5622_1          no       23.16           F           2
+Br5622_2          no       23.16           F           2
+Br5622_3          no       23.16           F           2
+Br5622_4          no       23.16           F           2
+Br5622_5          no       23.16           F           2
+Br5622_6          no       23.16           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -800,12 +813,12 @@ Br5639_6 sample01.13      Br5639         NTC          D1        high
 Br5639_7 sample01.13      Br5639         NTC          D1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5639_2          no       54.26           M           5
-Br5639_3          no       54.26           M           3
-Br5639_4          no       54.26           M           5
-Br5639_5          no       54.26           M           4
-Br5639_6          no       54.26           M           3
-Br5639_7          no       54.26           M           4
+Br5639_2          no       54.26           M           4
+Br5639_3          no       54.26           M           1
+Br5639_4          no       54.26           M           4
+Br5639_5          no       54.26           M           5
+Br5639_6          no       54.26           M           1
+Br5639_7          no       54.26           M           5
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -849,12 +862,12 @@ Br5746_5 sample01.14      Br5746         SCZ          A1        high
 Br5746_6 sample01.14      Br5746         SCZ          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5746_1          no       51.99           F           7
-Br5746_2          no       51.99           F           7
-Br5746_3          no       51.99           F           7
-Br5746_4          no       51.99           F           7
-Br5746_5          no       51.99           F           7
-Br5746_6          no       51.99           F           8
+Br5746_1          no       51.99           F           6
+Br5746_2          no       51.99           F           6
+Br5746_3          no       51.99           F           6
+Br5746_4          no       51.99           F           6
+Br5746_5          no       51.99           F           6
+Br5746_6          no       51.99           F           7
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -898,12 +911,12 @@ Br5931_5 sample01.15      Br5931         NTC          A1        high
 Br5931_6 sample01.15      Br5931         NTC          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5931_1          no       49.03           F           1
-Br5931_2          no       49.03           F           1
-Br5931_3          no       49.03           F           1
-Br5931_4          no       49.03           F           1
-Br5931_5          no       49.03           F           1
-Br5931_6          no       49.03           F           1
+Br5931_1          no       49.03           F           2
+Br5931_2          no       49.03           F           2
+Br5931_3          no       49.03           F           2
+Br5931_4          no       49.03           F           2
+Br5931_5          no       49.03           F           2
+Br5931_6          no       49.03           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -947,12 +960,12 @@ Br5973_5 sample01.16      Br5973         SCZ          D1         mid
 Br5973_6 sample01.16      Br5973         SCZ          D1         mid
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br5973_1          no       61.39           F           1
-Br5973_2          no       61.39           F           1
-Br5973_3          no       61.39           F           1
-Br5973_4          no       61.39           F          10
-Br5973_5          no       61.39           F           1
-Br5973_6          no       61.39           F           1
+Br5973_1          no       61.39           F           2
+Br5973_2          no       61.39           F           2
+Br5973_3          no       61.39           F           2
+Br5973_4          no       61.39           F           9
+Br5973_5          no       61.39           F           2
+Br5973_6          no       61.39           F           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -996,12 +1009,12 @@ Br6032_5 sample01.17      Br6032         SCZ          D1        high
 Br6032_6 sample01.17      Br6032         SCZ          D1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br6032_1          no       57.03           M           8
-Br6032_2          no       57.03           M           4
-Br6032_3          no       57.03           M           1
-Br6032_4          no       57.03           M           1
-Br6032_5          no       57.03           M           8
-Br6032_6          no       57.03           M           8
+Br6032_1          no       57.03           M           7
+Br6032_2          no       57.03           M           5
+Br6032_3          no       57.03           M           2
+Br6032_4          no       57.03           M           2
+Br6032_5          no       57.03           M           5
+Br6032_6          no       57.03           M           7
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1045,12 +1058,12 @@ Br6389_5 sample01.18      Br6389         NTC          D1         mid
 Br6389_6 sample01.18      Br6389         NTC          D1         mid
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br6389_1          no       58.81           M           7
-Br6389_2          no       58.81           M           7
-Br6389_3          no       58.81           M           7
-Br6389_4          no       58.81           M           7
-Br6389_5          no       58.81           M           8
-Br6389_6          no       58.81           M           7
+Br6389_1          no       58.81           M           6
+Br6389_2          no       58.81           M           6
+Br6389_3          no       58.81           M           6
+Br6389_4          no       58.81           M           6
+Br6389_5          no       58.81           M           7
+Br6389_6          no       58.81           M           6
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1094,12 +1107,12 @@ Br6432_5 sample01.19      Br6432         NTC          D1        high
 Br6432_6 sample01.19      Br6432         NTC          D1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br6432_1          no       48.88           M           7
-Br6432_2          no       48.88           M           7
-Br6432_3          no       48.88           M           7
-Br6432_4          no       48.88           M           7
-Br6432_5          no       48.88           M           7
-Br6432_6          no       48.88           M           7
+Br6432_1          no       48.88           M           6
+Br6432_2          no       48.88           M           6
+Br6432_3          no       48.88           M           6
+Br6432_4          no       48.88           M           6
+Br6432_5          no       48.88           M           6
+Br6432_6          no       48.88           M           6
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1143,12 +1156,12 @@ Br6437_5 sample01.20      Br6437         SCZ          B1        high
 Br6437_6 sample01.20      Br6437         SCZ          B1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br6437_1         yes       40.76           M           8
-Br6437_2         yes       40.76           M           8
-Br6437_3         yes       40.76           M           8
-Br6437_4         yes       40.76           M           8
-Br6437_5         yes       40.76           M           8
-Br6437_6         yes       40.76           M           8
+Br6437_1         yes       40.76           M           7
+Br6437_2         yes       40.76           M           7
+Br6437_3         yes       40.76           M           7
+Br6437_4         yes       40.76           M           7
+Br6437_5         yes       40.76           M           7
+Br6437_6         yes       40.76           M           7
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1192,12 +1205,12 @@ Br6496_5 sample01.21      Br6496         SCZ          A1        high
 Br6496_6 sample01.21      Br6496         SCZ          A1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br6496_1          no        38.1           M           1
-Br6496_2          no        38.1           M           1
-Br6496_3          no        38.1           M           1
-Br6496_4          no        38.1           M           1
-Br6496_5          no        38.1           M           1
-Br6496_6          no        38.1           M           3
+Br6496_1          no        38.1           M           2
+Br6496_2          no        38.1           M           2
+Br6496_3          no        38.1           M           2
+Br6496_4          no        38.1           M           2
+Br6496_5          no        38.1           M           2
+Br6496_6          no        38.1           M           2
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1241,12 +1254,12 @@ Br8433_5 sample01.22      Br8433         NTC          C1        high
 Br8433_7 sample01.22      Br8433         NTC          C1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br8433_1          no       47.95           M           4
-Br8433_2          no       47.95           M           3
-Br8433_3          no       47.95           M           4
-Br8433_4          no       47.95           M           1
-Br8433_5          no       47.95           M           1
-Br8433_7          no       47.95           M           3
+Br8433_1          no       47.95           M           5
+Br8433_2          no       47.95           M           1
+Br8433_3          no       47.95           M           5
+Br8433_4          no       47.95           M           2
+Br8433_5          no       47.95           M           2
+Br8433_7          no       47.95           M           1
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1290,12 +1303,12 @@ Br8667_5 sample01.23      Br8667         NTC          D1        high
 Br8667_6 sample01.23      Br8667         NTC          D1        high
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br8667_1          no       37.33           F           7
-Br8667_2          no       37.33           F           7
-Br8667_3          no       37.33           F           7
-Br8667_4          no       37.33           F           7
-Br8667_5          no       37.33           F           7
-Br8667_6          no       37.33           F           7
+Br8667_1          no       37.33           F           6
+Br8667_2          no       37.33           F           6
+Br8667_3          no       37.33           F           6
+Br8667_4          no       37.33           F           6
+Br8667_5          no       37.33           F           6
+Br8667_6          no       37.33           F           6
 DataFrame with 6 rows and 23 columns
                          Sample     Barcode     cell_id transcript_counts
                     <character> <character> <character>         <numeric>
@@ -1339,13 +1352,13 @@ Br8772_5 sample01.24      Br8772         SCZ          D1         mid
 Br8772_6 sample01.24      Br8772         SCZ          D1         mid
                 tear         Age         Sex      Banksy
          <character> <character> <character> <character>
-Br8772_1          no        57.8           F           8
-Br8772_2          no        57.8           F           8
-Br8772_3          no        57.8           F           8
-Br8772_4          no        57.8           F           8
-Br8772_5          no        57.8           F           8
-Br8772_6          no        57.8           F           8
+Br8772_1          no        57.8           F           7
+Br8772_2          no        57.8           F           7
+Br8772_3          no        57.8           F           7
+Br8772_4          no        57.8           F           7
+Br8772_5          no        57.8           F           7
+Br8772_6          no        57.8           F           7
 null device 
           1 
 **** Job ends ****
-Tue Jan 28 08:07:50 PM EST 2025
+Tue Feb  4 02:00:39 PM EST 2025
