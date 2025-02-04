@@ -66,7 +66,19 @@ if(!file.exists(here("processed-data", "03_clustering", sprintf("banksy_clusteri
   clusts <- cbind(colData(spe_joint)[, cnm], rownames(colData(spe_joint)))
   print(head(clusts))
   write.csv(clusts, here("processed-data", "03_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))
+  
+  pdf(here("plots", "03_clustering", sprintf("banksy_clustering_%s.pdf", cnm)))
+  for (i in 1:length(brnums)){
+      sub_spe <- spe[, spe$BrNum == brnums[i]]
 
+      print(head(colData(sub_spe)))
+
+      p <- make_escheR(sub_spe) %>%
+          add_ground("Banksy")+
+          ggtitle(paste(brnums[[i]], unique(sub_spe$Dx)[[1]]))
+      print(p)
+
+    }
 } else{
   clusts <- read.csv(here("processed-data", "03_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))
   print(head(clusts))
