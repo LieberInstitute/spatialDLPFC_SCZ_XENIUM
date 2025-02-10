@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Feb  5 01:41:22 PM EST 2025
+Mon Feb 10 11:55:04 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 13298765
+Job id: 13580744
 Job name: 01_spatial_domains_banksy
 Hostname: jhpce3
 Task id: 
@@ -226,3 +226,587 @@ here() starts at /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatia
 ✖ lubridate::second<-() masks S4Vectors::second<-()
 ✖ dplyr::slice()        masks IRanges::slice()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+[1] "6" "7" "6" "5" "6" "7"
+Iteration 1
+Change: 7912
+Iteration 2
+Change: 4285
+Iteration 3
+Change: 2200
+Iteration 4
+Change: 1319
+Iteration 5
+Change: 752
+Iteration 6
+Change: 460
+Iteration 7
+Change: 307
+Iteration 8
+Change: 187
+Iteration 9
+Change: 121
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5" "7" "6" "6" "6" "5"
+Iteration 1
+Change: 8699
+Iteration 2
+Change: 4532
+Iteration 3
+Change: 2434
+Iteration 4
+Change: 1360
+Iteration 5
+Change: 849
+Iteration 6
+Change: 472
+Iteration 7
+Change: 325
+Iteration 8
+Change: 198
+Iteration 9
+Change: 110
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7" "7" "7" "7" "7" "6"
+Iteration 1
+Change: 6766
+Iteration 2
+Change: 3182
+Iteration 3
+Change: 1536
+Iteration 4
+Change: 895
+Iteration 5
+Change: 512
+Iteration 6
+Change: 326
+Iteration 7
+Change: 209
+Iteration 8
+Change: 160
+Iteration 9
+Change: 119
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1" "3" "4" "3" "3" "4"
+Iteration 1
+Change: 9237
+Iteration 2
+Change: 4712
+Iteration 3
+Change: 2627
+Iteration 4
+Change: 1559
+Iteration 5
+Change: 965
+Iteration 6
+Change: 557
+Iteration 7
+Change: 332
+Iteration 8
+Change: 236
+Iteration 9
+Change: 167
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "3" "6" "5" "6" "3" "2"
+Iteration 1
+Change: 7596
+Iteration 2
+Change: 4163
+Iteration 3
+Change: 2362
+Iteration 4
+Change: 1472
+Iteration 5
+Change: 882
+Iteration 6
+Change: 525
+Iteration 7
+Change: 377
+Iteration 8
+Change: 243
+Iteration 9
+Change: 151
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6" "6" "6" "6" "6" "3"
+Iteration 1
+Change: 7064
+Iteration 2
+Change: 3302
+Iteration 3
+Change: 1803
+Iteration 4
+Change: 1047
+Iteration 5
+Change: 573
+Iteration 6
+Change: 364
+Iteration 7
+Change: 223
+Iteration 8
+Change: 169
+Iteration 9
+Change: 130
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7" "4" "7" "4" "1" "7"
+Iteration 1
+Change: 10991
+Iteration 2
+Change: 5435
+Iteration 3
+Change: 2795
+Iteration 4
+Change: 1673
+Iteration 5
+Change: 1010
+Iteration 6
+Change: 589
+Iteration 7
+Change: 372
+Iteration 8
+Change: 266
+Iteration 9
+Change: 189
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2" "6" "6" "6" "3" "6"
+Iteration 1
+Change: 6080
+Iteration 2
+Change: 3559
+Iteration 3
+Change: 2069
+Iteration 4
+Change: 1159
+Iteration 5
+Change: 694
+Iteration 6
+Change: 448
+Iteration 7
+Change: 257
+Iteration 8
+Change: 149
+Iteration 9
+Change: 98
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7" "7" "7" "6" "6" "6"
+Iteration 1
+Change: 6000
+Iteration 2
+Change: 3153
+Iteration 3
+Change: 1836
+Iteration 4
+Change: 1059
+Iteration 5
+Change: 661
+Iteration 6
+Change: 443
+Iteration 7
+Change: 281
+Iteration 8
+Change: 190
+Iteration 9
+Change: 105
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6" "1" "1" "1" "6" "6"
+Iteration 1
+Change: 8938
+Iteration 2
+Change: 4767
+Iteration 3
+Change: 2715
+Iteration 4
+Change: 1575
+Iteration 5
+Change: 901
+Iteration 6
+Change: 561
+Iteration 7
+Change: 375
+Iteration 8
+Change: 236
+Iteration 9
+Change: 162
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6" "6" "7" "6" "6" "2"
+Iteration 1
+Change: 7697
+Iteration 2
+Change: 4597
+Iteration 3
+Change: 2698
+Iteration 4
+Change: 1557
+Iteration 5
+Change: 941
+Iteration 6
+Change: 581
+Iteration 7
+Change: 354
+Iteration 8
+Change: 251
+Iteration 9
+Change: 140
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2" "6" "6" "6" "6" "6"
+Iteration 1
+Change: 11259
+Iteration 2
+Change: 4977
+Iteration 3
+Change: 2545
+Iteration 4
+Change: 1431
+Iteration 5
+Change: 901
+Iteration 6
+Change: 566
+Iteration 7
+Change: 326
+Iteration 8
+Change: 190
+Iteration 9
+Change: 124
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6" "6" "6" "1" "3" "7"
+Iteration 1
+Change: 7238
+Iteration 2
+Change: 4175
+Iteration 3
+Change: 2482
+Iteration 4
+Change: 1451
+Iteration 5
+Change: 987
+Iteration 6
+Change: 592
+Iteration 7
+Change: 412
+Iteration 8
+Change: 288
+Iteration 9
+Change: 204
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7" "7" "7" "7" "2" "7"
+Iteration 1
+Change: 6283
+Iteration 2
+Change: 3499
+Iteration 3
+Change: 2009
+Iteration 4
+Change: 1237
+Iteration 5
+Change: 706
+Iteration 6
+Change: 459
+Iteration 7
+Change: 259
+Iteration 8
+Change: 169
+Iteration 9
+Change: 92
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1" "5" "6" "6" "6" "6"
+Iteration 1
+Change: 6296
+Iteration 2
+Change: 3398
+Iteration 3
+Change: 1908
+Iteration 4
+Change: 1161
+Iteration 5
+Change: 716
+Iteration 6
+Change: 415
+Iteration 7
+Change: 281
+Iteration 8
+Change: 159
+Iteration 9
+Change: 110
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "2" "1" "6" "6" "6" "2"
+Iteration 1
+Change: 5500
+Iteration 2
+Change: 2842
+Iteration 3
+Change: 1576
+Iteration 4
+Change: 956
+Iteration 5
+Change: 562
+Iteration 6
+Change: 382
+Iteration 7
+Change: 246
+Iteration 8
+Change: 150
+Iteration 9
+Change: 97
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "1" "1" "6" "1" "3" "3"
+Iteration 1
+Change: 6077
+Iteration 2
+Change: 3568
+Iteration 3
+Change: 2132
+Iteration 4
+Change: 1288
+Iteration 5
+Change: 780
+Iteration 6
+Change: 466
+Iteration 7
+Change: 311
+Iteration 8
+Change: 190
+Iteration 9
+Change: 121
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5" "7" "7" "7" "3" "7"
+Iteration 1
+Change: 7630
+Iteration 2
+Change: 3465
+Iteration 3
+Change: 1872
+Iteration 4
+Change: 1088
+Iteration 5
+Change: 613
+Iteration 6
+Change: 374
+Iteration 7
+Change: 211
+Iteration 8
+Change: 173
+Iteration 9
+Change: 110
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "4" "7" "7" "7" "2" "7"
+Iteration 1
+Change: 5673
+Iteration 2
+Change: 2856
+Iteration 3
+Change: 1599
+Iteration 4
+Change: 905
+Iteration 5
+Change: 571
+Iteration 6
+Change: 358
+Iteration 7
+Change: 230
+Iteration 8
+Change: 99
+Iteration 9
+Change: 67
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "5" "2" "3" "7" "3" "6"
+Iteration 1
+Change: 7734
+Iteration 2
+Change: 4047
+Iteration 3
+Change: 2155
+Iteration 4
+Change: 1208
+Iteration 5
+Change: 729
+Iteration 6
+Change: 418
+Iteration 7
+Change: 270
+Iteration 8
+Change: 158
+Iteration 9
+Change: 99
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6" "6" "6" "6" "6" "6"
+Iteration 1
+Change: 8963
+Iteration 2
+Change: 4054
+Iteration 3
+Change: 2175
+Iteration 4
+Change: 1284
+Iteration 5
+Change: 750
+Iteration 6
+Change: 516
+Iteration 7
+Change: 306
+Iteration 8
+Change: 178
+Iteration 9
+Change: 127
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7" "6" "7" "5" "6" "6"
+Iteration 1
+Change: 10009
+Iteration 2
+Change: 4110
+Iteration 3
+Change: 2015
+Iteration 4
+Change: 1003
+Iteration 5
+Change: 622
+Iteration 6
+Change: 368
+Iteration 7
+Change: 236
+Iteration 8
+Change: 162
+Iteration 9
+Change: 110
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "6" "7" "7" "5" "7" "7"
+Iteration 1
+Change: 10458
+Iteration 2
+Change: 4825
+Iteration 3
+Change: 2468
+Iteration 4
+Change: 1414
+Iteration 5
+Change: 870
+Iteration 6
+Change: 546
+Iteration 7
+Change: 301
+Iteration 8
+Change: 192
+Iteration 9
+Change: 107
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+[1] "7" "6" "6" "1" "3" "4"
+Iteration 1
+Change: 7998
+Iteration 2
+Change: 4314
+Iteration 3
+Change: 2375
+Iteration 4
+Change: 1423
+Iteration 5
+Change: 865
+Iteration 6
+Change: 528
+Iteration 7
+Change: 332
+Iteration 8
+Change: 211
+Iteration 9
+Change: 126
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+null device 
+          1 
+**** Job ends ****
+Mon Feb 10 12:10:30 PM EST 2025
