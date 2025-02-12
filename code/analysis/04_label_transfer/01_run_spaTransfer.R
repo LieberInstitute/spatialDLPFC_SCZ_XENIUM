@@ -98,8 +98,8 @@ pdf(here("plots", "04_label_transfer", "label_transfer_N24_k50.pdf"), height=15,
       spe$predictions_num <- as.numeric(spe$predictions_num)
 
 
-      props <- c(0.5, 0.8, 0.6, 0.5, 0.2, 0.4, 0.5)
-      names(props) <- 1:7
+      #props <- c(0.5, 0.8, 0.6, 0.5, 0.2, 0.4, 0.5)
+      #names(props) <- 1:7
       spe$predictions_smooth <- nmfLabelTransfer::smoother(labels_curr=colData(spe)[,"predictions_num"],
                                                         locs=spatialCoords(spe),
                                                         props=NULL,
@@ -132,8 +132,8 @@ pdf(here("plots", "04_label_transfer", "label_transfer_N24_k50.pdf"), height=15,
           ggtitle(paste(unique(colData(spe)$BrNum), unique(colData(spe)$Dx)))
 
         gridExtra::grid.arrange(p, p_smooth, ncol=2)
-      # Make faceted plots for Br8667 and Br5973:
 
+      # Make faceted plots for Br8667 and Br5973:
       if (unique(colData(spe)$BrNum) %in% c("Br8667", "Br5973")){
 
 
