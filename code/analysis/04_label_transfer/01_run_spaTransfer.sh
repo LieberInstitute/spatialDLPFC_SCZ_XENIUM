@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=01_spatial_domains_banksy
+#SBATCH --job-name=01_run_spaTransfer
 #SBATCH --mem=500G
 #SBATCH --time=72:00:00
 #SBATCH -n 1
