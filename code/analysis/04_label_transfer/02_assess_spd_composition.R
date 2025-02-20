@@ -13,6 +13,7 @@ res <- readRDS(here("processed-data", "04_label_transfer", "label_transfer_N24_k
 pdf(here("plots", "04_label_transfer", "label_transfer_faceted_plots.pdf"), width = 10, height = 10)
 for (i in 1:length(res$targets)){
   spe <- res$targets[[i]]
+  spe <- spe[which(rowData(spe)$Type=="Gene Expression"), ]
   spe$predictions <- as.character(spe$nmf_preds)
   #print(unlist(strsplit(spe$predictions, split="0")))
   spe$predictions_num <- unlist(lapply(strsplit(spe$predictions, split="0"), "[", 2))
@@ -42,7 +43,11 @@ rm(res)
 gc()
 print(spe_all)
 
-write.csv(here("processed_data", "04_label_transfer", "label_transfer_N24_k50_smoothed_labels.csv"), colData(spe_all)[,"predictions_smooth"])
+labs <- as.data.frame(colData(spe_all)[,"predictions_smooth"])
+rownames(labs) <- colnames(spe_all)
+print(head(labs))
+write.csv(labs,
+  here("processed-data", "04_label_transfer", "label_transfer_N24_k50_smoothed_labels.csv"))
 
 spe_all$sample_id <- paste(spe_all$BrNum, spe_all$Dx, sep="_")
 spe_pseudo <- scuttle::aggregateAcrossCells(spe_all, 
