@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=02_assess_spd_composition
 #SBATCH --mem=200G
-#SBATCH --time=30:00
+#SBATCH --time=2:00:00
 #SBATCH -n 1
 #SBATCH --output=logs/%x.txt
 #SBATCH --error=logs/%x.txt    # file to collect standard output
