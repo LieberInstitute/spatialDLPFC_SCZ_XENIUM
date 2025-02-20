@@ -5,10 +5,11 @@ library(here)
 library(tidyverse)
 library(escheR)
 library(ggplot2)
-library(scattermore)
+#library(scattermore)
 
 # Read in the source dataset and merge in the PRECAST clusters based on code from Boyi
-if (!file.exists(here("processed-data", "04_label_transfer", "label_transfer_N24_k50.rds"))){
+k <- 100 # rank for label transfer
+if (!file.exists(here("processed-data", "04_label_transfer", sprintf("label_transfer_N24_k%s.rds", k)))){
   ## Load Spe ----
   raw_spe <- readRDS(
     here("/dcs04/lieber/marmaypag/spatialDLPFC_SCZ_LIBD4100",
@@ -29,8 +30,7 @@ if (!file.exists(here("processed-data", "04_label_transfer", "label_transfer_N24
   ## Load PRECAST df ----
   PRECAST_df <- readRDS(
     here("/dcs04/lieber/marmaypag/spatialDLPFC_SCZ_LIBD4100",
-      "processed-data/rds/spatial_cluster",
-      "PRECAST",
+      "processed-data/rds", "03_visium_spatial_clustering",
       "test_clus_label_df_semi_inform_k_2-16.rds"
     )
   )
@@ -78,16 +78,16 @@ if (!file.exists(here("processed-data", "04_label_transfer", "label_transfer_N24
                       assay="logcounts",
                       annotationsName="PRECAST_07",
                       seed=0,
-                      k=50,
+                      k=k,
                       technicalVarName="sample_label")
 
   print(res$targets)
-  saveRDS(res, here("processed-data", "04_label_transfer", "label_transfer_N24_k50.rds"))
+  saveRDS(res, here("processed-data", "04_label_transfer", sprintf("label_transfer_N24_k%s.rds", k)))
 
 }else{
-  res <- readRDS(here("processed-data", "04_label_transfer", "label_transfer_N24_k50.rds"))
+  res <- readRDS(here("processed-data", "04_label_transfer", sprintf("label_transfer_N24_k%s.rds", k)))
 }
-pdf(here("plots", "04_label_transfer", "label_transfer_N24_k50.pdf"), height=15, width=25)
+pdf(here("plots", "04_label_transfer", sprintf("label_transfer_N24_k%s.pdf", k)), height=15, width=25)
   for (i in 1:length(res$targets)){
       spe <- res$targets[[i]]
       spe$predictions <- as.character(spe$nmf_preds)
