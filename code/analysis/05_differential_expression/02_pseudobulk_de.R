@@ -14,7 +14,7 @@ suppressPackageStartupMessages({
 ####################################################################################################
 
 # Load the pseudobulked SPE
-spe_pseudo <- readRDS(here("processed-data", "05_differential_expression", "spe_pseudo_spaTransfer_k50_smoothed_predictions.rds"))
+spe_pseudo <- readRDS(here("processed-data", "05_differential_expression", "spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds"))
 spe_pseudo$Dx <- factor(spe_pseudo$Dx)
 spe_pseudo$predictions_smooth <- factor(spe_pseudo$predictions_smooth)
 spe_pseudo$Age <- as.numeric(spe_pseudo$Age)

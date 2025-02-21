@@ -38,10 +38,22 @@ spe_pseudo <- registration_pseudobulk(
       spe,
       var_registration = "predictions_smooth",
       var_sample_id = "BrNum",
-      covars = c("Dx", "Age", "Sex", "slide_id", "slide_id", "run_date"),
+      covars = c("Dx", "Age", "Sex", "slide_id", "run_date"),
       min_ncells = 10,
       pseudobulk_rds_file = here(
         "processed-data", "05_differential_expression",
-        paste0("spe_pseudo_", "spaTransfer_k50_smoothed_predictions", ".rds")
+        paste0("spe_pseudo_donor_domain_", "spaTransfer_k50_smoothed_predictions", ".rds")
+      )
+    )
+
+spe_pseudo_donor <- registration_pseudobulk(
+      spe,
+      var_registration = "Dx",
+      var_sample_id = "BrNum",
+      covars = c("Age", "Sex", "slide_id", "run_date"),
+      min_ncells = 10,
+      pseudobulk_rds_file = here(
+        "processed-data", "05_differential_expression",
+        paste0("spe_pseudo_donor_", "spaTransfer_k50_smoothed_predictions", ".rds")
       )
     )
