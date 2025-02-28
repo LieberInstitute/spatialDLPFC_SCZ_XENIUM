@@ -105,5 +105,3 @@ pdf(here("plots", "05_differential_expression", "donor_level_pseudobulk_Dx_DEGs_
       theme_minimal()
   )
 dev.off()
-
-

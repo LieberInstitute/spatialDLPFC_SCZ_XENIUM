@@ -22,6 +22,9 @@ colnames(spds) <- c("predictions_smooth")
 spe <- spe[,colnames(spe) %in% rownames(spds)]
 colData(spe) <- merge(colData(spe), spds, by="row.names", all.x=TRUE)
 
+# remove non-gene expression counts
+spe <- spe[rowData(spe)$Type == "Gene Expression",]
+
 # Add some slide and date related metadata
 slide_id <- unlist(lapply(strsplit(spe$Sample, split="/"), "[", 9))
 slide_id <- unlist(lapply(strsplit(slide_id, split="__Br"), "[", 1))

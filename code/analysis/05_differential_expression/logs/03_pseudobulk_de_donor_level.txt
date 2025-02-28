@@ -1,12 +1,14 @@
 **** Job starts ****
-Fri Feb 21 11:29:02 AM EST 2025
+Thu Feb 27 02:38:21 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 14136519
+Job id: 14233378
 Job name: 03_pseudobulk_de_donor_level
 Hostname: jhpce3
 Task id: 
+Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
+environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -14,10 +16,10 @@ Currently Loaded Modules:
 
  
 
-2025-02-21 11:29:13.872114 create model matrix
-2025-02-21 11:29:13.930599 computing enrichment statistics
-2025-02-21 11:29:14.014742 extract and reformat enrichment results
+2025-02-27 14:38:34.797032 create model matrix
+2025-02-27 14:38:34.885156 computing enrichment statistics
+2025-02-27 14:38:35.014698 extract and reformat enrichment results
 null device 
           1 
 **** Job ends ****
-Fri Feb 21 11:29:14 AM EST 2025
+Thu Feb 27 02:38:35 PM EST 2025

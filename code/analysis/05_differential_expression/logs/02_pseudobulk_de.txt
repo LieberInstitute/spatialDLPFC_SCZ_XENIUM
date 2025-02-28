@@ -1,8 +1,8 @@
 **** Job starts ****
-Fri Feb 21 11:07:01 AM EST 2025
+Thu Feb 27 02:53:20 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 14136488
+Job id: 14233877
 Job name: 02_pseudobulk_de
 Hostname: jhpce3
 Task id: 
@@ -14,14 +14,14 @@ Currently Loaded Modules:
 
  
 
-2025-02-21 11:07:16.857276 create model matrix
-2025-02-21 11:07:16.951011 run duplicateCorrelation()
-2025-02-21 11:07:18.054237 The estimated correlation is: 0.836548454072441
-2025-02-21 11:07:18.057281 computing enrichment statistics
-2025-02-21 11:07:18.210647 extract and reformat enrichment results
+2025-02-27 14:53:33.918041 create model matrix
+2025-02-27 14:53:33.995433 run duplicateCorrelation()
+2025-02-27 14:53:34.541611 The estimated correlation is: 0.912273068647004
+2025-02-27 14:53:34.544567 computing enrichment statistics
+2025-02-27 14:53:34.654503 extract and reformat enrichment results
 Warning message:
-ggrepel: 8 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
+ggrepel: 6 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
 null device 
           1 
 **** Job ends ****
-Fri Feb 21 11:07:18 AM EST 2025
+Thu Feb 27 02:53:35 PM EST 2025

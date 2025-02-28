@@ -44,10 +44,10 @@ dx_mod <-
   )
 
 # Save results
-write.csv(dx_res, here("processed-data", "05_differential_expression", "pseudobulk_Dx_DEGs_spaTransfer_k50_smoothed_predictions.csv"))
+write.csv(dx_res, here("processed-data", "05_differential_expression", "donor_domain_level_pseudobulk_Dx_DEGs_spaTransfer_k50_smoothed_predictions.csv"))
 
 
-pdf(here("plots", "05_differential_expression", "pseudobulk_Dx_DEGs_k50_volcano.pdf"))
+pdf(here("plots", "05_differential_expression", "donor_domain_level_pseudobulk_Dx_DEGs_k50_volcano.pdf"))
 ## Volcano Plot ----
   out_gene_df <- dx_res |>
     arrange(fdr_SCZ) |>
@@ -68,11 +68,11 @@ pdf(here("plots", "05_differential_expression", "pseudobulk_Dx_DEGs_k50_volcano.
     select(ensembl, gene, ends_with("SCZ"))
     
     sig_gene_df <- dx_res |>
-        filter(fdr_SCZ <= 0.05) |>
+        filter(fdr_SCZ <= 0.1) |>
         select(ensembl, gene, ends_with("SCZ"))
 
   n_sig_gene <- dx_res |>
-    filter(fdr_SCZ <= 0.05) |>
+    filter(fdr_SCZ <= 0.1) |>
     nrow()
 
   print(
@@ -98,7 +98,7 @@ pdf(here("plots", "05_differential_expression", "pseudobulk_Dx_DEGs_k50_volcano.
     #   ) +
       labs(
         title = paste0(
-          "Pseudobulk analysis by Dx - ", 
+          "Donor-domain level pseudobulk analysis by Dx - ", 
           " ( ", n_sig_gene, " sig genes)"
         )
       ) +
