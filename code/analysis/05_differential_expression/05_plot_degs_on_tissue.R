@@ -28,26 +28,36 @@ spe <- spe[rowData(spe)$Type == "Gene Expression",]
 
 # Plot the DEGs on the tissue
 
-pdf(here("plots", "05_differential_expression", "donor_domain_level_degs_on_tissue.pdf"))
+
 brnums <- unique(spe$BrNum)
 for (i in 1:length(brnums)){
+    br_use <- brnums[[i]]
+    pdf(here("plots", "05_differential_expression", "donor_domain_level_degs", sprintf("%s_donor_domain_level_degs_on_tissue.pdf", br_use)), height=5, width=15)
     sub_spe <- spe[, spe$BrNum == brnums[i]]
+    sub_spe <- scuttle::logNormCounts(sub_spe)
     
-    #p_list <- list()
+    p_list <- list()
     for(j in 1:length(degs)){
         deg_use <- degs[[j]]
         sub_spe$counts_DEG <- counts(sub_spe)[which(rownames(sub_spe)== deg_use),]  
+        sub_spe$logcounts_DEG <- logcounts(sub_spe)[which(rownames(sub_spe)== deg_use),]  
 
         p_list[[j]] <- make_escheR(sub_spe) %>%
           add_fill("counts_DEG")+
           ggtitle(paste(brnums[[i]], unique(sub_spe$Dx)[[1]], deg_use))+
           scattermore::geom_scattermore() 
+        p <- make_escheR(sub_spe) %>%
+          add_fill("logcounts_DEG")+
+          ggtitle(paste(brnums[[i]], unique(sub_spe$Dx)[[1]], deg_use))+
+          scattermore::geom_scattermore() 
+        gridExtra::grid.arrange(p_list[[j]], p, ncol=2)
     }
     
     #do.call(gridExtra::grid.arrange, c(p_list, ncol=4))
 
-
+    dev.off()
 
     }
-dev.off()
+
+
 
