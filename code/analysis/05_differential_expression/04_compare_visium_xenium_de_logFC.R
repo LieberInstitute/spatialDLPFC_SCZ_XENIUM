@@ -23,6 +23,9 @@ probe_list_updated <- readxl::read_excel(here("raw-data",
                 col_names=TRUE)
 
 probe_list_final <- merge(probe_list_updated, probe_list, by="Gene", all.x=TRUE) 
+write.csv(probe_list_final, here("raw-data",
+                "experiment_info", 
+                "combined_Xenium_SCZ_ProbeSelection5_SHK_v4_15_w_ensemblgene_list.xlsx"))
 
 xen_de_sig <- xen_de %>%
   filter(fdr_SCZ <= 0.1)
