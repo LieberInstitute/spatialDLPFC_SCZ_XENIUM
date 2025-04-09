@@ -39,15 +39,52 @@ top_markers <- lapply(markers, function(x){return(rownames(x)[1:20])})
 top_markers <- unique(do.call(c, top_markers))
 
 spe_pseudo <- aggregateAcrossCells(spe, ids=DataFrame(cbind(spe$Banksy, spe$BrNum)))
+spe_pseudo <- logNormCounts(spe_pseudo, size.factors=NULL)
 
+# Sangho's markers
+panel_markers <- read.csv(here("raw-data", "experiment_info", "combined_Xenium_SCZ_ProbeSelection5_SHK_v4_15_w_ensemblgene_list.csv"))
 
-pdf(here("plots", "06_cell_type_clustering", 
-            sprintf("banksy_lambda%s_res%s_cell_types_markers.pdf", lambda, res)),
+panel_markers <- panel_markers %>%
+    as.data.frame() %>%
+     mutate(cell_type = case_when(cell_type == 'BDNF' ~ NA,
+                           cell_type == "In (EI balance)" ~ 'In',
+                           TRUE ~ cell_type))
+
+markers_plot <- panel_markers %>%
+    filter(!is.na(cell_type))
+
+markers_plot <- markers_plot[order(markers_plot$cell_type),]
+
+pdf(here::here("plots", "06_cell_type_clustering", sprintf("banksy_lambda%s_res%s_cell_types_markers.pdf", lambda, res)),
             height=15, width=25)
-plot_counts <- as.matrix(counts(spe_pseudo)[rownames(spe_pseudo) %in% top_markers,])
+plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% top_markers,])
+
 dend = cluster_between_groups(plot_counts, spe_pseudo$Banksy)
+
 ha = HeatmapAnnotation(Banksy_label = spe_pseudo$Banksy)
 ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha, 
             cluster_columns = dend, row_names_gp = gpar(fontsize = 16))
+
+plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% markers_plot$Gene,])
+plot_counts <- plot_counts[markers_plot$Gene, ]
+dend = cluster_between_groups(plot_counts, spe_pseudo$Banksy)
+ha = HeatmapAnnotation(Banksy_label = spe_pseudo$Banksy)
+
+
+#row_annotation = rowAnnotation(cell_type = markers_plot$cell_type)
+row_annotation = rowAnnotation(foo = anno_text(markers_plot$cell_type, location = 0.5, just = "center",
+    gp = gpar(fill = plyr::mapvalues(markers_plot$cell_type, 
+                from=unique(markers_plot$cell_type), to=1:length(unique(markers_plot$cell_type))), col="white"),
+    width = max_text_width(markers_plot$cell_type)*1.2))
+
+ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha, 
+            cluster_columns = dend, row_names_gp = gpar(fontsize = 16), 
+            right_annotation = row_annotation, cluster_rows=FALSE)
+
+
 dev.off()
+
+
+
+
 
