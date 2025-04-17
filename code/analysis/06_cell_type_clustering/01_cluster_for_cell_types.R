@@ -24,7 +24,7 @@ print(spe)
 
 #### Banksy parameters ####
 lambda <- 0.1
-res <- 0.7
+res <- 0.1 # higher = more clusters
 compute_agf <- FALSE
 use_agf <- FALSE
 cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
@@ -65,6 +65,8 @@ if(!file.exists(here("processed-data", "06_cell_type_clustering", sprintf("banks
 
   clusts <- cbind(colData(spe_joint)[, cnm], rownames(colData(spe_joint)))
   print(head(clusts))
+  clusts <- as.data.frame(clusts)
+  colData(spe)[["Banksy"]] <- as.character(clusts$V1)
   write.csv(clusts, here("processed-data", "06_cell_type_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))
   
   pdf(here("plots", "06_cell_type_clustering", sprintf("banksy_clustering_%s.pdf", cnm)))
@@ -97,6 +99,13 @@ if(!file.exists(here("processed-data", "06_cell_type_clustering", sprintf("banks
           add_ground("Banksy")+
           ggtitle(paste(brnums[[i]], unique(sub_spe$Dx)[[1]]))
       print(p)
+
+       # Make faceted plots for Br8667 and Br5973:
+      if (unique(colData(sub_spe)$BrNum) %in% c("Br8667", "Br5973")){
+        plist_faceted <- nmfLabelTransfer::plot_faceted_clusters(sub_spe, "Banksy")
+        do.call(gridExtra::grid.arrange, c(plist_faceted, ncol=2))
+        
+      }
 
     }
   dev.off()

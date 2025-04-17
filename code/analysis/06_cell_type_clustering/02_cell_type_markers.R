@@ -56,19 +56,22 @@ markers_plot <- panel_markers %>%
 markers_plot <- markers_plot[order(markers_plot$cell_type),]
 
 pdf(here::here("plots", "06_cell_type_clustering", sprintf("banksy_lambda%s_res%s_cell_types_markers.pdf", lambda, res)),
-            height=15, width=25)
+            height=15, width=28)
 plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% top_markers,])
-
+plot_counts <- plot_counts[top_markers,]
+plot_counts <- t(scale(t(plot_counts)))
 dend = cluster_between_groups(plot_counts, spe_pseudo$Banksy)
 
-ha = HeatmapAnnotation(Banksy_label = spe_pseudo$Banksy)
+ha = HeatmapAnnotation(Banksy_label = anno_text(spe_pseudo$Banksy))
 ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha, 
             cluster_columns = dend, row_names_gp = gpar(fontsize = 16))
 
 plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% markers_plot$Gene,])
 plot_counts <- plot_counts[markers_plot$Gene, ]
+plot_counts <- t(scale(t(plot_counts)))
 dend = cluster_between_groups(plot_counts, spe_pseudo$Banksy)
-ha = HeatmapAnnotation(Banksy_label = spe_pseudo$Banksy)
+ha = HeatmapAnnotation(Banksy_label = anno_text(spe_pseudo$Banksy, rot=45),
+            gp = gpar(fontsize = 6))
 
 
 #row_annotation = rowAnnotation(cell_type = markers_plot$cell_type)
