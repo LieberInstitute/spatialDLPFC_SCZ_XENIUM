@@ -40,20 +40,31 @@ top_markers <- unique(do.call(c, top_markers))
 
 spe_pseudo <- aggregateAcrossCells(spe, ids=DataFrame(cbind(spe$Banksy, spe$BrNum)))
 spe_pseudo <- logNormCounts(spe_pseudo, size.factors=NULL)
+spe_pseudo <- scater::runPCA(spe_pseudo, ncomponents=50)
+
+pdf(here::here("plots", "06_cell_type_clustering", sprintf("banksy_lambda%s_res%s_PCA.pdf", lambda, res)))
+scater::plotPCA(spe_pseudo, colour_by = "Dx", ncomponents=5)
+scater::plotPCA(spe_pseudo, colour_by = "Banksy", shape_by="Dx", ncomponents=5)
+scater::plotPCA(spe_pseudo, colour_by = "BrNum", ncomponents=5)
+dev.off()
 
 # Sangho's markers
-panel_markers <- read.csv(here("raw-data", "experiment_info", "combined_Xenium_SCZ_ProbeSelection5_SHK_v4_15_w_ensemblgene_list.csv"))
+panel_markers <- readxl::read_xlsx((here("raw-data", 
+        "experiment_info", 
+        "Xenium_SHK_celltype_REannot_2025-04-13.xlsx")), sheet=2)
 
 panel_markers <- panel_markers %>%
     as.data.frame() %>%
-     mutate(cell_type = case_when(cell_type == 'BDNF' ~ NA,
-                           cell_type == "In (EI balance)" ~ 'In',
-                           TRUE ~ cell_type))
+    mutate(cell_type_updated=case_when(cell_type_updated=="NA" ~ NA,
+                                        TRUE ~ cell_type_updated))
+    #  mutate(cell_type = case_when(cell_type_updated == 'BDNF' ~ NA,
+    #                        cell_type == "In (EI balance)" ~ 'In',
+    #                        TRUE ~ cell_type))
 
 markers_plot <- panel_markers %>%
-    filter(!is.na(cell_type))
+    filter(!is.na(cell_type_updated))
 
-markers_plot <- markers_plot[order(markers_plot$cell_type),]
+markers_plot <- markers_plot[order(markers_plot$cell_type_updated),]
 
 pdf(here::here("plots", "06_cell_type_clustering", sprintf("banksy_lambda%s_res%s_cell_types_markers.pdf", lambda, res)),
             height=15, width=28)
@@ -75,10 +86,10 @@ ha = HeatmapAnnotation(Banksy_label = anno_text(spe_pseudo$Banksy, rot=45),
 
 
 #row_annotation = rowAnnotation(cell_type = markers_plot$cell_type)
-row_annotation = rowAnnotation(foo = anno_text(markers_plot$cell_type, location = 0.5, just = "center",
-    gp = gpar(fill = plyr::mapvalues(markers_plot$cell_type, 
-                from=unique(markers_plot$cell_type), to=1:length(unique(markers_plot$cell_type))), col="white"),
-    width = max_text_width(markers_plot$cell_type)*1.2))
+row_annotation = rowAnnotation(foo = anno_text(markers_plot$cell_type_updated, location = 0.5, just = "center",
+    gp = gpar(fill = plyr::mapvalues(markers_plot$cell_type_updated, 
+                from=unique(markers_plot$cell_type_updated), to=1:length(unique(markers_plot$cell_type_updated))), col="white"),
+    width = max_text_width(markers_plot$cell_type_updated)*1.2))
 
 ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha, 
             cluster_columns = dend, row_names_gp = gpar(fontsize = 16), 
@@ -86,6 +97,8 @@ ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha,
 
 
 dev.off()
+
+
 
 
 
