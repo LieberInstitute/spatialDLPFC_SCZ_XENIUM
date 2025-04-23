@@ -23,6 +23,7 @@ print(spe)
 #### Banksy parameters ####
 lambda <- 0.1
 res <- 0.7 # higher = more clusters
+use_agf <- FALSE
 cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
 
 
@@ -37,12 +38,18 @@ colData(spe)[["Banksy"]] <- as.character(clusts$V1)
 
 clusts <- clusts %>% as.data.frame() %>% 
   mutate(V1 = as.numeric(V1)) %>%
-  mutate(annots=case_when(V1 %in% c(6, 8, 1, 10) ~ "Oligo", # 10 and 15 i am not super sure about
+  mutate(annots=case_when(V1 %in% c(6, 8, 1) ~ "Oligo", # 10 and 15 i am not super sure about
+                          V1 %in% c(10) ~ "Ambig/Oligo",
                           V1 %in% c(7) ~ "Mic",
-                          V1 %in% c(12, 9, 15) ~ "In",
-                          V1 %in% c(18, 11, 14, 2) ~ "Ex",
+                          V1 %in% c(15) ~ "Ambig/In/Endo",
+                          V1 %in% c(18) ~ "L5 Ex",
+                          V1 %in% c(14) ~ "L6 Ex",
+                          V1 %in% c(11) ~ "L4/5 Ex",
+                          V1 %in% c(2) ~ "L2/3 Ex",
                           V1 %in% c(17, 16, 4) ~ "Ast",
                           V1 %in% c(5, 13, 3) ~ "Endo",
+                          V1 %in% c(12) ~ "In: VIP, LAMP5",
+                          V1 %in% c(9) ~ "In: SST, PVALB",
                        TRUE ~ "NA")) %>%
     mutate(annots_combined = paste(annots, V1, sep="."))
   

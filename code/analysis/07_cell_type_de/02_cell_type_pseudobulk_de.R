@@ -19,11 +19,13 @@ spe_pseudo$Dx <- factor(spe_pseudo$Dx)
 spe_pseudo$predictions_smooth <- factor(spe_pseudo$annots)
 spe_pseudo$Age <- as.numeric(spe_pseudo$Age)
 
+
 #### Banksy parameters ####
 lambda <- 0.1
 res <- 0.7 # higher = more clusters
 use_agf <- FALSE
 cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
+
 
 # Create the DE model
 dx_mod <-
@@ -55,6 +57,7 @@ write.csv(dx_res, here("processed-data", "07_cell_type_de", sprintf("donor_cell_
 
 
 pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_Dx_DEGs_%s.pdf", cnm)))
+
 ## Volcano Plot ----
   out_gene_df <- dx_res |>
     arrange(fdr_SCZ) |>
