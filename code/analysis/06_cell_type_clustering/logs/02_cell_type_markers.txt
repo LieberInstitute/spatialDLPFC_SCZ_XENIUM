@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Apr 14 02:25:46 PM EDT 2025
+Wed Apr 23 10:59:18 AM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16025802
+Job id: 16307498
 Job name: 02_cell_type_markers
 Hostname: jhpce3
 Task id: 
@@ -144,65 +144,4 @@ here() starts at /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatia
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ✔ lubridate 1.9.3     ✔ tibble    3.2.1
 ✔ purrr     1.0.2     ✔ tidyr     1.3.1
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ lubridate::%within%() masks IRanges::%within%()
-✖ dplyr::collapse()     masks IRanges::collapse()
-✖ dplyr::combine()      masks Biobase::combine(), BiocGenerics::combine()
-✖ dplyr::count()        masks matrixStats::count()
-✖ dplyr::desc()         masks IRanges::desc()
-✖ tidyr::expand()       masks S4Vectors::expand()
-✖ dplyr::filter()       masks stats::filter()
-✖ dplyr::first()        masks S4Vectors::first()
-✖ dplyr::lag()          masks stats::lag()
-✖ ggplot2::Position()   masks BiocGenerics::Position(), base::Position()
-✖ purrr::reduce()       masks GenomicRanges::reduce(), IRanges::reduce()
-✖ dplyr::rename()       masks S4Vectors::rename()
-✖ lubridate::second()   masks S4Vectors::second()
-✖ lubridate::second<-() masks S4Vectors::second<-()
-✖ dplyr::slice()        masks IRanges::slice()
-✖ lubridate::stamp()    masks cowplot::stamp()
-ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-Loading required package: grid
-========================================
-ComplexHeatmap version 2.18.0
-Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
-Github page: https://github.com/jokergoo/ComplexHeatmap
-Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
-
-If you use it in published research, please cite either one:
-- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
-- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
-    genomic data. Bioinformatics 2016.
-
-
-The new InteractiveComplexHeatmap package can directly export static 
-complex heatmaps into an interactive Shiny app with zero effort. Have a try!
-
-This message can be suppressed by:
-  suppressPackageStartupMessages(library(ComplexHeatmap))
-========================================
-
-class: SpatialExperiment 
-dim: 300 1262965 
-metadata(24): Samples Samples ... Samples Samples
-assays(1): counts
-rownames(300): A2M ABCA2 ... ZNF804A ZP3
-rowData names(3): ID Symbol Type
-colnames(1262965): Br1113_1 Br1113_2 ... Br8772_56955 Br8772_56956
-colData names(22): Sample Barcode ... Age Sex
-reducedDimNames(0):
-mainExpName: NULL
-altExpNames(0):
-spatialCoords names(2) : x_centroid y_centroid
-imgData names(1): sample_id
-  X V1       V2
-1 1 16 Br1113_1
-2 2  5 Br1113_2
-3 3  7 Br1113_3
-4 4  3 Br1113_4
-5 5  7 Br1113_5
-6 6  3 Br1113_6
-null device 
-          1 
-**** Job ends ****
-Mon Apr 14 02:26:56 PM EDT 2025
+slurmstepd: error: *** JOB 16307498 ON compute-152 CANCELLED AT 2025-04-23T10:59:29 ***
