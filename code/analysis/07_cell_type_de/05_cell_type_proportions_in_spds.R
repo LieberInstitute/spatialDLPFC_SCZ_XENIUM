@@ -62,6 +62,7 @@ rect_data <- tabs_df %>%
 ggplot(tabs_df, aes(x = BrNum_ordered, y = Freq, fill = Var2)) +
   geom_bar(position = "fill", stat = "identity", aes(fill=Var2)) +
   facet_wrap(~Var1) +
+  ggnewscale::new_scale_fill()+
   # Dx annotation rectangles
   geom_rect(data = rect_data, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax, fill = Dx),
             inherit.aes = FALSE, colour = NA) +
