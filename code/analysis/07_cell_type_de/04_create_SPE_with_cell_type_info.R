@@ -71,4 +71,21 @@ spe <- spe[,colnames(spe) %in% rownames(spds)]
 colData(spe) <- merge(colData(spe), spds, by="row.names", all.x=TRUE)
 print(spe)
 
+
+
+# Also add Sang Ho's gene annotations to the rowData for ease of access later
+panel_markers <- readxl::read_xlsx((here("raw-data", 
+        "experiment_info", 
+        "Xenium_SHK_celltype_REannot_2025-04-13.xlsx")), sheet=2)
+panel_markers$`...1` <- NULL
+
+panel_markers <- panel_markers %>%
+    as.data.frame() %>%
+    mutate(cell_type_updated=case_when(cell_type_updated=="NA" ~ NA,
+                                        TRUE ~ cell_type_updated))%>%
+    mutate(Symbol=Gene)
+
+df <- merge(rowData(spe), panel_markers, by="Symbol")
+rowData(spe) <- df
+                        
 saveRDS(spe, here("processed-data", "07_cell_type_de", "cleaned_spe_N24_with_cell_type_and_spds.RDS"))
