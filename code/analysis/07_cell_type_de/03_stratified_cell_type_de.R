@@ -44,6 +44,7 @@ pdf(here("plots", "07_cell_type_de",
 # Loop over the cell types and perform DE within each cell type
 
 cell_types <- unique(spe_pseudo$annots)
+dx_results <- list()
 for(i in 1:length(cell_types)){
     cell_type_use <- cell_types[[i]]
 
@@ -66,6 +67,7 @@ for(i in 1:length(cell_types)){
         gene_ensembl = "ID",
         gene_name = "Symbol"
     )
+ 
 
 
     # save the results
@@ -125,7 +127,22 @@ for(i in 1:length(cell_types)){
         ) +
         theme_minimal()
   )
-
+    dx_res$cell_type <- cell_type_use
+    dx_res <- dx_res %>%
+        select(gene, logFC_SCZ, cell_type)
+    dx_results[[i]] <- dx_res
 
 }
+dev.off()
+
+dx_df <- do.call(rbind, dx_results)
+dx_mat <- dx_df %>%
+    as.data.frame() %>% 
+    pivot_wider(names_from=cell_type, values_from=logFC_SCZ)%>%
+    column_to_rownames(var="gene") %>%
+    as.matrix()
+
+pdf(here("plots", "07_cell_type_de", "stratified_cell_type_de_heatmap.pdf"),
+    height=25, width=10)
+ComplexHeatmap::Heatmap(dx_mat)
 dev.off()
