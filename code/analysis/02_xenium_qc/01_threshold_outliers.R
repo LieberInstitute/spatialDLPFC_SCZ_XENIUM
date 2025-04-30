@@ -144,6 +144,7 @@ for(i in 1:length(brnums)){
     
     
     # Make some scatterplots of the QC metrics to see how they are related
+    # Inspo for the plots: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009290
     mito_1 <- ggplot(colData(spe_sub), aes(x=detected, y=subsets_mito_percent))+
         geom_point(aes(colour=mito_out))+
         geom_smooth(method="lm")+
