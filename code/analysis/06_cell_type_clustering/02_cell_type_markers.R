@@ -10,6 +10,7 @@ library(escheR)
 library(scran)
 library(scater)
 library(ComplexHeatmap)
+library(circlize)
 
 ##########################################################################################
 # Run marker gene detection on BANKSY clusters
@@ -78,12 +79,12 @@ ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha,
             cluster_columns = dend, row_names_gp = gpar(fontsize = 16))
 
 plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% markers_plot$Gene,])
+colnames(plot_counts) <- paste(spe_pseudo$BrNum, spe_pseudo$Dx, sep="_")
 plot_counts <- plot_counts[markers_plot$Gene, ]
 plot_counts <- t(scale(t(plot_counts)))
 dend = cluster_between_groups(plot_counts, spe_pseudo$Banksy)
 ha = HeatmapAnnotation(Banksy_label = anno_text(spe_pseudo$Banksy, rot=45),
             gp = gpar(fontsize = 6))
-
 
 #row_annotation = rowAnnotation(cell_type = markers_plot$cell_type)
 row_annotation = rowAnnotation(foo = anno_text(markers_plot$cell_type_updated, location = 0.5, just = "center",
@@ -91,10 +92,26 @@ row_annotation = rowAnnotation(foo = anno_text(markers_plot$cell_type_updated, l
                 from=unique(markers_plot$cell_type_updated), to=1:length(unique(markers_plot$cell_type_updated))), col="white"),
     width = max_text_width(markers_plot$cell_type_updated)*1.2))
 
-ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha, 
-            cluster_columns = dend, row_names_gp = gpar(fontsize = 16), 
-            right_annotation = row_annotation, cluster_rows=FALSE)
+# 1. Extract Dx group from column names
+Dx_group <- ifelse(grepl("NTC$", colnames(plot_counts)), "NTC", "SCZ")
 
+# 2. Create a factor to preserve order in legend
+Dx_group <- factor(Dx_group, levels = c("NTC", "SCZ"))
+
+# 3. Define colors
+dx_colors <- c("NTC" = "skyblue", "SCZ" = "salmon")
+
+# 4. Create bottom annotation
+col_ha_bottom <- HeatmapAnnotation(
+  Dx = Dx_group,
+  col = list(Dx = dx_colors),
+  annotation_name_side = "left"
+)
+
+# 5. Draw heatmap with bottom annotation
+ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=col_ha_bottom, 
+            cluster_columns = dend, row_names_gp = gpar(fontsize = 16),
+            right_annotation = row_annotation, cluster_rows=FALSE)
 
 dev.off()
 
