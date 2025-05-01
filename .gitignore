@@ -3,4 +3,7 @@
 .RData
 .Ruserdata
 .vscode/
-plots/02_xenium_qc/01_total_counts.pdf
+plots/02_xenium_qc/*
+*nmf_mod.RDS
+*.RDS
+*.rds
