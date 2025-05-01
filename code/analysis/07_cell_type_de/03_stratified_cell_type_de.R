@@ -6,8 +6,8 @@ suppressPackageStartupMessages({
   library(tidyverse)
   library(ggrepel)
   library(sessioninfo)
+  library(ComplexHeatmap)
 })
-
 ####################################################################################################
 # Perform DE analysis stratified by cell type on the pseudobulked object
 # Reference: https://github.com/LieberInstitute/spatialDLPFC_SCZ/blob/main/code/analysis/pseudobulk_dx/PB_analysis_dx_gene.R
@@ -128,21 +128,54 @@ for(i in 1:length(cell_types)){
         theme_minimal()
   )
     dx_res$cell_type <- cell_type_use
-    dx_res <- dx_res %>%
+    dx_res_use <- dx_res %>%
         select(gene, logFC_SCZ, cell_type)
-    dx_results[[i]] <- dx_res
+    dx_results[[i]] <- dx_res_use
 
 }
 dev.off()
+
+panel_markers <- readxl::read_xlsx((here("raw-data", 
+        "experiment_info", 
+        "Xenium_SHK_celltype_REannot_2025-04-13.xlsx")), sheet=2)
+panel_markers$`...1` <- NULL
+
+panel_markers <- panel_markers %>%
+    as.data.frame() %>%
+    mutate(cell_type_updated=case_when(cell_type_updated=="NA" ~ NA,
+                                        TRUE ~ cell_type_updated))%>%
+    mutate(dx_deg=case_when(dx_deg=="NA" ~ NA,
+                                        TRUE ~ dx_deg))
+
+dx_degs <- panel_markers[!is.na(panel_markers$dx_deg),]%>%
+    select(Gene, dx_deg)
 
 dx_df <- do.call(rbind, dx_results)
 dx_mat <- dx_df %>%
     as.data.frame() %>% 
     pivot_wider(names_from=cell_type, values_from=logFC_SCZ)%>%
+    filter(gene %in% dx_degs$Gene) %>%
     column_to_rownames(var="gene") %>%
     as.matrix()
 
+# Create row annotation of directionality 
+# Ensure gene names are rownames
+dx_deg_vec <- dx_degs %>%
+  filter(Gene %in% rownames(dx_mat)) %>%
+  distinct(Gene, .keep_all = TRUE) %>% # avoid duplicated rows
+  column_to_rownames("Gene")
+
+# Reorder to match dx_mat
+dx_deg_vec <- dx_deg_vec[rownames(dx_mat),]
+dx_col_fun <- c("Dx_DEG_Up" = "red", "Dx_DEG_Down" = "blue")
+
+row_anno <- rowAnnotation(
+  DEG = dx_deg_vec,
+  col = list(DEG = dx_col_fun),
+  show_annotation_name = TRUE
+)
+
 pdf(here("plots", "07_cell_type_de", "stratified_cell_type_de_heatmap.pdf"),
     height=25, width=10)
-ComplexHeatmap::Heatmap(dx_mat)
+ComplexHeatmap::Heatmap(dx_mat, right_annotation = row_anno)
 dev.off()
