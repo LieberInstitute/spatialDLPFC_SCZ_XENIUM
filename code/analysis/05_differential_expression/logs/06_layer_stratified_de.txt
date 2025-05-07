@@ -1,0 +1,43 @@
+**** Job starts ****
+Wed May  7 03:13:12 PM EDT 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 16522372
+Job name: 06_layer_stratified_de
+Hostname: jhpce3
+Task id: 
+Loading conda_R/4.3.x
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+null device 
+          1 
+2025-05-07 15:13:32.020047 create model matrix
+2025-05-07 15:13:32.086082 computing enrichment statistics
+2025-05-07 15:13:32.179959 extract and reformat enrichment results
+2025-05-07 15:13:32.505185 create model matrix
+2025-05-07 15:13:32.543596 computing enrichment statistics
+2025-05-07 15:13:32.661485 extract and reformat enrichment results
+2025-05-07 15:13:32.925333 create model matrix
+2025-05-07 15:13:32.959905 computing enrichment statistics
+2025-05-07 15:13:33.043954 extract and reformat enrichment results
+2025-05-07 15:13:33.317726 create model matrix
+2025-05-07 15:13:33.357873 computing enrichment statistics
+2025-05-07 15:13:33.453684 extract and reformat enrichment results
+2025-05-07 15:13:33.744512 create model matrix
+2025-05-07 15:13:33.779545 computing enrichment statistics
+2025-05-07 15:13:33.864179 extract and reformat enrichment results
+2025-05-07 15:13:34.159099 create model matrix
+2025-05-07 15:13:34.200487 computing enrichment statistics
+2025-05-07 15:13:34.297513 extract and reformat enrichment results
+2025-05-07 15:13:34.573829 create model matrix
+2025-05-07 15:13:34.610291 computing enrichment statistics
+2025-05-07 15:13:34.69864 extract and reformat enrichment results
+null device 
+          1 
+**** Job ends ****
+Wed May  7 03:13:35 PM EDT 2025
