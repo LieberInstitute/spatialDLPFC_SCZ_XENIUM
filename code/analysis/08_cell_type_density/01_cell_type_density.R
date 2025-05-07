@@ -85,8 +85,12 @@ dev.off()
 all_densities <- do.call(rbind, densities)
 all_densities <- as.data.frame(all_densities)
 
-pdf(here("plots", "08_cell_type_density", "whole_tissue_density_boxplots.pdf"))
+pdf(here("plots", "08_cell_type_density", "whole_tissue_density_boxplots.pdf"), height=10, width=10)
 ggplot(all_densities, aes(x=Dx, y=density))+
-  geom_boxplot()+
-  facet_wrap(~cell_type, scales="free")
+  geom_boxplot(aes(fill=Dx))+
+  facet_wrap(~cell_type, scales="free")+
+  cowplot::theme_cowplot()
 dev.off()
+
+write.csv(all_densities, here("processed-data", "08_cell_type_density",
+          "cell_type_densities_across_tissue.csv"))
