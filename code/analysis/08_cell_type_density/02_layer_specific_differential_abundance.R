@@ -45,7 +45,7 @@ for (i in 1:length(layers)){
     # keep <- filterByExpr(y.ab, group=y.ab$samples$BrNum)
     # y.ab <- y.ab[keep,]
     # summary(keep)
-
+    #y.ab <- calcNormFactors(y.ab)
     # Create design matrix
     design <- model.matrix(~factor(Dx) + factor(slide_id) 
                  + factor(Sex), y.ab$samples)
