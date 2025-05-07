@@ -18,6 +18,8 @@ spe_pseudo$Dx <- factor(spe_pseudo$Dx)
 spe_pseudo$predictions_smooth <- factor(spe_pseudo$predictions_smooth)
 spe_pseudo$Age <- as.numeric(spe_pseudo$Age)
 
+
+cnm <- "spaTransfer_k50_smoothed"
 # Run PCA and plot PC plot to see if there is variation driven by Dx within the layers
 set.seed(1108)
 spe_pseudo <- scater::runPCA(spe_pseudo, ncomponents=50)
@@ -38,7 +40,7 @@ dx_results <- list()
 for(i in 1:length(layers)){
     layer_use <- layers[[i]]
 
-    spe_pseudo_sub <- spe_pseudo[,spe_pseudo$annots==layer_use]
+    spe_pseudo_sub <- spe_pseudo[,spe_pseudo$predictions_smooth==layer_use]
 
     # Create the DE model
     dx_mod <-
@@ -65,7 +67,7 @@ for(i in 1:length(layers)){
     layer_use_fname <- gsub("\\:", "-", layer_use_fname)
     write.csv(dx_res, here("processed-data", "05_differential_expression", 
             "stratified_results", 
-            sprintf("stratified_donor_layer_level_pseudobulk_Dx_DEGs_%s.csv", cell_type_use_fname)))
+            sprintf("stratified_donor_layer_level_pseudobulk_Dx_DEGs_%s.csv", layer_use_fname)))
 
 
    
@@ -110,16 +112,16 @@ for(i in 1:length(layers)){
             nudge_y = 0.1
         ) +
         labs(
-            title = paste0(cell_type_use, 
+            title = paste0(layer_use, 
             " Donor-layer level pseudobulk analysis by Dx - ", 
             " ( ", n_sig_gene, " sig genes)"
             )
         ) +
         theme_minimal()
   )
-    dx_res$cell_type <- cell_type_use
+    dx_res$layer<- layer_use
     dx_res_use <- dx_res %>%
-        select(gene, logFC_SCZ, cell_type)
+        select(gene, logFC_SCZ, layer)
     dx_results[[i]] <- dx_res_use
 
 }
