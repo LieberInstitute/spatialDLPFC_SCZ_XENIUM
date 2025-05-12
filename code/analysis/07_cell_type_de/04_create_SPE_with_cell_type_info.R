@@ -15,7 +15,7 @@ suppressPackageStartupMessages({
 spe <- readRDS(here("processed-data", "01_build_spe", "raw_spe_N24.RDS"))
 outlier_ids <- read.csv(here("processed-data", "02_xenium_qc", "outlier_ids.csv"))$x
 spe <- spe[, -which(colnames(spe) %in% outlier_ids)]
-rm (outlier_ids)
+rm(outlier_ids)
 spe <- spe[which(rowData(spe)$Type=="Gene Expression"), ]
 print(spe)
 
@@ -63,12 +63,21 @@ spe$run_date <- run_date
 
 ### Spatial domain information
 spds <- read.csv(here("processed-data", "04_label_transfer", "label_transfer_N24_k50_smoothed_labels.csv"))
-
-rownames(spds) <- spds$X 
+print(head(spds))
+rownames(spds) <- spds$X
 spds$X <- NULL
+
 colnames(spds) <- c("spatransfer_k50_predictions_smooth")
-spe <- spe[,colnames(spe) %in% rownames(spds)]
-colData(spe) <- merge(colData(spe), spds, by="row.names", all.x=TRUE)
+print(head(spds))
+
+print(dim(spe))
+print(dim(spds))
+
+print(head(colnames(spe)))
+print(head(rownames(spds)))
+stopifnot(all(colnames(spe)==rownames(spds)))
+
+colData(spe)$spatransfer_k50_predictions_smooth <- factor(spds$spatransfer_k50_predictions_smooth)
 print(spe)
 
 
