@@ -6,6 +6,7 @@ suppressPackageStartupMessages({
   library(tidyverse)
   library(ggrepel)
   library(sessioninfo)
+  library(escheR)
 })
 
 ####################################################################################################
@@ -14,13 +15,16 @@ suppressPackageStartupMessages({
 ####################################################################################################
 
 spe <- readRDS(here("processed-data", "01_build_spe", "raw_spe_N24.RDS"))
+outlier_ids <- read.csv(here("processed-data", "02_xenium_qc", "outlier_ids.csv"))$x
+spe <- spe[, -which(colnames(spe) %in% outlier_ids)]
+rm(outlier_ids)
 spds <- read.csv(here("processed-data", "04_label_transfer", "label_transfer_N24_k50_smoothed_labels.csv"))
 
 rownames(spds) <- spds$X 
 spds$X <- NULL
 colnames(spds) <- c("predictions_smooth")
-spe <- spe[,colnames(spe) %in% rownames(spds)]
-colData(spe) <- merge(colData(spe), spds, by="row.names", all.x=TRUE)
+stopifnot(all(colnames(spe)==rownames(spds)))
+colData(spe)$predictions_smooth <- factor(spds$predictions_smooth)
 
 # remove non-gene expression counts
 spe <- spe[rowData(spe)$Type == "Gene Expression",]
@@ -60,3 +64,19 @@ spe_pseudo_donor <- registration_pseudobulk(
         paste0("spe_pseudo_donor_", "spaTransfer_k50_smoothed_predictions", ".rds")
       )
     )
+
+
+# sanity check plots of spds
+pdf(here("plots", "05_differential_expression", "pseudobulk_sanity_check_plots.pdf"), width=10, height=10)
+brnums <- unique(spe$BrNum)
+
+for(i in 1:length(brnums)){
+  spe_use <- spe[,spe$BrNum == brnums[i]]
+  p <- make_escheR(spe_use) %>%
+    add_fill("predictions_smooth")+
+    ggtitle(unique(spe$BrNum))+
+    scale_fill_discrete()
+  print(p)
+}
+
+dev.off()

@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon May 12 11:33:26 AM EDT 2025
+Mon May 12 04:08:44 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16565260
+Job id: 16567519
 Job name: 01_create_pseudobulk_spe
 Hostname: jhpce3
 Task id: 
@@ -14,15 +14,65 @@ Currently Loaded Modules:
 
  
 
-2025-05-12 11:34:13.098817 make pseudobulk object
-2025-05-12 11:34:23.173832 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-05-12 11:34:23.194004 drop lowly expressed genes
-2025-05-12 11:34:23.355679 normalize expression
-2025-05-12 11:34:23.441901 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds
-2025-05-12 11:34:23.521007 make pseudobulk object
-2025-05-12 11:34:28.799284 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-05-12 11:34:28.81894 drop lowly expressed genes
-2025-05-12 11:34:28.873847 normalize expression
-2025-05-12 11:34:28.924717 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_spaTransfer_k50_smoothed_predictions.rds
+2025-05-12 16:09:35.125582 make pseudobulk object
+2025-05-12 16:09:46.392198 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-05-12 16:09:46.443972 drop lowly expressed genes
+2025-05-12 16:09:46.650901 normalize expression
+2025-05-12 16:09:46.768963 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds
+2025-05-12 16:09:46.973223 make pseudobulk object
+2025-05-12 16:09:53.484202 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-05-12 16:09:53.508931 drop lowly expressed genes
+2025-05-12 16:09:53.583497 normalize expression
+2025-05-12 16:09:53.651833 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_spaTransfer_k50_smoothed_predictions.rds
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+Scale for fill is already present.
+Adding another scale for fill, which will replace the existing scale.
+null device 
+          1 
 **** Job ends ****
-Mon May 12 11:34:29 AM EDT 2025
+Mon May 12 04:10:40 PM EDT 2025

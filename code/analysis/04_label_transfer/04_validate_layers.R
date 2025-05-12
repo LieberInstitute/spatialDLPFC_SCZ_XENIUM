@@ -65,7 +65,7 @@ colnames(t_stats) <- gsub("^t_stat_", "", colnames(t_stats))
 # Get the manual modeling results
 manual_modeling_results <- fetch_data(type = "modeling_results")
 
-manual_cor_g100 <- layer_stat_cor(
+manual_cor <- layer_stat_cor(
     t_stats,
     manual_modeling_results,
     model_type = "enrichment",
@@ -76,8 +76,8 @@ manual_cor_g100 <- layer_stat_cor(
 pdf(here("plots", "04_label_transfer", 
             "layer_enrichment_correlation_manual_allgenes.pdf"), width = 10, height = 10)
 layer_stat_cor_plot(
-    manual_cor_g100,
-    max = max(manual_cor_g100)
+    manual_cor,
+    max = max(manual_cor)
   )
 dev.off()
 
