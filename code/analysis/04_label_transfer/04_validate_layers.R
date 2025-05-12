@@ -20,9 +20,10 @@ spe_pseudo$predictions_smooth <- factor(spe_pseudo$predictions_smooth)
 spe_pseudo$Age <- as.numeric(spe_pseudo$Age)
 
 
-
+# ------------------------------------------------------------
 # First, need to perform enrichment analysis with the spatial domain as the
 # registration variable to get domain-speciifc t-statistics
+# ------------------------------------------------------------
 
 # Create the DE model
 dx_mod <-
@@ -77,5 +78,61 @@ pdf(here("plots", "04_label_transfer",
 layer_stat_cor_plot(
     manual_cor_g100,
     max = max(manual_cor_g100)
+  )
+dev.off()
+
+
+# ------------------------------------------------------------
+# Try registration of spatialDLPFC layers to manaul annotations, using only
+# the genes from the Xenium panel
+# ------------------------------------------------------------
+
+# Get the spatialDLPFC modeling results
+spatialDLPFC_modeling_results <- fetch_data(
+    type = "spatialDLPFC_Visium_modeling_results"
+  )
+
+spatialDLPFC_enrich <- spatialDLPFC_modeling_results$enrichment[, grep("^t_stat_", colnames(spatialDLPFC_modeling_results$enrichment))]
+spatialDLPFC_enrich <- spatialDLPFC_enrich[rownames(spatialDLPFC_enrich) %in% rownames(layer_res),]
+
+spatialDLPFC_cor <- layer_stat_cor(
+    spatialDLPFC_enrich,
+    manual_modeling_results,
+    model_type = "enrichment",
+    reverse = FALSE,
+    top_n = NULL
+  )
+
+pdf(here("plots", "04_label_transfer", 
+            "layer_enrichment_correlation_spatialDLPFC_allgenes.pdf"), width = 10, height = 10)
+layer_stat_cor_plot(
+    spatialDLPFC_cor,
+    max = max(spatialDLPFC_cor)
+  )
+dev.off()
+
+
+# ------------------------------------------------------------
+# Register against the Visium layers from Boyi's dataset
+# ------------------------------------------------------------
+
+vis_enrich <- readRDS("/dcs04/lieber/marmaypag/spatialDLPFC_SCZ_LIBD4100/processed-data/rds/04_SpD_marker_genes/test_enrich_PRECAST_07.rds")
+vis_use <- list()
+vis_use$enrichment <- vis_enrich
+
+vis_cor <- layer_stat_cor(
+    t_stats,
+    vis_use,
+    model_type = "enrichment",
+    reverse = FALSE,
+    top_n = NULL
+  )
+
+
+pdf(here("plots", "04_label_transfer", 
+            "layer_enrichment_correlation_visium_allgenes.pdf"), width = 10, height = 10)
+layer_stat_cor_plot(  
+    vis_cor,
+    max = max(vis_cor)
   )
 dev.off()
