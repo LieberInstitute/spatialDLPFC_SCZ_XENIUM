@@ -1,14 +1,12 @@
 **** Job starts ****
-Thu Feb 27 02:08:20 PM EST 2025
+Mon May 12 11:33:26 AM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 14229934
+Job id: 16565260
 Job name: 01_create_pseudobulk_spe
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
-environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -16,15 +14,15 @@ Currently Loaded Modules:
 
  
 
-2025-02-27 14:09:09.399074 make pseudobulk object
-2025-02-27 14:09:21.537487 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-02-27 14:09:21.564564 drop lowly expressed genes
-2025-02-27 14:09:21.761528 normalize expression
-2025-02-27 14:09:21.858179 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds
-2025-02-27 14:09:21.928833 make pseudobulk object
-2025-02-27 14:09:27.690296 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-02-27 14:09:27.711694 drop lowly expressed genes
-2025-02-27 14:09:27.77064 normalize expression
-2025-02-27 14:09:27.827669 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_spaTransfer_k50_smoothed_predictions.rds
+2025-05-12 11:34:13.098817 make pseudobulk object
+2025-05-12 11:34:23.173832 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-05-12 11:34:23.194004 drop lowly expressed genes
+2025-05-12 11:34:23.355679 normalize expression
+2025-05-12 11:34:23.441901 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds
+2025-05-12 11:34:23.521007 make pseudobulk object
+2025-05-12 11:34:28.799284 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-05-12 11:34:28.81894 drop lowly expressed genes
+2025-05-12 11:34:28.873847 normalize expression
+2025-05-12 11:34:28.924717 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_spaTransfer_k50_smoothed_predictions.rds
 **** Job ends ****
-Thu Feb 27 02:09:28 PM EST 2025
+Mon May 12 11:34:29 AM EDT 2025
