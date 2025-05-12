@@ -1,12 +1,14 @@
 **** Job starts ****
-Wed May  7 03:13:12 PM EDT 2025
+Mon May 12 04:18:06 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16522372
+Job id: 16567694
 Job name: 06_layer_stratified_de
 Hostname: jhpce3
 Task id: 
+Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
+environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -16,28 +18,28 @@ Currently Loaded Modules:
 
 null device 
           1 
-2025-05-07 15:13:32.020047 create model matrix
-2025-05-07 15:13:32.086082 computing enrichment statistics
-2025-05-07 15:13:32.179959 extract and reformat enrichment results
-2025-05-07 15:13:32.505185 create model matrix
-2025-05-07 15:13:32.543596 computing enrichment statistics
-2025-05-07 15:13:32.661485 extract and reformat enrichment results
-2025-05-07 15:13:32.925333 create model matrix
-2025-05-07 15:13:32.959905 computing enrichment statistics
-2025-05-07 15:13:33.043954 extract and reformat enrichment results
-2025-05-07 15:13:33.317726 create model matrix
-2025-05-07 15:13:33.357873 computing enrichment statistics
-2025-05-07 15:13:33.453684 extract and reformat enrichment results
-2025-05-07 15:13:33.744512 create model matrix
-2025-05-07 15:13:33.779545 computing enrichment statistics
-2025-05-07 15:13:33.864179 extract and reformat enrichment results
-2025-05-07 15:13:34.159099 create model matrix
-2025-05-07 15:13:34.200487 computing enrichment statistics
-2025-05-07 15:13:34.297513 extract and reformat enrichment results
-2025-05-07 15:13:34.573829 create model matrix
-2025-05-07 15:13:34.610291 computing enrichment statistics
-2025-05-07 15:13:34.69864 extract and reformat enrichment results
+2025-05-12 16:18:22.777793 create model matrix
+2025-05-12 16:18:22.839813 computing enrichment statistics
+2025-05-12 16:18:22.927318 extract and reformat enrichment results
+2025-05-12 16:18:23.243058 create model matrix
+2025-05-12 16:18:23.276449 computing enrichment statistics
+2025-05-12 16:18:23.358386 extract and reformat enrichment results
+2025-05-12 16:18:23.608809 create model matrix
+2025-05-12 16:18:23.642605 computing enrichment statistics
+2025-05-12 16:18:23.724545 extract and reformat enrichment results
+2025-05-12 16:18:23.973739 create model matrix
+2025-05-12 16:18:24.008278 computing enrichment statistics
+2025-05-12 16:18:24.095323 extract and reformat enrichment results
+2025-05-12 16:18:24.4301 create model matrix
+2025-05-12 16:18:24.466347 computing enrichment statistics
+2025-05-12 16:18:24.552792 extract and reformat enrichment results
+2025-05-12 16:18:24.803517 create model matrix
+2025-05-12 16:18:24.837213 computing enrichment statistics
+2025-05-12 16:18:24.917443 extract and reformat enrichment results
+2025-05-12 16:18:25.155479 create model matrix
+2025-05-12 16:18:25.189061 computing enrichment statistics
+2025-05-12 16:18:25.269021 extract and reformat enrichment results
 null device 
           1 
 **** Job ends ****
-Wed May  7 03:13:35 PM EDT 2025
+Mon May 12 04:18:25 PM EDT 2025

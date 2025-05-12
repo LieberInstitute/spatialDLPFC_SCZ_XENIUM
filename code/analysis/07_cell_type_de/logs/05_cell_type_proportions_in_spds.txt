@@ -1,9 +1,9 @@
 **** Job starts ****
-Mon May 12 04:18:09 PM EDT 2025
+Mon May 12 06:51:55 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16567695
-Job name: 03_pseudobulk_de_donor_level
+Job id: 16568618
+Job name: 05_cell_type_proportions_in_spds
 Hostname: jhpce3
 Task id: 
 Unloading conda_R/4.3.x
@@ -16,10 +16,10 @@ Currently Loaded Modules:
 
  
 
-2025-05-12 16:18:23.836775 create model matrix
-2025-05-12 16:18:23.933477 computing enrichment statistics
-2025-05-12 16:18:24.071621 extract and reformat enrichment results
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells 10996743 587.3   20420245 1090.6  14443897  771.4
+Vcells 31505152 240.4  351305076 2680.3 293741830 2241.1
 null device 
           1 
 **** Job ends ****
-Mon May 12 04:18:24 PM EDT 2025
+Mon May 12 06:53:03 PM EDT 2025

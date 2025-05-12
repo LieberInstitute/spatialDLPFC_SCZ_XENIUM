@@ -1,12 +1,14 @@
 **** Job starts ****
-Thu Feb 27 02:53:20 PM EST 2025
+Mon May 12 04:16:05 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 14233877
+Job id: 16567683
 Job name: 02_pseudobulk_de
 Hostname: jhpce3
 Task id: 
+Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
+environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -14,14 +16,14 @@ Currently Loaded Modules:
 
  
 
-2025-02-27 14:53:33.918041 create model matrix
-2025-02-27 14:53:33.995433 run duplicateCorrelation()
-2025-02-27 14:53:34.541611 The estimated correlation is: 0.912273068647004
-2025-02-27 14:53:34.544567 computing enrichment statistics
-2025-02-27 14:53:34.654503 extract and reformat enrichment results
+2025-05-12 16:16:18.284211 create model matrix
+2025-05-12 16:16:18.356095 run duplicateCorrelation()
+2025-05-12 16:16:18.956215 The estimated correlation is: 0.59847653853245
+2025-05-12 16:16:18.958823 computing enrichment statistics
+2025-05-12 16:16:19.068598 extract and reformat enrichment results
 Warning message:
-ggrepel: 6 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
+ggrepel: 9 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
 null device 
           1 
 **** Job ends ****
-Thu Feb 27 02:53:35 PM EST 2025
+Mon May 12 04:16:19 PM EDT 2025

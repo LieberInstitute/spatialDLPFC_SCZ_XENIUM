@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Apr 30 09:45:35 AM EDT 2025
+Mon May 12 04:33:24 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16431352
+Job id: 16567817
 Job name: 04_create_SPE_with_cell_type_info
 Hostname: jhpce3
 Task id: 
@@ -36,14 +36,32 @@ imgData names(1): sample_id
 4 4  3 Br1113_4
 5 5  7 Br1113_5
 6 6  3 Br1113_6
+         X colData.spe_all.....predictions_smooth..
+1 Br1113_1                                    spd06
+2 Br1113_2                                    spd07
+3 Br1113_3                                    spd06
+4 Br1113_4                                    spd07
+5 Br1113_5                                    spd07
+6 Br1113_6                                    spd07
+         spatransfer_k50_predictions_smooth
+Br1113_1                              spd06
+Br1113_2                              spd07
+Br1113_3                              spd06
+Br1113_4                              spd07
+Br1113_5                              spd07
+Br1113_6                              spd07
+[1]     300 1262965
+[1] 1262965       1
+[1] "Br1113_1" "Br1113_2" "Br1113_3" "Br1113_4" "Br1113_5" "Br1113_6"
+[1] "Br1113_1" "Br1113_2" "Br1113_3" "Br1113_4" "Br1113_5" "Br1113_6"
 class: SpatialExperiment 
 dim: 300 1262965 
 metadata(24): Samples Samples ... Samples Samples
 assays(1): counts
 rownames(300): A2M ABCA2 ... ZNF804A ZP3
 rowData names(3): ID Symbol Type
-colnames: NULL
-colData names(28): Row.names Sample ... run_date
+colnames(1262965): Br1113_1 Br1113_2 ... Br8772_56955 Br8772_56956
+colData names(27): Sample Barcode ... run_date
   spatransfer_k50_predictions_smooth
 reducedDimNames(0):
 mainExpName: NULL
@@ -53,4 +71,4 @@ imgData names(1): sample_id
 New names:
 • `` -> `...1`
 **** Job ends ****
-Wed Apr 30 09:47:41 AM EDT 2025
+Mon May 12 04:35:12 PM EDT 2025
