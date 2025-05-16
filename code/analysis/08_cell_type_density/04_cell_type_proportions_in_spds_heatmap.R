@@ -44,28 +44,49 @@ rm(spe)
 gc()
 
 
-# ntc_tab <- all_tabs[[1]]
-# colnames(ntc_tab)  <- c("spatial_domain", "cell_type", "proportion", "Dx")
-# ntc_tab <- ntc_tab %>%
-#     pivot_wider(names_from = spatial_domain, values_from = proportion)
 
-tabs_df <- do.call(rbind, all_tabs)
-colnames(tabs_df) <- c("spatial_domain", "cell_type", "proportion", "Dx")
-tabs_df_wide <- tabs_df %>%
-    pivot_wider(names_from = cell_type, values_from = proportion)
-tabs_df_wider <- tabs_df_wide %>%
-    pivot_wider(values_from=contains("`"),
-                names_from = Dx) 
+ntc_tab <- all_tabs[[1]]
+cell_types_unique<- unique(ntc_tab$cell_type)
+colnames(ntc_tab)  <- c("spatial_domain", "cell_type", "proportion", "Dx")
+ntc_tab <- ntc_tab %>%
+    pivot_wider(names_from = cell_type, values_from = proportion)%>%
+    rename_at(vars(all_of(cell_types_unique)),function(x) paste0(x,"_NTC"))
 
-# plot a heatmap of the proportions
+
+scz_tab <- all_tabs[[2]]
+colnames(scz_tab)  <- c("spatial_domain", "cell_type", "proportion", "Dx")
+scz_tab <- scz_tab %>%
+    pivot_wider(names_from = cell_type, values_from = proportion)%>%
+    rename_at(vars(all_of(cell_types_unique)),function(x) paste0(x,"_SCZ"))
+
+
+all_tab <- cbind(ntc_tab, scz_tab)
+
+# # plot a heatmap of the proportions
 pdf(here("plots", "07_cell_type_de", "cell_type_props_in_spds_heatmap.pdf"), height=10, width=15)
 # Reorder BrNum so NTC bars are on the left
-tabs_df_wide <- tabs_df_wide %>%
-  mutate(Dx_ordered = factor(Dx, levels = unique(Dx[order(Dx)])))
 
-plot_mat <- tabs_df_wide %>%
-    select(starts_with("spd")) %>%
-    as.data.frame()%>%
-    as.matrix()
-Heatmap(plot_mat)
+all_tab_plot <- all_tab %>%
+  select(-c(spatial_domain, Dx)) %>%
+  as.matrix()
+rownames(all_tab_plot) <- all_tab$spatial_domain
+
+column_condition <- ifelse(grepl("NTC$", colnames(all_tab_plot)), "NTC", "SCZ")
+col_ha <- HeatmapAnnotation(
+  Dx = column_condition,
+  col = list(Dx = c("NTC" = "skyblue", "SCZ" = "tomato"))
+)
+
+ordered_cols <- c(
+  colnames(all_tab_plot)[column_condition == "NTC"],
+  colnames(all_tab_plot)[column_condition == "SCZ"]
+)
+all_tab_plot <- all_tab_plot[, ordered_cols]
+
+Heatmap(all_tab_plot, 
+          bottom_annotation = col_ha,
+          cluster_columns = FALSE,)
 dev.off()
+
+
+
