@@ -1,0 +1,240 @@
+**** Job starts ****
+Mon May 12 06:56:34 PM EDT 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 16568625
+Job name: 01_cell_type_density
+Hostname: jhpce3
+Task id: 
+Unloading conda_R/4.3.x
+Loading conda_R/4.3.x
+environment: line 5: __conda_exe: command not found
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+Rows: 1437689 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1499044 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1147445 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1686786 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1530540 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1213543 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1663976 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1172914 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1157142 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1559892 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1417859 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1784711 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1580508 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1141875 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1144818 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1116374 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1184593 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1330018 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1031635 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1494664 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1485936 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1548286 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1724397 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+Rows: 1423887 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): cell_id
+dbl (3): vertex_x, vertex_y, label_id
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Geometry attributes are ignored.
+null device 
+          1 
+null device 
+          1 
+**** Job ends ****
+Mon May 12 07:21:43 PM EDT 2025
