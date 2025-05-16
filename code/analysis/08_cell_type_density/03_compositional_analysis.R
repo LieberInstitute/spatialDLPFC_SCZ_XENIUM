@@ -33,6 +33,7 @@ layers <- unique(spe$spatransfer_k50_predictions_smooth)
 pdf(here("plots", "08_cell_type_density", "cacoa_cell_loadings.pdf"))
 for(i in 1:length(layers)){
     layer_use <- layers[i]
+    print(layer_use)
     spe_use <- spe[,spe$spatransfer_k50_predictions_smooth == layer_use]
 
     sample.groups <- colData(spe_use)[["Dx"]]
