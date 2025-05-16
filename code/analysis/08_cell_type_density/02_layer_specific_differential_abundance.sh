@@ -24,7 +24,7 @@ module load conda_R/4.3.x
 module list
 
 ## Run code
-Rscript 02_differential_abundance.R
+Rscript 02_layer_specific_differential_abundance.R
 
 
 ## Memeory stat
