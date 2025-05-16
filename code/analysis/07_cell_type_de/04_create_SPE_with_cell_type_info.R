@@ -80,7 +80,22 @@ stopifnot(all(colnames(spe)==rownames(spds)))
 colData(spe)$spatransfer_k50_predictions_smooth <- factor(spds$spatransfer_k50_predictions_smooth)
 print(spe)
 
+# map spd style labels to actual annotations
+domain_annotations <- colData(spe) %>%
+  as.data.frame() %>%
+  mutate(domain_annotations = case_when(spatransfer_k50_predictions_smooth == "spd07" ~ "L1",
+                                          spatransfer_k50_predictions_smooth == "spd06" ~ "L2/3",
+                                          spatransfer_k50_predictions_smooth == "spd02" ~ "L3/4",
+                                          spatransfer_k50_predictions_smooth == "spd05" ~ "L5",
+                                          spatransfer_k50_predictions_smooth == "spd03" ~ "L6",
+                                          spatransfer_k50_predictions_smooth == "spd01" ~ "WMtz",
+                                          spatransfer_k50_predictions_smooth == "spd04" ~ "WM",
+                                          TRUE ~ NA))
 
+
+
+colData(spe)$domain_annotations <- domain_annotations$domain_annotations
+print(spe$domain_annotations)
 
 # Also add Sang Ho's gene annotations to the rowData for ease of access later
 panel_markers <- readxl::read_xlsx((here("raw-data", 
