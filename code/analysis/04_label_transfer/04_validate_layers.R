@@ -72,6 +72,9 @@ manual_cor <- layer_stat_cor(
     reverse = FALSE,
     top_n = NULL
   )
+# reorder to get things to be diagonal
+manual_cor <- manual_cor[c("spd07", "spd06", "spd02", "spd05", "spd03","spd01", "spd04"),]
+cor_annot <- annotate_registered_clusters(manual_cor)
 
 pdf(here("plots", "04_label_transfer", 
             "layer_enrichment_correlation_manual_allgenes.pdf"), width = 10, height = 10)
@@ -103,6 +106,10 @@ spatialDLPFC_cor <- layer_stat_cor(
     top_n = NULL
   )
 
+# reorder to be diagonal
+spatialDLPFC_cor <- spatialDLPFC_cor[c("t_stat_Sp09D01", "t_stat_Sp09D02", "t_stat_Sp09D03", "t_stat_Sp09D05", "t_stat_Sp09D08", "t_stat_Sp09D04", "t_stat_Sp09D07", "t_stat_Sp09D06", "t_stat_Sp09D09"),]
+
+cor_annot <- annotate_registered_clusters(spatialDLPFC_cor)
 pdf(here("plots", "04_label_transfer", 
             "layer_enrichment_correlation_spatialDLPFC_allgenes.pdf"), width = 10, height = 10)
 layer_stat_cor_plot(
@@ -128,7 +135,8 @@ vis_cor <- layer_stat_cor(
     top_n = NULL
   )
 
-
+# reorder to be diagonal
+vis_cor <- vis_cor[colnames(vis_cor),]
 pdf(here("plots", "04_label_transfer", 
             "layer_enrichment_correlation_visium_allgenes.pdf"), width = 10, height = 10)
 layer_stat_cor_plot(  
