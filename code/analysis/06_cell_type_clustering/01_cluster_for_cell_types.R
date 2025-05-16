@@ -24,7 +24,7 @@ print(spe)
 
 #### Banksy parameters ####
 lambda <- 0.1
-res <- 0.1 # higher = more clusters
+res <- 0.7 # higher = more clusters
 compute_agf <- FALSE
 use_agf <- FALSE
 cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
