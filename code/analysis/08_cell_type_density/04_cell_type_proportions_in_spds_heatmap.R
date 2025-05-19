@@ -44,8 +44,6 @@ for (i in 1:length(diags)){
 rm(spe)
 gc()
 
-
-
 ntc_tab <- all_tabs[[1]]
 colnames(ntc_tab)  <- c("spatial_domain", "cell_type", "proportion", "Dx")
 
@@ -93,16 +91,3 @@ Heatmap(all_tab_plot,
           col = col_fun,
           name="Proportion")
 dev.off()
-
-
-
-
-
-
-
-
-
-
-
-
-
