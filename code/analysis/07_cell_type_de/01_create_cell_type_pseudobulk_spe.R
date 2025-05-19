@@ -6,6 +6,7 @@ suppressPackageStartupMessages({
   library(tidyverse)
   library(ggrepel)
   library(sessioninfo)
+  library(escheR)
 })
 
 ####################################################################################################
@@ -80,14 +81,17 @@ spe_pseudo <- registration_pseudobulk(
       )
     )
 
-# spe_pseudo_donor <- registration_pseudobulk(
-#       spe,
-#       var_registration = "Dx",
-#       var_sample_id = "BrNum",
-#       covars = c("Age", "Sex", "slide_id", "run_date"),
-#       min_ncells = 10,
-#       pseudobulk_rds_file = here(
-#         "processed-data", "05_differential_expression",
-#         paste0("spe_pseudo_donor_", "spaTransfer_k50_smoothed_predictions", ".rds")
-#       )
-#     )
+# sanity check plots of spds
+pdf(here("plots", "07_cell_type_de", "pseudobulk_sanity_check_plots.pdf"), width=10, height=10)
+brnums <- unique(spe$BrNum)
+
+for(i in 1:length(brnums)){
+  spe_use <- spe[,spe$BrNum == brnums[i]]
+  p <- make_escheR(spe_use) %>%
+    add_fill("annots")+
+    ggtitle(unique(spe_use$BrNum))+
+    scale_fill_discrete()
+  print(p)
+}
+
+dev.off()
