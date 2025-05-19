@@ -16,7 +16,7 @@ suppressPackageStartupMessages({
 # Load the pseudobulked SPE
 spe_pseudo <- readRDS(here("processed-data", "05_differential_expression", "spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds"))
 spe_pseudo$Dx <- factor(spe_pseudo$Dx)
-spe_pseudo$predictions_smooth <- factor(spe_pseudo$predictions_smooth)
+spe_pseudo$predictions_smooth <- factor(spe_pseudo$domain_annotations)
 spe_pseudo$Age <- as.numeric(spe_pseudo$Age)
 
 
@@ -73,7 +73,7 @@ manual_cor <- layer_stat_cor(
     top_n = NULL
   )
 # reorder to get things to be diagonal
-manual_cor <- manual_cor[c("spd07", "spd06", "spd02", "spd05", "spd03","spd01", "spd04"),]
+manual_cor <- manual_cor[c("L1", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"),]
 cor_annot <- annotate_registered_clusters(manual_cor)
 
 pdf(here("plots", "04_label_transfer", 
