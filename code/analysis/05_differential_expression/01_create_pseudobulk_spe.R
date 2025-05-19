@@ -26,6 +26,23 @@ colnames(spds) <- c("predictions_smooth")
 stopifnot(all(colnames(spe)==rownames(spds)))
 colData(spe)$predictions_smooth <- factor(spds$predictions_smooth)
 
+# map spd style labels to actual annotations
+domain_annotations <- colData(spe) %>%
+  as.data.frame() %>%
+  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1",
+                                        predictions_smooth == "spd06" ~ "L2/3",
+                                        predictions_smooth == "spd02" ~ "L3/4",
+                                        predictions_smooth == "spd05" ~ "L5",
+                                        predictions_smooth == "spd03" ~ "L6",
+                                        predictions_smooth == "spd01" ~ "WMtz",
+                                        predictions_smooth == "spd04" ~ "WM",
+                                          TRUE ~ NA))
+
+
+
+colData(spe)$domain_annotations <- domain_annotations$domain_annotations
+print(head(spe$domain_annotations))
+
 # remove non-gene expression counts
 spe <- spe[rowData(spe)$Type == "Gene Expression",]
 
@@ -43,7 +60,7 @@ spe$run_date <- run_date
 
 spe_pseudo <- registration_pseudobulk(
       spe,
-      var_registration = "predictions_smooth",
+      var_registration = "domain_annotations",
       var_sample_id = "BrNum",
       covars = c("Dx", "Age", "Sex", "slide_id", "run_date"),
       min_ncells = 10,
@@ -73,8 +90,8 @@ brnums <- unique(spe$BrNum)
 for(i in 1:length(brnums)){
   spe_use <- spe[,spe$BrNum == brnums[i]]
   p <- make_escheR(spe_use) %>%
-    add_fill("predictions_smooth")+
-    ggtitle(unique(spe$BrNum))+
+    add_fill("domain_annotations")+
+    ggtitle(unique(spe_use$BrNum))+
     scale_fill_discrete()
   print(p)
 }
