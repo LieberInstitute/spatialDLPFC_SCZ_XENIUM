@@ -75,7 +75,15 @@ all_tab_plot <- all_tab_plot[, order(colnames(all_tab_plot))] # sort the columns
 column_condition <- ifelse(grepl("NTC$", colnames(all_tab_plot)), "NTC", "SCZ")
 col_ha <- HeatmapAnnotation(
   Dx = column_condition,
-  col = list(Dx = c("NTC" = "skyblue", "SCZ" = "tomato"))
+  col = list(Dx = c("NTC" = "skyblue", "SCZ" = "tomato")),
+  annotation_name_gp = gpar(fontsize = 18),
+  annotation_legend_param = list(
+    title = "Condition",
+    at = c("NTC", "SCZ"),
+    labels = c("NTC", "SCZ"),
+    title_gp = gpar(fontsize = 18),
+    labels_gp = gpar(fontsize = 18)
+  )
 )
 
 # set colour limits
@@ -89,5 +97,16 @@ Heatmap(all_tab_plot,
           cluster_columns = FALSE,
           cluster_rows=FALSE,
           col = col_fun,
-          name="Proportion")
+          name="Proportion",
+          row_names_gp = gpar(fontsize = 18),
+          column_names_gp=gpar(fontsize = 18),
+          heatmap_legend_param=list(
+            title = "Proportion",
+            at = c(0, 0.5, 1),
+            labels = c("0", "0.5", "1"),
+            title_gp = gpar(fontsize = 18),
+            labels_gp = gpar(fontsize = 18)
+          )
+)
 dev.off()
+
