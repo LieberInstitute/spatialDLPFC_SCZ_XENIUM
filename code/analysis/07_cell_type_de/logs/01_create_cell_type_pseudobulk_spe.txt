@@ -1,14 +1,12 @@
 **** Job starts ****
-Mon May 19 11:20:38 AM EDT 2025
+Thu May 22 03:28:39 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16649790
+Job id: 16683671
 Job name: 01_create_cell_type_pseudobulk_spe
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
-environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -36,11 +34,11 @@ imgData names(1): sample_id
 4 4  3 Br1113_4
 5 5  7 Br1113_5
 6 6  3 Br1113_6
-2025-05-19 11:22:29.407995 make pseudobulk object
-2025-05-19 11:22:55.726309 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-05-19 11:22:55.79788 drop lowly expressed genes
-2025-05-19 11:22:56.053587 normalize expression
-2025-05-19 11:22:56.477387 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/07_cell_type_de/spe_pseudo_donor_celltype_clust_M0_lam0.1_k50_res0.7.rds
+2025-05-22 15:29:35.237875 make pseudobulk object
+2025-05-22 15:29:46.802678 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-05-22 15:29:46.83242 drop lowly expressed genes
+2025-05-22 15:29:46.926353 normalize expression
+2025-05-22 15:29:47.086106 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/07_cell_type_de/spe_pseudo_donor_celltype_clust_M0_lam0.1_k50_res0.7.rds
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
@@ -92,4 +90,4 @@ Adding another scale for fill, which will replace the existing scale.
 null device 
           1 
 **** Job ends ****
-Mon May 19 11:24:47 AM EDT 2025
+Thu May 22 03:30:37 PM EDT 2025
