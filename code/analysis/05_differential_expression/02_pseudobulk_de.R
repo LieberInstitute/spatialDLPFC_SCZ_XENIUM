@@ -80,11 +80,11 @@ pdf(here("plots", "05_differential_expression", "donor_domain_level_pseudobulk_D
       dx_res,
       aes(
         x = logFC_SCZ, y = -log10(fdr_SCZ),
-        color = fdr_SCZ <= 0.05
+        color = fdr_SCZ <= 0.1
       )
     ) +
       geom_point(alpha = 0.8) +
-      geom_label_repel(
+      geom_label_repel(size=6,
         data = sig_gene_df,
         aes(label = gene),
         force = 2,
@@ -98,11 +98,14 @@ pdf(here("plots", "05_differential_expression", "donor_domain_level_pseudobulk_D
     #   ) +
       labs(
         title = paste0(
-          "Donor-domain level pseudobulk analysis by Dx - ", 
-          " ( ", n_sig_gene, " sig genes)"
+          "Donor-domain level analysis by Dx"
         )
-      ) +
-      theme_minimal()
+      ) +theme_minimal()+
+         theme(axis.text.x=element_text(size=16),
+            axis.text.y=element_text(size=16),
+            axis.title.x=element_text(size=16),
+            axis.title.y=element_text(size=16),
+            plot.title = element_text(hjust = 0.5, size=20))
   )
 dev.off()
 
