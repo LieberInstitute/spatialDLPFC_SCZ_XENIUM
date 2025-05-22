@@ -113,7 +113,7 @@ for(i in 1:length(cell_types)){
         )
         ) +
         geom_point(alpha = 0.8) +
-        geom_label_repel(
+        geom_label_repel(size=6,
             data = sig_gene_df,
             aes(label = gene),
             force = 2,
@@ -121,11 +121,14 @@ for(i in 1:length(cell_types)){
         ) +
         labs(
             title = paste0(cell_type_use, 
-            " Donor-cell type level pseudobulk analysis by Dx - ", 
-            " ( ", n_sig_gene, " sig genes)"
-            )
-        ) +
-        theme_minimal()
+            " Donor-cell type level analysis by Dx")
+        ) +theme_minimal()+
+         theme(axis.text.x=element_text(size=16),
+            axis.text.y=element_text(size=16),
+            axis.title.x=element_text(size=16),
+            axis.title.y=element_text(size=16),
+            plot.title = element_text(hjust = 0.5, size=20))
+        
   )
     dx_res$cell_type <- cell_type_use
     dx_res_use <- dx_res %>%
