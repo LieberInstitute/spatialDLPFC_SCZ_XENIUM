@@ -90,7 +90,7 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
       dx_res,
       aes(
         x = logFC_SCZ, y = -log10(fdr_SCZ),
-        color = fdr_SCZ <= 0.05
+        color = fdr_SCZ <= 0.1
       )
     ) +
       geom_point(alpha = 0.8) +
@@ -98,7 +98,8 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
         data = sig_gene_df,
         aes(label = gene),
         force = 2,
-        nudge_y = 0.1
+        nudge_y = 0.1,
+        size=10
       ) +
       labs(
         title = paste0(
@@ -106,6 +107,11 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
           " ( ", n_sig_gene, " sig genes)"
         )
       ) +
+      theme(axis.text.x=element_text(size=16),
+            axis.text.y=element_text(size=16),
+            axis.title.x=element_text(size=16),
+            axis.title.y=element_text(size=16),
+            plot.title = element_text(hjust = 0.5, size=20)) +
       theme_minimal()
   )
 dev.off()
