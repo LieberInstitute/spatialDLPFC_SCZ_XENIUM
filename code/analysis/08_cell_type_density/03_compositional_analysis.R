@@ -10,6 +10,7 @@ suppressPackageStartupMessages({
   library(readxl)
   library(edgeR)
   library(cacoa)
+  library(cowplot)
 
 })
 
@@ -26,7 +27,7 @@ spe$cell_types <- colData(spe)[["Banksy-clust_M0_lam0.1_k50_res0.7-cell-types"]]
 
 brnums <- unique(spe$BrNum)
 
-layers <- unique(spe$spatransfer_k50_predictions_smooth)
+layers <- unique(spe$domain_annotations)
 
 # Reference for creating new Cacoa object: https://github.com/kharchenkolab/cacoa
 # Create a Cacoa object
@@ -34,7 +35,7 @@ pdf(here("plots", "08_cell_type_density", "cacoa_cell_loadings.pdf"))
 for(i in 1:length(layers)){
     layer_use <- layers[i]
     print(layer_use)
-    spe_use <- spe[,spe$spatransfer_k50_predictions_smooth == layer_use]
+    spe_use <- spe[,spe$domain_annotations == layer_use]
 
     sample.groups <- colData(spe_use)[["Dx"]]
     names(sample.groups) <- colData(spe_use)[["BrNum"]]
@@ -54,9 +55,13 @@ for(i in 1:length(layers)){
         as.matrix(counts(spe_use)), sample.groups=sample.groups, cell.groups=cell.groups, sample.per.cell=sample.per.cell, 
         ref.level=ref.level, target.level=target.level)
 
+
     cao$estimateCellLoadings()
-    print(cao$plotCellLoadings(show.pvals=TRUE)+
-            ggtitle(layer_use))
+    p <- cao$plotCellLoadings(show.pvals=TRUE)
+
+    title <- ggdraw() + 
+      draw_label(layer_use, fontface = 'bold')
+    print(plot_grid(title, p, ncol = 1, rel_heights = c(0.1, 1)))
 
 
 }
