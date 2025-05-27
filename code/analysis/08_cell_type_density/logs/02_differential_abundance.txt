@@ -1,14 +1,12 @@
 **** Job starts ****
-Mon May 12 08:04:48 PM EDT 2025
+Tue May 27 01:18:25 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16569197
+Job id: 16812050
 Job name: 02_differential_abundance
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
-environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -439,4 +437,4 @@ Ambig/In/Endo  -0.04309014 15.55288 0.07775731 0.78389814 0.9275760
 null device 
           1 
 **** Job ends ****
-Mon May 12 08:06:41 PM EDT 2025
+Tue May 27 01:19:08 PM EDT 2025
