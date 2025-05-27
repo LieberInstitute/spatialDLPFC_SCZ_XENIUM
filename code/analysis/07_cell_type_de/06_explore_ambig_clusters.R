@@ -143,12 +143,13 @@ spe <- scuttle::addPerCellQCMetrics(spe, subsets=list(
   control_codeword_counts = grepl("NegControlCodeword", rownames(spe)),
   control_probe_counts = grepl("NegControlProbe", rownames(spe))
 ))
+spe$detected_genes <- colSums(counts(spe)[rowData(spe)$Type == "Gene Expression",] > 0)
 
 area_df <- colData(spe) %>%
   as.data.frame() %>%
   select(cell_area, nucleus_area, annots, 
   subsets_control_probe_counts_percent, subsets_control_codeword_counts_percent, 
-  detected)%>%
+  detected, detected_genes)%>%
   mutate(is_neuron = ifelse(annots %in% c("L2/3 Ex", "L4/5 Ex", "L5 Ex", "L6 Ex", "In: SST, PVALB", "In: VIP, LAMP5"), TRUE, FALSE))
 
 
@@ -221,7 +222,7 @@ ggplot(area_df, aes(x=nucleus_area, y=subsets_control_codeword_counts_percent, c
   ylab("Percentage of control codeword counts")+
   facet_wrap(~annots)
 
-ggplot(area_df, aes(x=detected, y=subsets_control_probe_counts_percent))+
+ggplot(area_df, aes(x=detected_genes, y=subsets_control_probe_counts_percent))+
   geom_point()+
   facet_wrap(~annots)+
   geom_smooth(method = "lm", se=FALSE)+
@@ -229,7 +230,7 @@ ggplot(area_df, aes(x=detected, y=subsets_control_probe_counts_percent))+
   xlab("Number of detected genes")+
   ylab("Percentage of control probe counts")
 
-ggplot(area_df, aes(x=detected, y=subsets_control_codeword_counts_percent))+
+ggplot(area_df, aes(x=detected_genes, y=subsets_control_codeword_counts_percent))+
   geom_point()+
   facet_wrap(~annots)+
   geom_smooth(method = "lm", se=FALSE)+
@@ -260,6 +261,7 @@ area_df %>%
   filter(!is_neuron) %>%
   summarise(prop_zero = sum(subsets_control_probe_counts_percent == 0)/n()) %>%
   print()
+
 
 
 
