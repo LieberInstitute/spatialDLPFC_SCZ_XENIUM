@@ -30,35 +30,32 @@ spe$domain_annotations <- as.factor(spe$domain_annotations)
 spe$cell_types <- as.factor(spe$cell_types)
 
 # create unique identifier based on Dx and BrNum
-spe$id <- as.factor(paste(spe$Dx, spe$BrNum, spe$cell_types, sep = "_"))
-# loop over the layers
-for (i in 1:length(layers)){
-  layer_use <- layers[[i]]
-  spe_sub <- spe[, spe$domain_annotations == layer_use]
+spe$id <- as.factor(paste(spe$Dx, spe$BrNum, spe$cell_types, spe$domain_annotations, sep = "_"))
 
-  #--------------------------
-  # Create pseudobulked data
-  #--------------------------
-  pb <- aggregateToPseudoBulk(spe,
+
+#--------------------------
+# Create pseudobulked data
+#--------------------------
+pb <- aggregateToPseudoBulk(spe,
     assay = "counts",
     cluster_id = "cell_types",
     sample_id = "id",
     verbose = TRUE
-  )
-  cobj <- crumblr(cellCounts(pb)) # crumblr object
-  # =========
-  # Dream DE
-  # =========
-  form = ~ + Dx + BrNum
-  fit <- dream(cobj, form, colData(pb))
-  fit <- eBayes(fit)
-  # Extract results for each cell type
-  topTable(fit, coef = "DxSCZ", number = Inf)
+)
+cobj <- crumblr(cellCounts(pb)) # crumblr object
+# =========
+# Dream DE
+# =========
+form = ~ + Dx + (1|BrNum) + domain_annotations
+fit <- dream(cobj, form, colData(pb))
+fit <- eBayes(fit)
 
-  vp <- fitExtractVarPartModel(cobj, form, colData(pb))
+# Extract results for each cell type
+topTable(fit, coef = "DxSCZ", number = Inf)
+
+vp <- fitExtractVarPartModel(cobj, form, colData(pb))
 # layer adjusted analysis?
 # pseudobulk to donor-domain-cell type level?
 
-}
 
 
