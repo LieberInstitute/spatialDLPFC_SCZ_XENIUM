@@ -18,6 +18,25 @@ spe$cell_types <- as.factor(colData(spe)[["Banksy-clust_M0_lam0.1_k50_res0.7-cel
 spe$Age <- as.numeric(spe$Age)
 
 
+# Read in Sangho's annotations
+panel_markers <- readxl::read_xlsx((here("raw-data", 
+        "experiment_info", 
+        "Xenium_SHK_celltype_REannot_2025-04-13.xlsx")), sheet=2)
+panel_markers$`...1` <- NULL
+
+panel_markers <- panel_markers %>%
+    as.data.frame() %>%
+    mutate(cell_type_updated=case_when(cell_type_updated=="NA" ~ NA,
+                                        TRUE ~ cell_type_updated))%>%
+    mutate(dx_deg=case_when(dx_deg=="NA" ~ NA,
+                                        TRUE ~ dx_deg))
+
+dx_degs <- panel_markers[!is.na(panel_markers$dx_deg),]%>%
+    select(Gene, dx_deg)%>%
+    mutate(gene=Gene) %>%
+    select(gene, dx_deg)
+
+
 pdf(here("plots", "07_cell_type_de", "layer_stratified_cell_type_as_covariate_de.pdf"))
 for (i in 1:length(layers)){
     layer_use <- layers[[i]]
@@ -59,20 +78,13 @@ for (i in 1:length(layers)){
     gene_ensembl = "ID",
     gene_name = "Symbol"
   )
-  ## Volcano Plot ----
-    impl_gene_df <- dx_res |>
-        filter(gene %in% c(
-        "PVALB",
-        "NOS1",
-        "SST",
-        "CHODL",
-        "GRIN2A",
-        "SV2A",
-        "DLG4",
-        "C4A",
-        "C3"
-        )) |>
-        select(ensembl, gene, ends_with("SCZ"))
+
+  # merge with sangho's markers
+  dx_res <- merge(dx_res, dx_degs, by="gene", all.x=TRUE) %>%
+    mutate(dx_deg=case_when(
+        dx_deg=="Dx_DEG_Up" ~ "up",
+        dx_deg=="Dx_DEG_Down" ~ "down",
+        TRUE ~ "none")) 
         
     sig_gene_df <- dx_res |>
         arrange(fdr_SCZ) |>
@@ -88,7 +100,8 @@ for (i in 1:length(layers)){
         dx_res,
         aes(
             x = logFC_SCZ, y = -log10(fdr_SCZ),
-            color = fdr_SCZ <= 0.05
+            color = fdr_SCZ <= 0.05,
+            shape=dx_deg
         )
         ) +
         geom_point(alpha = 0.8) +
@@ -108,5 +121,19 @@ for (i in 1:length(layers)){
             axis.title.y=element_text(size=16),
             plot.title = element_text(hjust = 0.5, size=20))
     )
+
+    layer_use <- gsub("\\/", "_", layer_use)
+    write.csv(dx_res, here("processed-data", "07_cell_type_de", "layer_stratified_results",
+        paste0("layer_stratified_cell_type_as_covariate_de_results_", layer_use, ".csv")), row.names=FALSE)
 }
 dev.off()
+
+
+
+# dx_df <- do.call(rbind, dx_results)
+# dx_mat <- dx_df %>%
+#     as.data.frame() %>% 
+#     pivot_wider(names_from=cell_type, values_from=logFC_SCZ)%>%
+#     filter(gene %in% dx_degs$Gene) %>%
+#     column_to_rownames(var="gene") %>%
+#     as.matrix()
