@@ -47,6 +47,7 @@ cell_types <- unique(spe_pseudo$annots)
 dx_results <- list()
 for(i in 1:length(cell_types)){
     cell_type_use <- cell_types[[i]]
+    print(cell_type_use)
 
     spe_pseudo_sub <- spe_pseudo[,spe_pseudo$annots==cell_type_use]
 
@@ -100,6 +101,7 @@ for(i in 1:length(cell_types)){
         #filter(fdr_SCZ <= 0.1) |>
         #select(ensembl, gene, ends_with("SCZ"))
 
+    print(sig_gene_df)
     n_sig_gene <- dx_res |>
         filter(fdr_SCZ <= 0.1) |>
         nrow()
