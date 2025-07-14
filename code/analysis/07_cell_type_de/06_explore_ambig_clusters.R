@@ -9,6 +9,8 @@ suppressPackageStartupMessages({
   library(ComplexHeatmap)
   library(grid)
   library(scales)
+  library(ggridges)
+  library(scattermore)
 })
 
 
@@ -62,7 +64,10 @@ run_date <- unlist(lapply(strsplit(spe$Sample, split="/"), "[", 7))
 spe$run_date <- run_date
 
 # Create the pseudobulk SPE for plotting
-spe_pseudo <- aggregateAcrossCells(spe, ids=DataFrame(cbind(spe$annots, spe$BrNum)))
+spe_pseudo <- aggregateAcrossCells(spe, ids=DataFrame(cbind(spe$annots, spe$BrNum)),
+                                  coldata.merge=list(
+                                    cell_area=sum,
+                                    nucleus_area=sum))
 spe_pseudo <- logNormCounts(spe_pseudo, size.factors=NULL)
 colnames(spe_pseudo) <- spe_pseudo$annots
 
@@ -100,13 +105,13 @@ column_ha <- HeatmapAnnotation(
   col = list(CellType = celltype_colors)
 )
 # Plot the raw counts too
-plot_counts_raw <- as.matrix(counts(spe_pseudo)[grepl("NegControl",rownames(spe_pseudo)),])
+plot_counts_raw <- as.matrix(counts(spe_pseudo)[grepl("NegControl",rownames(spe_pseudo)),])/spe_pseudo$ncells
 plot_counts_raw <- t(scale(t(plot_counts_raw)))
 colnames(plot_counts_raw) <- colnames(spe_pseudo)
 
 dend_raw = cluster_between_groups(plot_counts_raw, colnames(plot_counts_raw))
 
-plot_counts_raw <- plot_counts[,order.dendrogram(dend_raw)]
+plot_counts_raw <- plot_counts_raw[,order.dendrogram(dend_raw)]
 
 # Create a column annotation using cell type information
 cell_types_raw <- colnames(plot_counts_raw)
@@ -119,19 +124,41 @@ column_ha_raw <- HeatmapAnnotation(
   col = list(CellType = celltype_colors)
 )
 
+plot_counts_cell_size_norm <- as.matrix(counts(spe_pseudo)[grepl("NegControl",rownames(spe_pseudo)),])/spe_pseudo$cell_area
+plot_counts_cell_size_norm <- t(scale(t(plot_counts_cell_size_norm)))
+colnames(plot_counts_cell_size_norm) <- colnames(spe_pseudo)
+
+dend_cell_size_norm = cluster_between_groups(plot_counts_cell_size_norm, 
+                colnames(plot_counts_cell_size_norm))
+plot_counts_cell_size_norm <- plot_counts_cell_size_norm[,order.dendrogram(dend_cell_size_norm)]
+
+cell_types_cell_size_norm <- colnames(plot_counts_cell_size_norm)
+#names(cell_types_cell_size_norm) <- colnames(spe_pseudo)
+
+# Create the annotation
+column_ha_cell_size_norm <- HeatmapAnnotation(
+  CellType = cell_types_cell_size_norm,
+  annotation_name_gp = gpar(fontsize = 10),
+  col = list(CellType = celltype_colors)
+)
+
 pdf(here("plots", "07_cell_type_de", "heatmap_ambig_clusters.pdf"))
 
-ComplexHeatmap::Heatmap(plot_counts, cluster_columns=dend,
+ComplexHeatmap::Heatmap(plot_counts, cluster_columns=TRUE,
         name="logcounts",
          row_names_gp = gpar(fontsize = 10),
          column_names_gp=gpar(fontsize = 10), column_names_rot=45,
          bottom_annotation=column_ha)
 
 ComplexHeatmap::Heatmap(plot_counts_raw, cluster_columns=dend_raw,
-        name="counts", bottom_annotation = column_ha_raw, 
+        name="counts divided\nby ncells", bottom_annotation = column_ha_raw, 
         row_names_gp = gpar(fontsize = 10), 
         show_column_names=TRUE)
 
+ComplexHeatmap::Heatmap(plot_counts_cell_size_norm, cluster_columns=dend_cell_size_norm,
+        name="counts divided\nby cell size", bottom_annotation = column_ha_cell_size_norm, 
+        row_names_gp = gpar(fontsize = 10), 
+        show_column_names=TRUE)
 dev.off()
 
 #---------------------------------------------------
@@ -144,51 +171,170 @@ spe <- scuttle::addPerCellQCMetrics(spe, subsets=list(
   control_probe_counts = grepl("NegControlProbe", rownames(spe))
 ))
 spe$detected_genes <- colSums(counts(spe)[rowData(spe)$Type == "Gene Expression",] > 0)
+spe$gene_counts <-  colSums(counts(spe)[rowData(spe)$Type == "Gene Expression",])
 
 area_df <- colData(spe) %>%
   as.data.frame() %>%
   select(cell_area, nucleus_area, annots, 
   subsets_control_probe_counts_percent, subsets_control_codeword_counts_percent, 
-  detected, detected_genes)%>%
+  detected, detected_genes, total_counts, gene_counts,
+  subsets_control_codeword_counts_sum, subsets_control_probe_counts_sum)%>%
   mutate(is_neuron = ifelse(annots %in% c("L2/3 Ex", "L4/5 Ex", "L5 Ex", "L6 Ex", "In: SST, PVALB", "In: VIP, LAMP5"), TRUE, FALSE))
 
 
 pdf(here("plots", "07_cell_type_de", "cell_nucleus_area_boxplots.pdf"), width=10, height=10)
-ggplot(area_df, aes(x=annots, y=cell_area, colour=annots))+
-  geom_violin()+
-  geom_boxplot(width=.1)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  ylab("Cell area")+
-  xlab("Cell type")+
-  scale_color_manual(values=celltype_colors)+
-  ggtitle("Cell area by cell type")
+# ggplot(area_df, aes(x=annots, y=cell_area, colour=annots))+
+#   geom_violin()+
+#   geom_boxplot(width=.1)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   ylab("Cell area")+
+#   xlab("Cell type")+
+#   scale_color_manual(values=celltype_colors)+
+#   ggtitle("Cell area by cell type")
 
-ggplot(area_df, aes(x=annots, y=nucleus_area, colour=annots))+
-  geom_violin()+
-  geom_boxplot(width=.1)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  ylab("Nucleus area")+
-  xlab("Cell type")+
-  scale_color_manual(values=celltype_colors)+
-  ggtitle("Nucleus area by cell type")
+# ggplot(area_df, aes(x=annots, y=nucleus_area, colour=annots))+
+#   geom_violin()+
+#   geom_boxplot(width=.1)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   ylab("Nucleus area")+
+#   xlab("Cell type")+
+#   scale_color_manual(values=celltype_colors)+
+#   ggtitle("Nucleus area by cell type")
 
-ggplot(area_df, aes(x=annots, y=subsets_control_codeword_counts_percent, colour=annots))+
-  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  scale_y_continuous(trans = scales::pseudo_log_trans(sigma = 0.01))+
-  ylab("Control codeword counts")+
-  xlab("Cell type")+
-  scale_color_manual(values=celltype_colors)+
-  ggtitle("Control codeword counts by cell type")
+ggplot(area_df, aes(x=nucleus_area, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific nucleus area")
 
-ggplot(area_df, aes(x=annots, y=subsets_control_probe_counts_percent, colour=annots))+
-  geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  scale_y_continuous(trans = scales::pseudo_log_trans(sigma = 0.01))+
-  ylab("Control probe counts")+
-  xlab("Cell type")+
-  scale_color_manual(values=celltype_colors)+
-  ggtitle("Control probe counts by cell type")
+ggplot(area_df, aes(x=cell_area, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific cell area")
+
+ggplot(area_df, aes(x=total_counts, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific total counts")
+
+ggplot(area_df, aes(x=gene_counts, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific gene counts")
+
+
+ggplot(area_df, aes(x=detected_genes, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific number of detected genes")
+
+ggplot(area_df, aes(x=subsets_control_codeword_counts_sum, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific number of control codewords")
+
+ggplot(area_df, aes(x=subsets_control_probe_counts_sum, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific number of control probes")
+
+
+ggplot(area_df, aes(x=subsets_control_codeword_counts_percent, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific percentage of control codewords")
+
+ggplot(area_df, aes(x=subsets_control_probe_counts_percent, y=annots, group=annots))+
+    geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+    scale_fill_discrete()+
+    ggtitle("Cell type specific percentage of control probes")
+
+  ggplot(area_df, aes(x=subsets_control_probe_counts_sum/cell_area, y=annots, group=annots))+
+      geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+      scale_fill_discrete()+
+      ggtitle("Cell type specific density of control probes")
+  
+  ggplot(area_df, aes(x=subsets_control_codeword_counts_sum/cell_area, y=annots, group=annots))+
+      geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+      scale_fill_discrete()+
+      ggtitle("Cell type specific density of control codewords")
+  
+  ggplot(area_df, aes(x=detected_genes/cell_area, y=annots, group=annots))+
+      geom_density_ridges(aes(fill=is_neuron), alpha=0.8, scale=1.5)+
+      scale_fill_discrete()+
+      ggtitle("Number of genes detected per micron squared")
+
+# ggplot(area_df, aes(x=total_counts, y=subsets_control_probe_counts_percent))+
+#   geom_point(aes(colour=is_neuron), alpha=0.5)+
+#   #geom_smooth(method = "lm", se=FALSE)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   xlab("Total counts")+
+#   ylab("Percentage of control probe counts")+
+#   facet_wrap(~annots)+
+#   geom_scattermore()
+
+# ggplot(area_df, aes(x=total_counts, y=subsets_control_codeword_counts_percent))+
+#   geom_point(aes(colour=is_neuron), alpha=0.5)+
+#   #geom_smooth(method = "lm", se=FALSE)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   xlab("Total counts")+
+#   ylab("Percentage of control probe counts")+
+#   facet_wrap(~annots)+
+#   geom_scattermore()
+
+#   ggplot(area_df, aes(x=detected_genes, y=subsets_control_codeword_counts_sum/cell_area))+
+#     geom_point(aes(colour=is_neuron), alpha=0.5)+
+#     #geom_smooth(method = "lm", se=FALSE)+
+#     theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#     xlab("Detected")+
+#     ylab("Control codeword counts divided by cell area")+
+#     facet_wrap(~annots)+
+#     geom_scattermore()
+ 
+  ggplot(area_df, aes(x=detected_genes, y=subsets_control_probe_counts_sum/cell_area))+
+    geom_point(aes(colour=is_neuron), alpha=0.5)+
+    #geom_smooth(method = "lm", se=FALSE)+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    xlab("Detected")+
+    ylab("Control probe counts divided by cell area")+
+    facet_wrap(~annots)+
+    geom_scattermore()
+
+  ggplot(area_df, aes(x=cell_area, y=subsets_control_probe_counts_sum))+
+    geom_point(aes(colour=is_neuron), alpha=0.5)+
+    #geom_smooth(method = "lm", se=FALSE)+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    xlab("Cell area")+
+    ylab("Control probe counts")+
+    geom_scattermore()+
+    geom_smooth(method="lm", se=FALSE,
+                  data = subset(area_df, cell_area<600))
+
+  ggplot(area_df, aes(x=cell_area, y=subsets_control_codeword_counts_sum))+
+    geom_point(aes(colour=is_neuron), alpha=0.5)+
+    #geom_smooth(method = "lm", se=FALSE)+
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+    xlab("Cell area")+
+    ylab("Control codeword counts")+
+    geom_scattermore()+
+    geom_smooth(method="lm", se=FALSE,
+                  data = subset(area_df, cell_area<600))
+# ggplot(area_df, aes(x=annots, y=subsets_control_codeword_counts_percent, colour=annots))+
+#   geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   scale_y_continuous(trans = scales::pseudo_log_trans(sigma = 0.01))+
+#   ylab("Control codeword counts")+
+#   xlab("Cell type")+
+#   scale_color_manual(values=celltype_colors)+
+#   ggtitle("Control codeword counts by cell type")
+
+# ggplot(area_df, aes(x=annots, y=subsets_control_probe_counts_percent, colour=annots))+
+#   geom_violin(draw_quantiles = c(0.25, 0.5, 0.75))+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   scale_y_continuous(trans = scales::pseudo_log_trans(sigma = 0.01))+
+#   ylab("Control probe counts")+
+#   xlab("Cell type")+
+#   scale_color_manual(values=celltype_colors)+
+#   ggtitle("Control probe counts by cell type")
 
 # ggplot(area_df, aes(x=nucleus_area, y=subsets_control_codeword_counts_percent, colour=is_neuron))+
 #   geom_point()+
@@ -206,37 +352,37 @@ ggplot(area_df, aes(x=annots, y=subsets_control_probe_counts_percent, colour=ann
 #   ylab("Percentage of control probe counts")+
 #   facet_wrap(~is_neuron)
 
-ggplot(area_df, aes(x=nucleus_area, y=subsets_control_probe_counts_percent, colour=is_neuron))+
-  geom_point()+
-  geom_smooth(method = "lm", se=FALSE)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  xlab("Nucleus area")+
-  ylab("Percentage of control probe counts")+
-  facet_wrap(~annots)
+# ggplot(area_df, aes(x=nucleus_area, y=subsets_control_probe_counts_percent, colour=is_neuron))+
+#   geom_point()+
+#   geom_smooth(method = "lm", se=FALSE)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   xlab("Nucleus area")+
+#   ylab("Percentage of control probe counts")+
+#   facet_wrap(~annots)
 
-ggplot(area_df, aes(x=nucleus_area, y=subsets_control_codeword_counts_percent, colour=is_neuron))+
-  geom_point()+
-  geom_smooth(method = "lm", se=FALSE)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  xlab("Nucleus area")+
-  ylab("Percentage of control codeword counts")+
-  facet_wrap(~annots)
+# ggplot(area_df, aes(x=nucleus_area, y=subsets_control_codeword_counts_percent, colour=is_neuron))+
+#   geom_point()+
+#   geom_smooth(method = "lm", se=FALSE)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   xlab("Nucleus area")+
+#   ylab("Percentage of control codeword counts")+
+#   facet_wrap(~annots)
 
-ggplot(area_df, aes(x=detected_genes, y=subsets_control_probe_counts_percent))+
-  geom_point()+
-  facet_wrap(~annots)+
-  geom_smooth(method = "lm", se=FALSE)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  xlab("Number of detected genes")+
-  ylab("Percentage of control probe counts")
+# ggplot(area_df, aes(x=detected_genes, y=subsets_control_probe_counts_percent))+
+#   geom_point()+
+#   facet_wrap(~annots)+
+#   geom_smooth(method = "lm", se=FALSE)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   xlab("Number of detected genes")+
+#   ylab("Percentage of control probe counts")
 
-ggplot(area_df, aes(x=detected_genes, y=subsets_control_codeword_counts_percent))+
-  geom_point()+
-  facet_wrap(~annots)+
-  geom_smooth(method = "lm", se=FALSE)+
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
-  xlab("Number of detected genes")+
-  ylab("Percentage of control codeword counts")
+# ggplot(area_df, aes(x=detected_genes, y=subsets_control_codeword_counts_percent))+
+#   geom_point()+
+#   facet_wrap(~annots)+
+#   geom_smooth(method = "lm", se=FALSE)+
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+#   xlab("Number of detected genes")+
+#   ylab("Percentage of control codeword counts")
 dev.off()
 
 # proportion of neurons with 0% control codeword counts
