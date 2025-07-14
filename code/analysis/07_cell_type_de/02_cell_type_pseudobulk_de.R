@@ -80,6 +80,7 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
     sig_gene_df <- dx_res |>
         filter(fdr_SCZ <= 0.1) |>
         select(ensembl, gene, ends_with("SCZ"))
+  print(sig_gene_df)
 
   n_sig_gene <- dx_res |>
     filter(fdr_SCZ <= 0.1) |>
@@ -116,4 +117,28 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
   )
 dev.off()
 
+# Check if the sig genes are found in the Visium analysis
+panel_markers <- readxl::read_xlsx((here("raw-data", 
+        "experiment_info", 
+        "Xenium_SHK_celltype_REannot_2025-04-13.xlsx")), sheet=2)
 
+panel_markers <- panel_markers %>%
+    as.data.frame() %>%
+    mutate(cell_type_updated=case_when(cell_type_updated=="NA" ~ NA,
+                                        TRUE ~ cell_type_updated))
+
+
+panel_markers <- panel_markers %>%
+  filter(Gene %in% sig_gene_df$gene) %>%
+  select(Gene, dx_deg,  cell_type_updated, layer_marker)%>%
+  column_to_rownames("Gene")
+
+sig_gene_df <- sig_gene_df %>%
+  mutate(xenium_direction = case_when(logFC_SCZ > 0 ~ "up",
+                               logFC_SCZ < 0 ~ "down"))%>%
+  select(xenium_direction)
+
+sig_df <- merge(panel_markers, sig_gene_df, by="row.names")
+
+sig_df <- sig_df[c("Row.names", "dx_deg", "xenium_direction", "cell_type_updated", "layer_marker")]
+print(sig_df)
