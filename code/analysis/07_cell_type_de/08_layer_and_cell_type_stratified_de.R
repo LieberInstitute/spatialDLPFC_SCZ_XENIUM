@@ -66,6 +66,7 @@ for (i in 1:length(layers)){
 
         print(ggplot(
             dx_res,
+            
             aes(
                 x = logFC_SCZ, y = -log10(fdr_SCZ),
                 color = fdr_SCZ <= 0.05
