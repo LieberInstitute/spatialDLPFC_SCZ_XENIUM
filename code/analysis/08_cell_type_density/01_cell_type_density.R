@@ -67,7 +67,8 @@ for(i in 1:length(brnums)){
     plot(st_geometry(cells_sf), col = 'lightblue')
     plot(concave, add = TRUE, border = 'darkgreen', lwd = 2)
 
-    area <- st_area(concave)
+    area <- st_area(concave, which="Euclidean")
+    print(area)
     cell_type_densities <- as.data.frame(table(spe_sub$cell_types)/area)
     cell_type_densities$BrNum <- br_use
     colnames(cell_type_densities) <- c("cell_type", "density", "BrNum")
