@@ -1,12 +1,14 @@
 **** Job starts ****
-Tue May 27 01:28:49 PM EDT 2025
+Tue Jul 15 03:13:35 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16812208
+Job id: 19930787
 Job name: 03_compositional_analysis
 Hostname: jhpce3
 Task id: 
+Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
+environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -34,4 +36,4 @@ There were 50 or more warnings (use warnings() to see the first 50)
 null device 
           1 
 **** Job ends ****
-Tue May 27 01:33:25 PM EDT 2025
+Tue Jul 15 03:16:16 PM EDT 2025
