@@ -1,0 +1,31 @@
+**** Job starts ****
+Tue Jul 15 03:13:35 PM EDT 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 19930788
+Job name: 08_cacoa_whole_tissue
+Hostname: jhpce3
+Task id: 
+Unloading conda_R/4.3.x
+Loading conda_R/4.3.x
+environment: line 5: __conda_exe: command not found
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+Warning message:
+replacing previous import ‘ape::where’ by ‘dplyr::where’ when loading ‘cacoa’ 
+Interpreting data.object as a raw count matrix
+Warning messages:
+1: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+2: In initialize(...) :
+  Many function may be not supported for an object of class matrixarray
+There were 12 warnings (use warnings() to see them)
+null device 
+          1 
+**** Job ends ****
+Tue Jul 15 03:15:36 PM EDT 2025
