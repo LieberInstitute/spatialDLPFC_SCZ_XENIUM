@@ -45,7 +45,6 @@ for(i in 1:length(layers)){
 
     sample.per.cell <- colData(spe_use)[["BrNum"]]
     names(sample.per.cell) <- spe_use$cell_id
-
     ref.level <- "NTC"
     target.level <- "SCZ"
 
