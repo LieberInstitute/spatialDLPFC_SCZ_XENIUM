@@ -28,15 +28,21 @@ write.csv(probe_list_final, here("raw-data",
                 "combined_Xenium_SCZ_ProbeSelection5_SHK_v4_15_w_ensemblgene_list.xlsx"))
 
 #xen_de_sig <- xen_de %>%
-  filter(fdr_SCZ <= 0.1)
+ # filter(fdr_SCZ <= 0.1)
 
 #probe_list[probe_list$gene %in% xen_de_sig$gene,]
+colnames(probe_list_final)[[ncol(probe_list_final)]] <- "notes"
+dx_deg <- probe_list_final %>%
+   as.data.frame() %>%
+    filter(!is.na(dx_deg)) %>%
+    select(Gene, dx_deg)
 
 vis_de <- vis_de %>% 
     mutate(logFC_SCZ = logFC_scz) %>%
     mutate(fdr_SCZ = fdr_scz) %>% 
     select(gene, logFC_SCZ, fdr_SCZ) %>%
-    filter(gene %in% xen_de$gene)
+    filter(gene %in% xen_de$gene) %>%
+    filter(gene %in% dx_deg$Gene)
 
 xen_de <- xen_de %>%
     select(gene, logFC_SCZ, fdr_SCZ) %>%
