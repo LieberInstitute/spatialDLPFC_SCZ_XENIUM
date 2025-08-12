@@ -38,8 +38,6 @@ spe$isLayer <- spe$domain_annotations %in% c("L2/3")
 #---------------------------------------
 
 
-
-
 pdf(here("plots", "08_cell_type_density", 
          "l6ex_on_tissue.pdf"))
 for (i in 1:length(brnums)){
