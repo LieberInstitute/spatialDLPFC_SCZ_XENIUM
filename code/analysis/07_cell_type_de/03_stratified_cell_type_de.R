@@ -7,6 +7,7 @@ suppressPackageStartupMessages({
   library(ggrepel)
   library(sessioninfo)
   library(ComplexHeatmap)
+  library(patchwork)
 })
 ####################################################################################################
 # Perform DE analysis stratified by cell type on the pseudobulked object
@@ -39,6 +40,7 @@ scater::plotPCA(spe_pseudo, colour_by = "annots", shape_by="Dx", ncomponents=5)
 scater::plotPCA(spe_pseudo, colour_by = "BrNum", ncomponents=5)
 dev.off()
 
+p_list <- list()
 pdf(here("plots", "07_cell_type_de", 
         sprintf("stratified_donor_cell_type_level_pseudobulk_Dx_DEGs_%s.pdf", cnm)))
 # Loop over the cell types and perform DE within each cell type
@@ -106,8 +108,9 @@ for(i in 1:length(cell_types)){
         filter(fdr_SCZ <= 0.1) |>
         nrow()
 
-    print(
-        ggplot(
+    
+
+    p <-  ggplot(
         dx_res,
         aes(
             x = logFC_SCZ, y = -log10(fdr_SCZ),
@@ -130,15 +133,38 @@ for(i in 1:length(cell_types)){
             axis.title.x=element_text(size=16),
             axis.title.y=element_text(size=16),
             plot.title = element_text(hjust = 0.5, size=20))
-        
-  )
+    
+    print(p)
+
+  
     dx_res$cell_type <- cell_type_use
     dx_res_use <- dx_res %>%
         select(gene, logFC_SCZ, cell_type)
     dx_results[[i]] <- dx_res_use
 
+    # add the microglia and L4/5Ex plots to a separate list
+    if (cell_type_use == "Mic"){
+         p_list[[cell_type_use]] <- p+ scale_x_continuous(limits = c(-1, 1))+
+            labs(title = "Microglia")
+    }
+    if(cell_type_use == "L4/5 Ex"){
+        p_list[[cell_type_use]] <- p+ scale_x_continuous(limits = c(-1, 1))+
+            labs(title = "L4/5 Excitatory Neurons")
+    }
+
 }
 dev.off()
+
+# plot the microglia and L4/5Ex plots together
+pdf(here("plots", "07_cell_type_de", 
+        "cell_type_specific_de_microglia_l45ex.pdf"), height=8, width=15)
+
+wrap_plots(p_list, ncol=2)+ plot_layout(guides = "collect") & 
+            theme(legend.position = "bottom",
+            legend.text=element_text(size=14),
+            legend.title=element_text(size=16))
+dev.off()
+
 
 panel_markers <- readxl::read_xlsx((here("raw-data", 
         "experiment_info", 

@@ -95,24 +95,18 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
       )
     ) +
       geom_point(alpha = 0.8) +
-      geom_label_repel(
+      geom_label_repel(size=6,
         data = sig_gene_df,
         aes(label = gene),
         force = 2,
         nudge_y = 0.1,
         size=10
       ) +
-      labs(
-        title = paste0(
-          "Donor-cell type level pseudobulk analysis by Dx - ", 
-          " ( ", n_sig_gene, " sig genes)"
-        )
-      ) +
-      theme(axis.text.x=element_text(size=16),
+ theme(axis.text.x=element_text(size=16),
             axis.text.y=element_text(size=16),
-            axis.title.x=element_text(size=16),
-            axis.title.y=element_text(size=16),
-            plot.title = element_text(hjust = 0.5, size=20)) +
+            axis.title.x=element_text(size=18),
+            axis.title.y=element_text(size=18),
+            legend.title=element_text(size=16)) +
       theme_minimal()
   )
 dev.off()

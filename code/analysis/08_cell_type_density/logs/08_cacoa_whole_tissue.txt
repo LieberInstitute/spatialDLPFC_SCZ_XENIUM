@@ -1,14 +1,12 @@
 **** Job starts ****
-Tue Jul 15 03:13:35 PM EDT 2025
+Wed Sep  3 02:05:42 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 19930788
+Job id: 21770696
 Job name: 08_cacoa_whole_tissue
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
-environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -28,4 +26,4 @@ There were 12 warnings (use warnings() to see them)
 null device 
           1 
 **** Job ends ****
-Tue Jul 15 03:15:36 PM EDT 2025
+Wed Sep  3 02:07:23 PM EDT 2025

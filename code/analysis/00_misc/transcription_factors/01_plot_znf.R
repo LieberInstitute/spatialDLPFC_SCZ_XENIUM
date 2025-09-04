@@ -7,6 +7,7 @@ suppressPackageStartupMessages({
   library(ggrepel)
   library(sessioninfo)
   library(escheR)
+  library(ComplexHeatmap)
 })
 
 ####################################################################################################
@@ -26,8 +27,6 @@ lambda <- 0.1
 res <- 0.7 # higher = more clusters
 use_agf <- FALSE
 cnm <- sprintf("clust_M%s_lam%s_k50_res%s", as.numeric(use_agf), lambda, res)
-
-
 
 clusts <- read.csv(here("processed-data", "06_cell_type_clustering", sprintf("banksy_clustering_lambda%s_res%s.csv", lambda, res)))
 clusts <- as.data.frame(clusts)
@@ -92,72 +91,167 @@ brnums <- unique(spe$BrNum)
 
 spe$is_neuron <- ifelse(spe$annots %in% c("L2/3 Ex", "L4/5 Ex", "L5 Ex", "L6 Ex", "In: SST, PVALB", "In: VIP, LAMP5"), TRUE, FALSE)
 
-pdf(here("plots", "00_misc", "transcription_factors", "ZNF804A_counts_logcounts.pdf"), 
-            width=24, height=18)
-for(i in 1:length(brnums)){ # change later
-    sample <- brnums[i]
-    spe_sub <- spe[, spe$BrNum == sample]
-    spe_sub <- scuttle::logNormCounts(spe_sub)
+# pdf(here("plots", "00_misc", "transcription_factors", "ZNF804A_counts_logcounts.pdf"), 
+#             width=24, height=18)
+# for(i in 1:length(brnums)){ # change later
+#     sample <- brnums[i]
+#     spe_sub <- spe[, spe$BrNum == sample]
+#     spe_sub <- scuttle::logNormCounts(spe_sub)
     
-    colData(spe_sub)[[paste0(gene_plot, "_counts")]] <- counts(spe_sub)[gene_plot, ]
-    colData(spe_sub)[[paste0(gene_plot, "_logcounts")]] <- logcounts(spe_sub)[gene_plot, ]
+#     colData(spe_sub)[[paste0(gene_plot, "_counts")]] <- counts(spe_sub)[gene_plot, ]
+#     colData(spe_sub)[[paste0(gene_plot, "_logcounts")]] <- logcounts(spe_sub)[gene_plot, ]
 
-    p_counts <- make_escheR(spe_sub, y_reverse=FALSE) %>%
-        add_fill(paste0(gene_plot, "_counts"), point_size=3) +
-        #add_ground("is_neuron", stroke=0.75)+
-        scale_fill_continuous(low="white", high="black")+
-        #scale_colour_manual(values = c("TRUE" = "red", "FALSE" = "transparent"))+
-        ggtitle(paste0("Counts of ", gene_plot, " in sample ", sample))
+#     p_counts <- make_escheR(spe_sub, y_reverse=FALSE) %>%
+#         add_fill(paste0(gene_plot, "_counts"), point_size=3) +
+#         #add_ground("is_neuron", stroke=0.75)+
+#         scale_fill_continuous(low="white", high="black")+
+#         #scale_colour_manual(values = c("TRUE" = "red", "FALSE" = "transparent"))+
+#         ggtitle(paste0("Counts of ", gene_plot, " in sample ", sample))
      
-    p_logcounts <- make_escheR(spe_sub, y_reverse=FALSE) %>%
-        add_fill(paste0(gene_plot, "_logcounts"), point_size=3) +
-        #add_ground("is_neuron", stroke=0.75)+
-        scale_fill_continuous(low="white", high="black")+
-        #scale_colour_manual(values = c("TRUE" = "red", "FALSE" = "transparent"))+
-        ggtitle(paste0("Counts of ", gene_plot, " in sample ", sample))
+#     p_logcounts <- make_escheR(spe_sub, y_reverse=FALSE) %>%
+#         add_fill(paste0(gene_plot, "_logcounts"), point_size=3) +
+#         #add_ground("is_neuron", stroke=0.75)+
+#         scale_fill_continuous(low="white", high="black")+
+#         #scale_colour_manual(values = c("TRUE" = "red", "FALSE" = "transparent"))+
+#         ggtitle(paste0("Counts of ", gene_plot, " in sample ", sample))
 
-    print(patchwork::wrap_plots(p_counts, p_logcounts, ncol=2))
-}
-dev.off()
+#     print(patchwork::wrap_plots(p_counts, p_logcounts, ncol=2))
+# }
+# dev.off()
 
 
 ############# Make bar chart for gene_plot positive proportion ###########################
-colData(spe)[[paste0(gene_plot, "_counts")]] <- counts(spe)[gene_plot, ]
-spe$is_gene_plot_pos <- ifelse(spe[[paste0(gene_plot, "_counts")]] > 0, TRUE, FALSE)
+# colData(spe)[[paste0(gene_plot, "_counts")]] <- counts(spe)[gene_plot, ]
+# spe$is_gene_plot_pos <- ifelse(spe[[paste0(gene_plot, "_counts")]] > 0, TRUE, FALSE)
 
-df <- colData(spe) %>%
-    as.data.frame() %>%
-    mutate(gene_plot_info = case_when(is_gene_plot_pos == TRUE ~ annots,
-                                    is_gene_plot_pos == FALSE ~ "Not expressed")) %>%
-      group_by(domain_annotations) %>%
-      mutate(domain_total = n()) %>%
-      group_by(domain_annotations, annots) %>%
-      summarise(
-            n_total = n(),
-            n_gene_pos = sum(is_gene_plot_pos),
-            prop_gene_pos = n_gene_pos / first(domain_total),
-            prop_gene_neg = sum(!is_gene_plot_pos)/first(domain_total),
-            .groups = "drop"
-        )
+# df <- colData(spe) %>%
+#     as.data.frame() %>%
+#     mutate(gene_plot_info = case_when(is_gene_plot_pos == TRUE ~ annots,
+#                                     is_gene_plot_pos == FALSE ~ "Not expressed")) %>%
+#       group_by(domain_annotations) %>%
+#       mutate(domain_total = n()) %>%
+#       group_by(domain_annotations, annots) %>%
+#       summarise(
+#             n_total = n(),
+#             n_gene_pos = sum(is_gene_plot_pos),
+#             prop_gene_pos = n_gene_pos / first(domain_total),
+#             prop_gene_neg = sum(!is_gene_plot_pos)/first(domain_total),
+#             .groups = "drop"
+#         )
 
-df <- df %>% pivot_longer(cols=c(prop_gene_pos, prop_gene_neg), 
-                          names_to="has_expression", 
-                          values_to="prop_gene_pos") %>%
-    mutate(has_expression = ifelse(has_expression == "prop_gene_pos", "ZNF804A+", "ZNF804A-"))
+# df <- df %>% pivot_longer(cols=c(prop_gene_pos, prop_gene_neg), 
+#                           names_to="has_expression", 
+#                           values_to="prop_gene_pos") %>%
+#     mutate(has_expression = ifelse(has_expression == "prop_gene_pos", "ZNF804A+", "ZNF804A-"))
+# p <- ggplot(df, aes(x=domain_annotations, y=prop_gene_pos, fill=annots)) +
+#     geom_bar(stat="identity", position="fill") +
+#     #scale_fill_manual(values=c("TRUE"="red", "FALSE"="grey"), name=paste0(gene_plot, " positive")) +
+#     labs(x="Spatial Domain", y="Proportion of cells") +
+#     theme_minimal() +
+#     theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+#     facet_wrap(~has_expression)
+
+
+############# Make heatmap for ZNF expression (pseudobulked by spd) ###########################
+
+plot_heatmap <- function(spe, gene){
+  spe$libsize <- colSums(counts(spe))
+  col_use <- sprintf("%s_expr", gene)
+  colData(spe)[[col_use]] <- counts(spe)[gene, ]
+  spe$BrNum <- paste(spe$BrNum, spe$Dx, sep="_")
+
+  agg_df <- colData(spe) %>%
+      as.data.frame() %>%
+    group_by(BrNum, domain_annotations, annots) %>%
+    summarise(pb_libsize=sum(get("libsize")), 
+                sum_expr = sum(get(col_use)), 
+                .groups="drop") %>%
+      mutate(
+      norm_expr = log((sum_expr/ pb_libsize)+1)           # normalize by total library size
+    )
+
+  agg_df <- agg_df %>%
+    mutate(col_name = paste(BrNum, domain_annotations, sep = "_"))
+
+  # Pivot to wide format: rows = cell types, columns = sample_domain
+  heatmap_df <- agg_df %>%
+    select(annots, col_name, norm_expr) %>%
+    pivot_wider(
+      names_from = col_name,
+      values_from = norm_expr,
+      values_fill = 0
+    )
+  #counts_plt <- logcounts(spe_pseudo)[c("ZNF804A", "XRRA1"), ]
+  heatmap_matrix <- as.matrix(heatmap_df[,-1]) # remove 'cell_type' column
+  rownames(heatmap_matrix) <- heatmap_df$annots
+
+  parts <- strsplit(colnames(heatmap_matrix), "_")
+
+  diagnosis_vec <- sapply(parts, `[`, 2)      # second field = diagnosis
+  domain_vec    <- sapply(parts, `[`, 3)      # third field = spatial domain
+
+
+
+  # Desired spatial domain order
+  domain_levels <- c("WMtz", "L3/4", "L6", "WM", "L5", "L2/3", "L1")
+  domain_vec <- factor(domain_vec, levels = domain_levels)
+
+  # Diagnosis order
+  diagnosis_levels <- c("NTC", "SCZ")
+  diagnosis_vec <- factor(diagnosis_vec, levels = diagnosis_levels)
+
+
+  col_order <- order(domain_vec, diagnosis_vec)
+  heatmap_matrix_ordered <- heatmap_matrix[, col_order]
+
+  domain_vec    <- domain_vec[col_order]
+  diagnosis_vec <- diagnosis_vec[col_order]
+
+  # # create colour palette to annotate spds 
+  # spatial_domain_vec <- sapply(strsplit(colnames(heatmap_matrix), "_"), `[`, 2)
+  domain_colors <- set_names(Polychrome::palette36.colors(7)[seq.int(7)],
+  domain_levels)
+
+  diagnosis_colors <- c("NTC" = "steelblue", "SCZ" = "firebrick")
+
+
+  top_ha <- HeatmapAnnotation(
+    SpatialDomain = domain_vec,
+    Diagnosis = diagnosis_vec,
+    col = list(
+      SpatialDomain = domain_colors,
+      Diagnosis = diagnosis_colors
+    ),
+    annotation_height = unit.c(unit(5, "mm"), unit(5, "mm"))
+  )
+
+  ht <- Heatmap(heatmap_matrix_ordered,
+    name = paste("Expression of", gene),
+    show_row_names = TRUE,
+    show_column_names = TRUE,
+    cluster_rows = TRUE,
+    cluster_columns = FALSE,
+    bottom_annotation = top_ha
+  )
+  return(ht)
+}
+
+ht_znf <- plot_heatmap(spe, gene_plot)
+ht_xrra <- plot_heatmap(spe, "XRRA1")
 
 pdf(here("plots", "00_misc", "transcription_factors", "ZNF804A_proportion.pdf"), 
             width=10, height=8)
 
-p <- ggplot(df, aes(x=domain_annotations, y=prop_gene_pos, fill=annots)) +
-    geom_bar(stat="identity", position="fill") +
-    #scale_fill_manual(values=c("TRUE"="red", "FALSE"="grey"), name=paste0(gene_plot, " positive")) +
-    labs(x="Spatial Domain", y="Proportion of cells") +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1))+
-    facet_wrap(~has_expression)
 
-print(p)
+#print(p)
+draw(ht_znf)
+draw(ht_xrra)
 dev.off()
+
+
+
+
+
 
 
 

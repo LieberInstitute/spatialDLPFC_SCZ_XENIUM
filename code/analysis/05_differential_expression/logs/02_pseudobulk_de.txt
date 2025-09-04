@@ -1,17 +1,12 @@
 **** Job starts ****
-Fri May 16 10:00:37 AM EDT 2025
+Wed Sep  3 07:52:50 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16620333
+Job id: 21808881
 Job name: 02_pseudobulk_de
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.4.x
 Loading conda_R/4.3.x
-
-The following have been reloaded with a version change:
-  1) conda/3-24.3.0 => conda/3-23.3.1     2) conda_R/4.4.x => conda_R/4.3.x
-
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -19,13 +14,13 @@ Currently Loaded Modules:
 
  
 
-2025-05-16 10:00:51.788535 create model matrix
-2025-05-16 10:00:51.870887 run duplicateCorrelation()
-2025-05-16 10:00:52.553276 The estimated correlation is: 0.59847653853245
-2025-05-16 10:00:52.556761 computing enrichment statistics
-2025-05-16 10:00:52.696154 extract and reformat enrichment results
+2025-09-03 19:53:05.058731 create model matrix
+2025-09-03 19:53:05.128814 run duplicateCorrelation()
+2025-09-03 19:53:05.616936 The estimated correlation is: 0.59847653853245
+2025-09-03 19:53:05.620197 computing enrichment statistics
+2025-09-03 19:53:05.729191 extract and reformat enrichment results
 Warning message:
-ggrepel: 9 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
+ggrepel: 12 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
 null device 
           1 
 New names:
@@ -50,5 +45,5 @@ New names:
 17   SLC44A1          NA             down              <NA> Layer marker
 18   TNFSF10 Dx_DEG_Down             down              <NA>           NA
 19     XRRA1 Dx_DEG_Down             down              <NA>           NA
-**** Job ends ***
-Fri May 16 10:00:53 AM EDT 2025
+**** Job ends ****
+Wed Sep  3 07:53:06 PM EDT 2025

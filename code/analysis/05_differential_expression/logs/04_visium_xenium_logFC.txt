@@ -1,0 +1,410 @@
+**** Job starts ****
+Wed Sep  3 02:10:34 PM EDT 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 21770699
+Job name: 04_visium_xenium_logFC
+Hostname: jhpce3
+Task id: 
+Loading conda_R/4.3.x
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+here() starts at /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM
+New names:
+• `` -> `...1`
+• `` -> `...2`
+• `` -> `...3`
+• `` -> `...4`
+• `` -> `...5`
+       gene logFC_SCZ_vis  fdr_SCZ_vis logFC_SCZ_xen fdr_SCZ_xen
+1     ABCG2    -0.4453574 0.0025581364    -0.4628641 0.062941337
+2      ANLN    -0.2701096 0.0629683832    -0.5204533 0.062941337
+3    CHI3L1     0.5315625 0.0700346023     0.7302000 0.062941337
+4     ENPP2    -0.3670973 0.0083659822    -0.5276257 0.062941337
+5     EVI2A    -0.3485684 0.0028039657    -0.5177114 0.062941337
+6     FKBP5     0.5128289 0.0003441827     0.5868846 0.006334398
+7     GSTM5     0.7864234 0.0004835294     0.6197601 0.044308464
+8     HIF3A     0.4018323 0.0349695432     0.3931411 0.063397302
+9    IFITM3     0.3517128 0.0337108093    -0.5891149 0.063397302
+10    NPTX2    -0.4254525 0.0118749459    -0.5149058 0.062941337
+11   RNASE1    -0.3138726 0.0019405393    -0.5164358 0.053754105
+12    RPS26    -0.3996299 0.0001068805    -0.2780001 0.072213358
+13     SCG3    -0.1481811 0.0527662065    -0.3141893 0.071627487
+14 SERPINA3     1.0253701 0.0152488799     1.2370913 0.005777089
+15  TNFSF10    -0.5327152 0.0569457233    -0.5731178 0.062941337
+16    XRRA1    -0.2993767 0.0217115622    -0.3825239 0.001330035
+            direction
+1  both downregulated
+2  both downregulated
+3    both upregulated
+4  both downregulated
+5  both downregulated
+6    both upregulated
+7    both upregulated
+8    both upregulated
+9               mixed
+10 both downregulated
+11 both downregulated
+12 both downregulated
+13 both downregulated
+14   both upregulated
+15 both downregulated
+16 both downregulated
+null device 
+          1 
+[1] 168
+          Gene      Ensembl ID Probesets       cell_type      dx_deg
+1          A2M ENSG00000175899         8            <NA>   Dx_DEG_Up
+3        ABCG2 ENSG00000118777         8            <NA> Dx_DEG_Down
+4         ACO1 ENSG00000122729         8            <NA>   Dx_DEG_Up
+6         ACY3 ENSG00000132744         8            <NA> Dx_DEG_Down
+7       ADAM28 ENSG00000042980         8            <NA> Dx_DEG_Down
+9    ADCYAP1R1 ENSG00000078549         8            <NA>   Dx_DEG_Up
+10       ADIRF ENSG00000148671         4            <NA>   Dx_DEG_Up
+11        AIF1 ENSG00000204472         7             Mic Dx_DEG_Down
+14      AKAP8L ENSG00000011243         8            <NA>   Dx_DEG_Up
+16       ALCAM ENSG00000170017         8            <NA> Dx_DEG_Down
+17     ALDH1A1 ENSG00000165092         8            <NA> Dx_DEG_Down
+18     ALOX5AP ENSG00000132965         8            <NA> Dx_DEG_Down
+19        ANLN ENSG00000011426         5            <NA> Dx_DEG_Down
+20      APOLD1 ENSG00000178878         8            <NA>   Dx_DEG_Up
+21        AQP1 ENSG00000240583         8            <NA>   Dx_DEG_Up
+23      ARPC1B ENSG00000130429         8            <NA> Dx_DEG_Down
+25      ARRDC3 ENSG00000113369         8            <NA>   Dx_DEG_Up
+26      ATP2B4 ENSG00000058668         8            <NA>   Dx_DEG_Up
+27      BAIAP3 ENSG00000007516         8            <NA>   Dx_DEG_Up
+29        BCL6 ENSG00000113916         8            <NA>   Dx_DEG_Up
+30        BDNF ENSG00000176697         8            <NA> Dx_DEG_Down
+31       BLCAP ENSG00000166619         8            <NA>   Dx_DEG_Up
+34        C1QA ENSG00000173372         8             Mic Dx_DEG_Down
+35        C1QB ENSG00000173369         7             Mic Dx_DEG_Down
+37          C3 ENSG00000125730         8             Mic Dx_DEG_Down
+44       CAPN3 ENSG00000092529         5            <NA> Dx_DEG_Down
+45       CAPZB ENSG00000077549         8            <NA> Dx_DEG_Down
+47       CASC3 ENSG00000108349         8            <NA>   Dx_DEG_Up
+49        CCNI ENSG00000118816         8            <NA> Dx_DEG_Down
+51        CD53 ENSG00000143119         8            <NA> Dx_DEG_Down
+53        CD74 ENSG00000019582         8             Mic Dx_DEG_Down
+54      CFAP36 ENSG00000163001         8            <NA> Dx_DEG_Down
+55      CHI3L1 ENSG00000133048         8            <NA>   Dx_DEG_Up
+56       CHST1 ENSG00000175264         8            <NA>   Dx_DEG_Up
+57      CLDN11 ENSG00000013297         5           Oligo Dx_DEG_Down
+60       CNDP1 ENSG00000150656         5            <NA> Dx_DEG_Down
+61        CNN3 ENSG00000117519         8            <NA>   Dx_DEG_Up
+64        CORT ENSG00000241563         8              In Dx_DEG_Down
+65       COX5A ENSG00000178741         8            <NA> Dx_DEG_Down
+68       CSF1R ENSG00000182578         8            <NA> Dx_DEG_Down
+70        CTIF ENSG00000134030         8            <NA>   Dx_DEG_Up
+72      CX3CR1 ENSG00000168329         8            <NA> Dx_DEG_Down
+75        CYBA ENSG00000051523         8            <NA> Dx_DEG_Down
+76        CYBB ENSG00000165168         8            <NA> Dx_DEG_Down
+81       DDIT4 ENSG00000168209         8            <NA>   Dx_DEG_Up
+82       DEAF1 ENSG00000177030         8            <NA>   Dx_DEG_Up
+87        EGR1 ENSG00000120738         8            <NA> Dx_DEG_Down
+89     ELMSAN1 ENSG00000156030         8            <NA>   Dx_DEG_Up
+90        ELOC ENSG00000154582         8            <NA> Dx_DEG_Down
+92       ENPP2 ENSG00000136960         5            <NA> Dx_DEG_Down
+95       EVI2A ENSG00000126860         5            <NA> Dx_DEG_Down
+96       FABP3 ENSG00000121769         8            <NA> Dx_DEG_Down
+99       FKBP5 ENSG00000096060         8            <NA>   Dx_DEG_Up
+102      FSCN1 ENSG00000075618         8            <NA> Dx_DEG_Down
+106 GABPB1-AS1 ENSG00000244879         8            <NA>   Dx_DEG_Up
+109    GADD45G ENSG00000130222         5            <NA>   Dx_DEG_Up
+110    GALNT16 ENSG00000100626         8            <NA>   Dx_DEG_Up
+111     GATD3A ENSG00000160221         8            <NA>   Dx_DEG_Up
+112     GATD3B ENSG00000280071         8            <NA> Dx_DEG_Down
+113       GFAP ENSG00000131095         8             Ast   Dx_DEG_Up
+115       GJB1 ENSG00000169562         5            <NA> Dx_DEG_Down
+117      GPR34 ENSG00000171659         8             Mic Dx_DEG_Down
+121      GSTM5 ENSG00000134201         8            <NA>   Dx_DEG_Up
+123       HHIP ENSG00000164161         5            <NA> Dx_DEG_Down
+124      HIF3A ENSG00000124440         8            <NA>   Dx_DEG_Up
+126   HLA-DPA1 ENSG00000231389         8            <NA> Dx_DEG_Down
+129      HMGB2 ENSG00000164104         8            <NA>   Dx_DEG_Up
+130    HNRNPH3 ENSG00000096746         8            <NA>   Dx_DEG_Up
+132      HSPA8 ENSG00000109971         8            <NA> Dx_DEG_Down
+134     IFITM3 ENSG00000142089         8          Immune   Dx_DEG_Up
+136     IGFBP6 ENSG00000167779         7            <NA> Dx_DEG_Down
+137      IGSF6 ENSG00000140749         8            <NA> Dx_DEG_Down
+138       IRS2 ENSG00000185950         8            <NA>   Dx_DEG_Up
+141      ITGAX ENSG00000140678         8             Mic Dx_DEG_Down
+142      ITGB2 ENSG00000160255         8            <NA> Dx_DEG_Down
+143      ITGB4 ENSG00000132470         8            <NA>   Dx_DEG_Up
+144      ITM2A ENSG00000078596         8            <NA> Dx_DEG_Down
+145 KANSL1-AS1 ENSG00000214401         1            <NA> Dx_DEG_Down
+146      KCNK1 ENSG00000135750         8            <NA> Dx_DEG_Down
+147      KIF1A ENSG00000130294         8            <NA>   Dx_DEG_Up
+148      KIF5A ENSG00000155980         8            <NA>   Dx_DEG_Up
+150       KLK6 ENSG00000167755         5            <NA> Dx_DEG_Down
+153     LAPTM5 ENSG00000162511         8            <NA> Dx_DEG_Down
+154      LATS1 ENSG00000131023         8            <NA>   Dx_DEG_Up
+156     LILRB4 ENSG00000186818         8            <NA> Dx_DEG_Down
+159      LPAR6 ENSG00000139679         8            <NA> Dx_DEG_Down
+160       LST1 ENSG00000204482         5            <NA> Dx_DEG_Down
+161       LY86 ENSG00000112799         8            <NA> Dx_DEG_Down
+162      LZTS3 ENSG00000088899         8            <NA>   Dx_DEG_Up
+163        MAG ENSG00000105695         5           Oligo Dx_DEG_Down
+165      MAPK3 ENSG00000102882         8            <NA>   Dx_DEG_Up
+171     MRPL27 ENSG00000108826         8            <NA> Dx_DEG_Down
+172     MRPL57 ENSG00000173141         8            <NA> Dx_DEG_Down
+180       MT1E ENSG00000169715         5            <NA>   Dx_DEG_Up
+181       MT1M ENSG00000205364         2            <NA>   Dx_DEG_Up
+182       MT1X ENSG00000187193         4            <NA>   Dx_DEG_Up
+183       MT2A ENSG00000125148         5            <NA>   Dx_DEG_Up
+184   MTRNR2L1 ENSG00000256618         8            <NA>   Dx_DEG_Up
+187       MYL6 ENSG00000092841         8            <NA> Dx_DEG_Down
+189     NDUFB2 ENSG00000090266         8            <NA> Dx_DEG_Down
+190     NDUFB9 ENSG00000147684         8            <NA> Dx_DEG_Down
+194      NORAD ENSG00000260032         8            <NA>   Dx_DEG_Up
+197     NPIPA1 ENSG00000183426         8            <NA>   Dx_DEG_Up
+199      NPTX2 ENSG00000106236         8 In (EI balance) Dx_DEG_Down
+205     NUDT14 ENSG00000183828         5            <NA> Dx_DEG_Down
+206      NUPR1 ENSG00000176046         8            <NA>   Dx_DEG_Up
+208        OGA ENSG00000198408         8            <NA>   Dx_DEG_Up
+209     OLFML3 ENSG00000116774         8            <NA> Dx_DEG_Down
+210       OLR1 ENSG00000173391         8            <NA> Dx_DEG_Down
+211    OSBPL1A ENSG00000141447         8            <NA> Dx_DEG_Down
+212       OTOS ENSG00000178602         5            <NA>   Dx_DEG_Up
+213     P2RY12 ENSG00000169313         8             Mic Dx_DEG_Down
+214     P2RY13 ENSG00000181631         8             Mic Dx_DEG_Down
+217       PDXK ENSG00000160209         8            <NA>   Dx_DEG_Up
+219       PFN1 ENSG00000108518         8            <NA> Dx_DEG_Down
+221       PLD4 ENSG00000166428         8            <NA> Dx_DEG_Down
+222       PLEC ENSG00000178209         8            <NA>   Dx_DEG_Up
+223       PLP1 ENSG00000123560         3           Oligo Dx_DEG_Down
+225      PPM1K ENSG00000163644         8            <NA>   Dx_DEG_Up
+226      PSMA7 ENSG00000101182         8            <NA> Dx_DEG_Down
+228       PWP2 ENSG00000241945         8            <NA>   Dx_DEG_Up
+229     RANBP1 ENSG00000099901         8            <NA> Dx_DEG_Down
+230      RASD1 ENSG00000108551         8            <NA>   Dx_DEG_Up
+232      RCAN2 ENSG00000172348         8            <NA> Dx_DEG_Down
+234      RERGL ENSG00000111404         8            <NA> Dx_DEG_Down
+235      RGS10 ENSG00000148908         8            <NA> Dx_DEG_Down
+236     RIPOR2 ENSG00000111913         8            <NA>   Dx_DEG_Up
+237     RNASE1 ENSG00000129538         8            <NA> Dx_DEG_Down
+239    RPL36AL ENSG00000165502         8            <NA> Dx_DEG_Down
+240      RPS26 ENSG00000197728         8            <NA> Dx_DEG_Down
+241       RTF2 ENSG00000022277         8            <NA> Dx_DEG_Down
+242     S100A6 ENSG00000197956         5            <NA>   Dx_DEG_Up
+244     SAMSN1 ENSG00000155307         8            <NA> Dx_DEG_Down
+245       SCG3 ENSG00000104112         8            <NA> Dx_DEG_Down
+247     SELPLG ENSG00000110876         8             Mic Dx_DEG_Down
+248   SERPINA3 ENSG00000196136         8            <NA>   Dx_DEG_Up
+249   SERPING1 ENSG00000149131         8            <NA>   Dx_DEG_Up
+250      SESN1 ENSG00000080546         8            <NA>   Dx_DEG_Up
+251    SLC14A1 ENSG00000141469         8            <NA>   Dx_DEG_Up
+257      SMAD1 ENSG00000170365         8            <NA>   Dx_DEG_Up
+261       SNPH ENSG00000101298         8            <NA>   Dx_DEG_Up
+262       SOD2 ENSG00000112096         8            <NA>   Dx_DEG_Up
+263    SOX2-OT ENSG00000242808         3            <NA> Dx_DEG_Down
+264      SPRY2 ENSG00000136158         8            <NA> Dx_DEG_Down
+265      SSBP1 ENSG00000106028         8            <NA> Dx_DEG_Down
+266        SST ENSG00000157005         4              In Dx_DEG_Down
+268       SVBP ENSG00000177868         8            <NA> Dx_DEG_Down
+269        SYK ENSG00000165025         8             Mic Dx_DEG_Down
+271      SYTL4 ENSG00000102362         8            <NA>   Dx_DEG_Up
+273        TEF ENSG00000167074         8            <NA>   Dx_DEG_Up
+274         TF ENSG00000091513         5            <NA> Dx_DEG_Down
+276      TIMP1 ENSG00000102265         8            <NA>   Dx_DEG_Up
+277    TMEM119 ENSG00000183160         8             Mic Dx_DEG_Down
+278    TMEM144 ENSG00000164124         4            <NA> Dx_DEG_Down
+280    TNFSF10 ENSG00000121858         8            <NA> Dx_DEG_Down
+281       TNK2 ENSG00000061938         8            <NA>   Dx_DEG_Up
+283      TREM2 ENSG00000095970         8             Mic Dx_DEG_Down
+284    TSC22D3 ENSG00000157514         8            <NA>   Dx_DEG_Up
+286      TXNIP ENSG00000265972         8            <NA>   Dx_DEG_Up
+287     TYROBP ENSG00000011600         4            <NA> Dx_DEG_Down
+288       UGT8 ENSG00000174607         5            <NA> Dx_DEG_Down
+289    UQCRFS1 ENSG00000169021         8            <NA> Dx_DEG_Down
+290      USP22 ENSG00000124422         8            <NA>   Dx_DEG_Up
+292        VGF ENSG00000128564         8            <NA> Dx_DEG_Down
+295      XRRA1 ENSG00000166435         8            <NA> Dx_DEG_Down
+297     ZBTB16 ENSG00000109906         8            <NA>   Dx_DEG_Up
+298     ZNF483 ENSG00000173258         8            <NA>   Dx_DEG_Up
+300        ZP3 ENSG00000188372         8            <NA>   Dx_DEG_Up
+    layer_marker    notes
+1   Layer marker     <NA>
+3           <NA>     <NA>
+4           <NA>     <NA>
+6           <NA>     <NA>
+7           <NA>     <NA>
+9           <NA>     <NA>
+10          <NA>     <NA>
+11          <NA>     <NA>
+14          <NA>     <NA>
+16          <NA>     <NA>
+17          <NA>     <NA>
+18          <NA>     <NA>
+19          <NA>     <NA>
+20          <NA>     <NA>
+21          <NA>     <NA>
+23          <NA>     <NA>
+25          <NA>     <NA>
+26          <NA>     <NA>
+27          <NA>     <NA>
+29          <NA>     <NA>
+30          <NA>     <NA>
+31          <NA>     <NA>
+34          <NA>     <NA>
+35          <NA>     <NA>
+37          <NA>     <NA>
+44          <NA>     <NA>
+45          <NA>     <NA>
+47          <NA>     <NA>
+49          <NA>     <NA>
+51          <NA>     <NA>
+53          <NA>     <NA>
+54          <NA>     <NA>
+55          <NA>     <NA>
+56          <NA>     <NA>
+57          <NA>     <NA>
+60          <NA>     <NA>
+61          <NA>     <NA>
+64          <NA>     <NA>
+65          <NA>     <NA>
+68          <NA>     <NA>
+70          <NA>     <NA>
+72          <NA>     <NA>
+75          <NA>     <NA>
+76          <NA>     <NA>
+81          <NA>     <NA>
+82          <NA>     <NA>
+87          <NA>     <NA>
+89          <NA>     <NA>
+90          <NA>     <NA>
+92          <NA>     <NA>
+95          <NA>     <NA>
+96          <NA>     <NA>
+99          <NA>     <NA>
+102         <NA>     <NA>
+106         <NA>     <NA>
+109         <NA>     <NA>
+110         <NA>     <NA>
+111         <NA>     <NA>
+112         <NA>     <NA>
+113         <NA>     <NA>
+115         <NA>     <NA>
+117         <NA>     <NA>
+121         <NA>     <NA>
+123         <NA>     <NA>
+124         <NA>     <NA>
+126         <NA>     <NA>
+129         <NA>     <NA>
+130         <NA>     <NA>
+132         <NA>     <NA>
+134         <NA>     <NA>
+136         <NA>     <NA>
+137         <NA>     <NA>
+138         <NA>     <NA>
+141         <NA>     <NA>
+142         <NA>     <NA>
+143         <NA>     <NA>
+144         <NA>     <NA>
+145         <NA>     <NA>
+146         <NA>     <NA>
+147         <NA>     <NA>
+148         <NA>     <NA>
+150         <NA>     <NA>
+153         <NA>     <NA>
+154         <NA>     <NA>
+156         <NA>     <NA>
+159         <NA>     <NA>
+160         <NA>     <NA>
+161         <NA>     <NA>
+162         <NA>     <NA>
+163         <NA>     <NA>
+165         <NA> PGC-GWAS
+171         <NA>     <NA>
+172         <NA>     <NA>
+180         <NA>     <NA>
+181         <NA>     <NA>
+182         <NA>     <NA>
+183         <NA>     <NA>
+184         <NA>     <NA>
+187         <NA>     <NA>
+189         <NA>     <NA>
+190         <NA>     <NA>
+194         <NA>     <NA>
+197         <NA>     <NA>
+199         <NA>     <NA>
+205         <NA>     <NA>
+206         <NA>     <NA>
+208         <NA>     <NA>
+209         <NA>     <NA>
+210         <NA>     <NA>
+211         <NA>     <NA>
+212         <NA>     <NA>
+213         <NA>     <NA>
+214         <NA>     <NA>
+217         <NA>     <NA>
+219         <NA>     <NA>
+221         <NA>     <NA>
+222         <NA>     <NA>
+223 Layer marker     <NA>
+225         <NA>     <NA>
+226         <NA>     <NA>
+228         <NA>     <NA>
+229         <NA>     <NA>
+230         <NA>     <NA>
+232 Layer marker     <NA>
+234         <NA>     <NA>
+235         <NA>     <NA>
+236         <NA>     <NA>
+237         <NA>     <NA>
+239         <NA>     <NA>
+240         <NA>     <NA>
+241         <NA>     <NA>
+242         <NA>     <NA>
+244         <NA>     <NA>
+245         <NA>     <NA>
+247         <NA>     <NA>
+248 Layer marker     <NA>
+249         <NA>     <NA>
+250         <NA>     <NA>
+251         <NA>     <NA>
+257         <NA>     <NA>
+261         <NA>     <NA>
+262         <NA>     <NA>
+263 Layer marker     <NA>
+264         <NA>     <NA>
+265         <NA>     <NA>
+266         <NA>     <NA>
+268         <NA>     <NA>
+269         <NA>     <NA>
+271         <NA>     <NA>
+273         <NA>     <NA>
+274         <NA>     <NA>
+276         <NA>     <NA>
+277         <NA>     <NA>
+278         <NA>     <NA>
+280         <NA>     <NA>
+281         <NA>     <NA>
+283         <NA>     <NA>
+284         <NA>     <NA>
+286         <NA>     <NA>
+287         <NA>     <NA>
+288         <NA>     <NA>
+289         <NA>     <NA>
+290         <NA>     <NA>
+292         <NA>     <NA>
+295         <NA>     <NA>
+297         <NA>     <NA>
+298         <NA>     <NA>
+300         <NA>     <NA>
+**** Job ends ****
+Wed Sep  3 02:10:37 PM EDT 2025

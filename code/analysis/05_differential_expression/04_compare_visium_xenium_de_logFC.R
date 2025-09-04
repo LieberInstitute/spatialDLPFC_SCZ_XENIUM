@@ -75,7 +75,13 @@ ggplot(all_de, aes(x=logFC_SCZ_vis, y=logFC_SCZ_xen, colour=direction)) +
         force = 4,
         nudge_y = 0.2
       )+
-      theme_minimal() 
+      theme_minimal() +
+      theme(axis.text.x=element_text(size=16),
+            axis.text.y=element_text(size=16),
+            axis.title.x=element_text(size=18),
+            axis.title.y=element_text(size=18),
+            legend.title=element_text(size=16),
+            legend.text=element_text(size=12))
 dev.off()
 
 # Some sanity checks

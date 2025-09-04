@@ -31,7 +31,7 @@ layers <- unique(spe$domain_annotations)
 
 # Reference for creating new Cacoa object: https://github.com/kharchenkolab/cacoa
 # Create a Cacoa object
-pdf(here("plots", "08_cell_type_density", "whole_tissue_cacoa_cell_loadings.pdf"))
+pdf(here("plots", "08_cell_type_density", "whole_tissue_cacoa_cell_loadings.png"))
 sample.groups <- colData(spe)[["Dx"]]
 names(sample.groups) <- colData(spe)[["BrNum"]]
 
@@ -52,7 +52,13 @@ cao <- Cacoa$new(
 
 
 cao$estimateCellLoadings()
-p <- cao$plotCellLoadings(show.pvals=TRUE)
+p <- cao$plotCellLoadings(show.pvals=TRUE)#+
+#   theme(
+#     axis.title.x = element_text(size = 20),  # X-axis label
+#     axis.title.y = element_text(size = 20),  # Y-axis label
+#     axis.text.x  = element_text(size = 18),  # tick labels
+#     axis.text.y  = element_text(size = 18)
+#   )
 
 title <- ggdraw() + 
     draw_label("Whole tissue abundance analysis", fontface = 'bold')

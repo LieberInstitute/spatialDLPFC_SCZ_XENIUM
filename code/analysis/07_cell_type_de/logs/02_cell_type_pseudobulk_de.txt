@@ -1,8 +1,8 @@
 **** Job starts ****
-Thu Jun 26 10:31:19 AM EDT 2025
+Wed Sep  3 07:45:43 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 17830074
+Job id: 21808876
 Job name: 02_cell_type_pseudobulk_de
 Hostname: jhpce3
 Task id: 
@@ -14,11 +14,11 @@ Currently Loaded Modules:
 
  
 
-2025-06-26 10:31:34.191286 create model matrix
-2025-06-26 10:31:34.289011 run duplicateCorrelation()
-2025-06-26 10:31:35.972089 The estimated correlation is: 0.516133899964504
-2025-06-26 10:31:35.975552 computing enrichment statistics
-2025-06-26 10:31:36.151816 extract and reformat enrichment results
+2025-09-03 19:45:57.341232 create model matrix
+2025-09-03 19:45:57.404174 run duplicateCorrelation()
+2025-09-03 19:45:58.258712 The estimated correlation is: 0.516133899964504
+2025-09-03 19:45:58.261841 computing enrichment statistics
+2025-09-03 19:45:58.372825 extract and reformat enrichment results
 Warning message:
 In sprintf("donor_cell_type_level_pseudobulk_Dx_DEGs_.csv", cnm) :
   one argument not used by format 'donor_cell_type_level_pseudobulk_Dx_DEGs_.csv'
@@ -54,6 +54,8 @@ SERPINA3  1.0804574
 UQCRFS1  -0.1837842
 VGF      -0.4289276
 XRRA1    -0.3733331
+Warning message:
+Duplicated aesthetics after name standardisation: size 
 null device 
           1 
 New names:
@@ -70,9 +72,9 @@ New names:
 9        MBP          NA               up             Oligo Layer marker
 10     NPTX2 Dx_DEG_Down             down                In           NA
 11     RPS26 Dx_DEG_Down             down              <NA>           NA
-12  SERPINA3   Dx_DEG_Up               up   OA              <NA> Layer marker
+12  SERPINA3   Dx_DEG_Up               up              <NA> Layer marker
 13   UQCRFS1 Dx_DEG_Down             down              <NA>           NA
 14       VGF Dx_DEG_Down             down              <NA>           NA
 15     XRRA1 Dx_DEG_Down             down              <NA>           NA
 **** Job ends ****
-Thu Jun 26 10:31:37 AM EDT 2025
+Wed Sep  3 07:45:58 PM EDT 2025

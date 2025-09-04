@@ -96,16 +96,12 @@ pdf(here("plots", "05_differential_expression", "donor_domain_level_pseudobulk_D
     #     force = 2,
     #     nudge_y = -0.1
     #   ) +
-      labs(
-        title = paste0(
-          "Donor-domain level analysis by Dx"
-        )
-      ) +theme_minimal()+
-         theme(axis.text.x=element_text(size=16),
+     theme_minimal()+
+    theme(axis.text.x=element_text(size=16),
             axis.text.y=element_text(size=16),
-            axis.title.x=element_text(size=16),
-            axis.title.y=element_text(size=16),
-            plot.title = element_text(hjust = 0.5, size=20))
+            axis.title.x=element_text(size=18),
+            axis.title.y=element_text(size=18),
+            legend.title=element_text(size=16))
   )
 dev.off()
 
