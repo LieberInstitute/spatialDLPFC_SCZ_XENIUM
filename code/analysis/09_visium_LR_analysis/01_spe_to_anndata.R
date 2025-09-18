@@ -4,7 +4,7 @@ library(ggplot2)
 library(escheR)
 library(patchwork)
 library(tidyverse)
-#library(zellkonverter)
+library(zellkonverter)
 
 spe <- readRDS(
   here::here(
@@ -13,6 +13,9 @@ spe <- readRDS(
     "fnl_spe_kept_spots_only.rds"
   )
 )
+
+# make the rownames the gene symbols
+rownames(spe) <- rowData(spe)$gene_name
 
 dim(spe)
 #[1]  36601 279806
@@ -55,44 +58,44 @@ neur_plots <- list()
 neuropil_plots <- list()
 pnn_plots <- list()
 vasc_plots <- list()
-for(i in 1:length(brnums)){
-    br_use <- brnums[[i]]
-    spe_sub <- spe[,spe$BrNumbr == br_use]
+# for(i in 1:length(brnums)){
+#     br_use <- brnums[[i]]
+#     spe_sub <- spe[,spe$BrNumbr == br_use]
 
-    p_neurons <- make_escheR(spe_sub) %>%
-        add_fill("neun_pos") +
-        scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
-        ggtitle(paste0(br_use, " Neurons"))
+#     p_neurons <- make_escheR(spe_sub) %>%
+#         add_fill("neun_pos") +
+#         scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
+#         ggtitle(paste0(br_use, " Neurons"))
     
-    p_neuropil <- make_escheR(spe_sub) %>%
-        add_fill("neuropil_pos") +
-        scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
-        ggtitle(paste0(br_use, " Neuropil"))
+#     p_neuropil <- make_escheR(spe_sub) %>%
+#         add_fill("neuropil_pos") +
+#         scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
+#         ggtitle(paste0(br_use, " Neuropil"))
     
-    p_pnn <- make_escheR(spe_sub) %>%
-        add_fill("pnn_pos") +
-        scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
-        ggtitle(paste0(br_use, " PNN"))
+#     p_pnn <- make_escheR(spe_sub) %>%
+#         add_fill("pnn_pos") +
+#         scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
+#         ggtitle(paste0(br_use, " PNN"))
     
-    p_vasc <- make_escheR(spe_sub) %>%
-        add_fill("vasc_pos") +
-        scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
-        ggtitle(paste0(br_use, " Vasc"))
+#     p_vasc <- make_escheR(spe_sub) %>%
+#         add_fill("vasc_pos") +
+#         scale_fill_manual(values = c("TRUE" = "red", "FALSE" = "lightgrey")) +
+#         ggtitle(paste0(br_use, " Vasc"))
 
-    neur_plots[[i]] <- p_neurons
-    neuropil_plots[[i]] <- p_neuropil
-    pnn_plots[[i]] <- p_pnn
-    vasc_plots[[i]] <- p_vasc
+#     neur_plots[[i]] <- p_neurons
+#     neuropil_plots[[i]] <- p_neuropil
+#     pnn_plots[[i]] <- p_pnn
+#     vasc_plots[[i]] <- p_vasc
 
-}
+# }
 
-pdf(here("plots", "09_visium_LR_analysis", "spot_types_by_brnum.pdf"), 
-    width = 20, height = 15)
-print(wrap_plots(neur_plots, ncol=8) + plot_annotation(title = "Neurons"))
-print(wrap_plots(neuropil_plots, ncol=8) + plot_annotation(title = "Neuropil"))
-print(wrap_plots(pnn_plots, ncol=8) + plot_annotation(title = "PNN"))
-print(wrap_plots(vasc_plots, ncol=8) + plot_annotation(title = "Vasc"))
-dev.off()
+# pdf(here("plots", "09_visium_LR_analysis", "spot_types_by_brnum.pdf"), 
+#     width = 20, height = 15)
+# print(wrap_plots(neur_plots, ncol=8) + plot_annotation(title = "Neurons"))
+# print(wrap_plots(neuropil_plots, ncol=8) + plot_annotation(title = "Neuropil"))
+# print(wrap_plots(pnn_plots, ncol=8) + plot_annotation(title = "PNN"))
+# print(wrap_plots(vasc_plots, ncol=8) + plot_annotation(title = "Vasc"))
+# dev.off()
 
 # Turn the SPE objects into SCEs so that zellkonverter can convert them to AnnData
 colData(spe_neurons)$spot_type <- "neurons"
