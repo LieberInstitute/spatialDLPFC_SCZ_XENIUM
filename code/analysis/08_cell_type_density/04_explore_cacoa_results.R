@@ -38,19 +38,19 @@ spe$isLayer <- spe$domain_annotations %in% c("L2/3")
 #---------------------------------------
 
 
-pdf(here("plots", "08_cell_type_density", 
-         "l6ex_on_tissue.pdf"))
-for (i in 1:length(brnums)){
-  brnum <- brnums[i]
-  spe_sub <- spe[, spe$BrNum == brnum]
+# pdf(here("plots", "08_cell_type_density", 
+#          "l6ex_on_tissue.pdf"))
+# for (i in 1:length(brnums)){
+#   brnum <- brnums[i]
+#   spe_sub <- spe[, spe$BrNum == brnum]
   
-  p <- make_escheR(spe_sub) %>%
-      add_ground("isLayer", stroke=0.75) %>%
-      add_fill("is_l6ex", point_size=0.8) +
-      ggtitle(paste0(brnum, " ", spe_sub$Dx[1]))
-  print(p)
-}
-dev.off()
+#   p <- make_escheR(spe_sub) %>%
+#       add_ground("isLayer", stroke=0.75) %>%
+#       add_fill("is_l6ex", point_size=0.8) +
+#       ggtitle(paste0(brnum, " ", spe_sub$Dx[1]))
+#   print(p)
+# }
+# dev.off()
 
 # Make a boxplot of the proportion of L6 Ex cells in L2/3  
 
@@ -71,10 +71,16 @@ props <- props %>%
 
 p <- ggplot(props, aes(x=BrNum, y=proportion, fill=Dx))+
   geom_bar(stat="identity")+
-  ggtitle("Proportion of cells in L2/3 that are L6 Ex")
+  ggtitle("Proportion of cells in L2/3 that are L6 Ex")+
+  theme(axis.text.x=element_text(angle=45, hjust=1))
 print(p)
 
 dev.off()
+print(props)
+# print minimum and max proportion of L6 Ex cells in L2/3 for SCZ donors
+props_scz <- props %>% filter(Dx=="SCZ")
+print(paste0("Min proportion of L6 Ex cells in L2/3 for SCZ donors: ", min(props_scz$proportion)))
+print(paste0("Max proportion of L6 Ex cells in L2/3 for SCZ donors: ", max(props_scz$proportion)))
 
 # spe_l6ex <- spe[,spe$cell_types == "L6 Ex"]
 # spe_l6ex <- scater::runPCA(spe_l6ex, ncomponents=50)
