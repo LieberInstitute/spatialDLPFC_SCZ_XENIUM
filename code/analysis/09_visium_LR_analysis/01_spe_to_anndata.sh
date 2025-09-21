@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=01_spe_to_anndata
 #SBATCH --mem=100G
-#SBATCH --time=00:30:00
+#SBATCH --time=10:00:00
 #SBATCH -n 1
 #SBATCH --output=logs/%x.txt
 #SBATCH --error=logs/%x.txt    # file to collect standard output
