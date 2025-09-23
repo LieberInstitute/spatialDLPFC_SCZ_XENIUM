@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Sep 17 03:20:58 PM EDT 2025
+Mon Sep 22 08:15:08 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22581446
+Job id: 22691346
 Job name: 02_assess_spd_composition
 Hostname: jhpce3
 Task id: 
@@ -143,45 +143,3 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
-            used   (Mb) gc trigger    (Mb)   max used    (Mb)
-Ncells   9389354  501.5   17475735   933.4   14887618   795.1
-Vcells 500920306 3821.8 3769055989 28755.7 4622640427 35268.0
-class: SpatialExperiment 
-dim: 300 1262965 
-metadata(576): Samples Samples ... Samples Samples
-assays(2): counts logcounts
-rownames(300): A2M ABCA2 ... ZNF804A ZP3
-rowData names(4): ID Symbol Type gene_name
-colnames(1262965): Br1113_1 Br1113_2 ... Br8772_56955 Br8772_56956
-colData names(24): Sample Barcode ... sizeFactor nmf_preds
-reducedDimNames(1): nmf_projections
-mainExpName: NULL
-altExpNames(0):
-spatialCoords names(2) : x_centroid y_centroid
-imgData names(1): sample_id
-Error in `mutate()`:
-ℹ In argument: `domain_annotations = case_when(...)`.
-Caused by error in `case_when()`:
-! Failed to evaluate the left-hand side of formula 1.
-Caused by error:
-! object 'predictions_smooth' not found
-Backtrace:
-     ▆
-  1. ├─colData(spe_all) %>% as.data.frame() %>% ...
-  2. ├─dplyr::mutate(...)
-  3. ├─dplyr:::mutate.data.frame(...)
-  4. │ └─dplyr:::mutate_cols(.data, dplyr_quosures(...), by)
-  5. │   ├─base::withCallingHandlers(...)
-  6. │   └─dplyr:::mutate_col(dots[[i]], data, mask, new_columns)
-  7. │     └─mask$eval_all_mutate(quo)
-  8. │       └─dplyr (local) eval()
-  9. ├─dplyr::case_when(...)
- 10. │ └─dplyr:::case_formula_evaluate(...)
- 11. │   ├─base::withCallingHandlers(...)
- 12. │   └─rlang::eval_tidy(pair$lhs, env = default_env)
- 13. └─base::.handleSimpleError(...)
- 14.   └─dplyr (local) h(simpleError(msg, call))
- 15.     └─rlang::abort(message, parent = cnd, call = error_call)
-Execution halted
-**** Job ends ****
-Wed Sep 17 03:24:27 PM EDT 2025
