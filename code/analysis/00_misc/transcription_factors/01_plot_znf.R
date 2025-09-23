@@ -216,22 +216,36 @@ plot_heatmap <- function(spe, gene){
 
 
   top_ha <- HeatmapAnnotation(
-    SpatialDomain = domain_vec,
+    Domain = domain_vec,
     Diagnosis = diagnosis_vec,
     col = list(
-      SpatialDomain = domain_colors,
+      Domain = domain_colors,
       Diagnosis = diagnosis_colors
     ),
-    annotation_height = unit.c(unit(5, "mm"), unit(5, "mm"))
+    annotation_height = unit.c(unit(5, "mm"), unit(5, "mm")),
+    annotation_legend_param=list(Domain=list(nrow=1, direction="horizontal",
+        labels_gp=gpar(fontsize=16),
+        title_gp=gpar(fontsize=16)), 
+        Diagnosis=list(nrow=1, direction="horizontal",
+        labels_gp=gpar(fontsize=16),
+        title_gp=gpar(fontsize=16))),
+    annotation_name_gp = gpar(fontsize = 16)
   )
-
+  # replace colnames with just the brnum
+  colnames(heatmap_matrix_ordered) <- sapply(strsplit(colnames(heatmap_matrix_ordered), "_"), `[`, 1)
+  print(colnames(heatmap_matrix_ordered))
   ht <- Heatmap(heatmap_matrix_ordered,
     name = paste("Expression of", gene),
     show_row_names = TRUE,
     show_column_names = TRUE,
     cluster_rows = TRUE,
     cluster_columns = FALSE,
-    bottom_annotation = top_ha
+    bottom_annotation = top_ha,
+    heatmap_legend_param = list(
+               direction = "horizontal", 
+               labels_gp=gpar(fontsize=12),
+               title_gp=gpar(fontsize=16)),
+    row_names_gp = gpar(fontsize = 16)
   )
   return(ht)
 }
@@ -240,12 +254,12 @@ ht_znf <- plot_heatmap(spe, gene_plot)
 ht_xrra <- plot_heatmap(spe, "XRRA1")
 
 pdf(here("plots", "00_misc", "transcription_factors", "ZNF804A_proportion.pdf"), 
-            width=10, height=8)
+            width=20, height=10)
 
 
 #print(p)
-draw(ht_znf)
-draw(ht_xrra)
+draw(ht_znf,heatmap_legend_side = "bottom", annotation_legend_side = "bottom", merge_legend=TRUE)
+draw(ht_xrra,heatmap_legend_side = "bottom", annotation_legend_side = "bottom", merge_legend=TRUE)
 dev.off()
 
 
