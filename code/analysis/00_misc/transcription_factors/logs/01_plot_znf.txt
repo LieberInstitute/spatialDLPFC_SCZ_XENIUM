@@ -1,0 +1,88 @@
+**** Job starts ****
+Mon Sep 22 08:07:56 PM EDT 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 22691336
+Job name: 01_plot_znf
+Hostname: jhpce3
+Task id: 
+Loading conda_R/4.3.x
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+class: SpatialExperiment 
+dim: 300 1262965 
+metadata(24): Samples Samples ... Samples Samples
+assays(1): counts
+rownames(300): A2M ABCA2 ... ZNF804A ZP3
+rowData names(3): ID Symbol Type
+colnames(1262965): Br1113_1 Br1113_2 ... Br8772_56955 Br8772_56956
+colData names(22): Sample Barcode ... Age Sex
+reducedDimNames(0):
+mainExpName: NULL
+altExpNames(0):
+spatialCoords names(2) : x_centroid y_centroid
+imgData names(1): sample_id
+  X V1       V2
+1 1 16 Br1113_1
+2 2  5 Br1113_2
+3 3  7 Br1113_3
+4 4  3 Br1113_4
+5 5  7 Br1113_5
+6 6  3 Br1113_6
+  [1] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+  [9] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [17] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [25] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+ [33] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [41] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [49] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+ [57] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [65] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [73] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+ [81] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [89] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [97] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+[105] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+[113] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+[121] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+[129] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+[137] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+[145] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+[153] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+[161] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+  [1] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+  [9] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [17] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [25] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+ [33] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [41] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [49] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+ [57] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [65] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [73] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+ [81] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+ [89] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+ [97] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+[105] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+[113] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+[121] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+[129] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+[137] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+[145] "Br1113" "Br2719" "Br5314" "Br5400" "Br5436" "Br5622" "Br5639" "Br5931"
+[153] "Br6389" "Br6432" "Br8433" "Br8667" "Br1139" "Br2039" "Br2421" "Br5373"
+[161] "Br5588" "Br5590" "Br5746" "Br5973" "Br6032" "Br6437" "Br6496" "Br8772"
+The automatically generated colors map from the 1^st and 99^th of the
+values in the matrix. There are outliers in the matrix whose patterns
+might be hidden by this color mapping. You can manually set the color
+to `col` argument.
+
+Use `suppressMessages()` to turn off this message.
+null device 
+          1 
+**** Job ends ****
+Mon Sep 22 08:09:04 PM EDT 2025
