@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=01_spe_to_anndata
-#SBATCH --mem=100G
+#SBATCH --mem=250G
 #SBATCH --time=10:00:00
 #SBATCH -n 1
 #SBATCH --output=logs/%x.txt
