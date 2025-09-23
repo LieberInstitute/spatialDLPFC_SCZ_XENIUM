@@ -42,6 +42,7 @@ slide_id <- unlist(lapply(strsplit(slide_id, split="__Br"), "[", 1))
 
 spe_pseudo$slide_id <- slide_id
 
+
 run_date <- unlist(lapply(strsplit(spe_pseudo$Sample, split="/"), "[", 7))
 spe_pseudo$run_date <- run_date
 
