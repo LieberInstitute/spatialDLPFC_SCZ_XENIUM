@@ -109,7 +109,8 @@ else:
         adata.obsm['spatial'] = adata.obs[['coord_x', 'coord_y']].to_numpy()
         adata.X = adata.layers['logcounts'].toarray()
         adata.var_names_make_unique()
-        sdm.weight_matrix(adata, l=75, cutoff=0.2, single_cell=False) # weight_matrix by rbf kernel
+        #sdm.weight_matrix(adata, l=75, cutoff=0.2, single_cell=False) # weight_matrix by rbf kernel
+        sdm.weight_matrix(adata, l=75, n_neighbors=6, single_cell=False)
         sdm.extract_lr(adata, 'human', min_cell=3, mean="algebra") 
         sdm.spatialdm_global(adata, 1000, specified_ind=None, method='z-score', nproc=1)  
         sdm.sig_pairs(adata, method='z-score', fdr=True, threshold=0.1)
