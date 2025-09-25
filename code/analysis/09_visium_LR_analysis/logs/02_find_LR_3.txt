@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Sep 22 03:28:22 PM EDT 2025
+Tue Sep 23 11:58:12 AM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22687258
+Job id: 22696918
 Job name: 02_find_LR
 Hostname: jhpce3
 Task id: 3
@@ -16,22 +16,105 @@ Currently Loaded Modules:
 
 vasc
 vasc
-/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
-  utils.warn_names_duplicates("var")
-/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
-  utils.warn_names_duplicates("var")
 file does not exist, running spatialDM
+AnnData object with n_obs × n_vars = 21906 × 36601
+    obs: 'sample_id', 'in_tissue', 'array_row', 'array_col', 'X10x_graphclust', 'X10x_kmeans_10_clusters', 'X10x_kmeans_2_clusters', 'X10x_kmeans_3_clusters', 'X10x_kmeans_4_clusters', 'X10x_kmeans_5_clusters', 'X10x_kmeans_6_clusters', 'X10x_kmeans_7_clusters', 'X10x_kmeans_8_clusters', 'X10x_kmeans_9_clusters', 'key', 'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio', 'spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI', 'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA', 'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5', 'spg_CNClaudin5', 'BrNumbr', 'dx', 'DX', 'sex', 'age', 'rin', 'slide_id', 'lot_num', 'brnum', 'sample_label', 'outlier_cat', 'removed_spots', 'PRECAST_02', 'PRECAST_03', 'PRECAST_04', 'PRECAST_05', 'PRECAST_06', 'PRECAST_07', 'PRECAST_08', 'PRECAST_09', 'PRECAST_10', 'PRECAST_11', 'PRECAST_12', 'PRECAST_13', 'PRECAST_14', 'PRECAST_15', 'PRECAST_16', 'fnl_spd', 'spd_label', 'pnn_pos', 'neuropil_pos', 'neun_pos', 'vasc_pos', 'sizeFactor', 'spot_type', 'coord_x', 'coord_y', 'batch'
+    uns: 'ligand', 'receptor', 'geneInter', 'method', 'p_df', 'tf_df', 'zscore_df'
+    obsm: '10x_pca', '10x_tsne', '10x_umap', 'spatial'
+    layers: 'logcounts'
+AnnData object with n_obs × n_vars = 21906 × 36601
+    obs: 'sample_id', 'in_tissue', 'array_row', 'array_col', 'X10x_graphclust', 'X10x_kmeans_10_clusters', 'X10x_kmeans_2_clusters', 'X10x_kmeans_3_clusters', 'X10x_kmeans_4_clusters', 'X10x_kmeans_5_clusters', 'X10x_kmeans_6_clusters', 'X10x_kmeans_7_clusters', 'X10x_kmeans_8_clusters', 'X10x_kmeans_9_clusters', 'key', 'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio', 'spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI', 'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA', 'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5', 'spg_CNClaudin5', 'BrNumbr', 'dx', 'DX', 'sex', 'age', 'rin', 'slide_id', 'lot_num', 'brnum', 'sample_label', 'outlier_cat', 'removed_spots', 'PRECAST_02', 'PRECAST_03', 'PRECAST_04', 'PRECAST_05', 'PRECAST_06', 'PRECAST_07', 'PRECAST_08', 'PRECAST_09', 'PRECAST_10', 'PRECAST_11', 'PRECAST_12', 'PRECAST_13', 'PRECAST_14', 'PRECAST_15', 'PRECAST_16', 'fnl_spd', 'spd_label', 'pnn_pos', 'neuropil_pos', 'neun_pos', 'vasc_pos', 'sizeFactor', 'spot_type', 'coord_x', 'coord_y', 'batch'
+    uns: 'ligand', 'receptor', 'geneInter', 'method', 'p_df', 'tf_df', 'zscore_df'
+    obsm: '10x_pca', '10x_tsne', '10x_umap', 'spatial'
+    layers: 'logcounts'
+             Br2627_scz  Br1682_scz  ...  Br1753_ntc  Br5931_ntc
+VSIR_IGSF11    0.870612    0.702586  ...    1.000000    0.280560
+EFNA5_EPHA7    0.856082    0.761642  ...    1.000000    0.484979
+EFNA5_EPHB2    0.650772    0.131009  ...    0.321637    0.638009
+EFNB1_EPHA4    0.423513    0.471194  ...    1.000000    0.566655
+EFNB1_EPHB1    0.769830    0.238961  ...    1.000000    0.156931
+
+[5 rows x 63 columns]
+             Br2627_scz  Br1682_scz  ...  Br1753_ntc  Br5931_ntc
+VSIR_IGSF11       False       False  ...       False       False
+EFNA5_EPHA7       False       False  ...       False       False
+EFNA5_EPHB2       False       False  ...       False       False
+EFNB1_EPHA4       False       False  ...       False       False
+EFNB1_EPHB1       False       False  ...       False       False
+
+[5 rows x 63 columns]
+             Br2627_scz  Br1682_scz  ...  Br1753_ntc  Br5931_ntc
+VSIR_IGSF11   -1.129288   -0.531854  ...    0.000000    0.581178
+EFNA5_EPHA7   -1.062881   -0.711594  ...    0.000000    0.037662
+EFNA5_EPHB2   -0.387406    1.121636  ...    0.463126   -0.353143
+EFNB1_EPHA4    0.192915    0.072270  ...    0.000000   -0.167864
+EFNB1_EPHB1   -0.738287    0.709649  ...    0.000000    1.007152
+
+[5 rows x 63 columns]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+['Br2627_scz', 'Br1682_scz', 'Br1578_scz', 'Br1139_scz', 'Br5224_scz', 'Br2470_scz', 'Br5746_scz', 'Br6032_scz', 'Br5928_scz', 'Br5588_scz', 'Br8772_scz', 'Br2421_scz', 'Br6369_scz', 'Br6496_scz', 'Br1923_scz', 'Br8207_scz', 'Br5573_scz', 'Br5973_scz', 'Br6560_scz', 'Br6437_scz', 'Br8514_scz', 'Br5789_scz', 'Br5590_scz', 'Br2242_scz', 'Br8537_scz', 'Br5888_scz', 'Br5636_scz', 'Br5373_scz', 'Br2378_scz', 'Br2039_scz', 'Br1526_scz', 'Br1958_scz', 'Br5276_ntc', 'Br8492_ntc', 'Br8667_ntc', 'Br8433_ntc', 'Br5622_ntc', 'Br8042_ntc', 'Br8218_ntc', 'Br1204_ntc', 'Br5228_ntc', 'Br5472_ntc', 'Br5182_ntc', 'Br2719_ntc', 'Br5367_ntc', 'Br1113_ntc', 'Br6432_ntc', 'Br1214_ntc', 'Br6257_ntc', 'Br5314_ntc', 'Br5639_ntc', 'Br1092_ntc', 'Br6297_ntc', 'Br8325_ntc', 'Br5599_ntc', 'Br5436_ntc', 'Br5395_ntc', 'Br5400_ntc', 'Br8406_ntc', 'Br2720_ntc', 'Br6389_ntc', 'Br1753_ntc', 'Br5931_ntc']
+VSIR_IGSF11        -0.151742
+EFNA5_EPHA7        -0.119169
+EFNA5_EPHB2        -0.045958
+EFNB1_EPHA4         0.140254
+EFNB1_EPHB1        -0.074698
+                      ...   
+CCL5_CCR5           0.000000
+IGF2_IGF2R          0.000000
+IGF2_IGF1R          0.000000
+IGF2_ITGAV_ITGB3    0.000000
+IGF2_ITGA6_ITGB4    0.000000
+Length: 1281, dtype: float64
+AnnData object with n_obs × n_vars = 21906 × 36601
+    obs: 'sample_id', 'in_tissue', 'array_row', 'array_col', 'X10x_graphclust', 'X10x_kmeans_10_clusters', 'X10x_kmeans_2_clusters', 'X10x_kmeans_3_clusters', 'X10x_kmeans_4_clusters', 'X10x_kmeans_5_clusters', 'X10x_kmeans_6_clusters', 'X10x_kmeans_7_clusters', 'X10x_kmeans_8_clusters', 'X10x_kmeans_9_clusters', 'key', 'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio', 'spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI', 'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA', 'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5', 'spg_CNClaudin5', 'BrNumbr', 'dx', 'DX', 'sex', 'age', 'rin', 'slide_id', 'lot_num', 'brnum', 'sample_label', 'outlier_cat', 'removed_spots', 'PRECAST_02', 'PRECAST_03', 'PRECAST_04', 'PRECAST_05', 'PRECAST_06', 'PRECAST_07', 'PRECAST_08', 'PRECAST_09', 'PRECAST_10', 'PRECAST_11', 'PRECAST_12', 'PRECAST_13', 'PRECAST_14', 'PRECAST_15', 'PRECAST_16', 'fnl_spd', 'spd_label', 'pnn_pos', 'neuropil_pos', 'neun_pos', 'vasc_pos', 'sizeFactor', 'spot_type', 'coord_x', 'coord_y', 'batch'
+    uns: 'ligand', 'receptor', 'geneInter', 'method', 'p_df', 'tf_df', 'zscore_df', 'subset', 'conditions', 'n_sub', 'p_val', 'diff', 'diff_fdr', 'q1', 'q2', 'fdr_co', 'scz_specific', 'ntc_specific', 'scz_only', 'ntc_only'
+    obsm: '10x_pca', '10x_tsne', '10x_umap', 'spatial'
+    layers: 'logcounts'
+/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+  utils.warn_names_duplicates("var")
+/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+  utils.warn_names_duplicates("var")
+/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/seaborn/matrix.py:560: UserWarning: Clustering large matrix with scipy. Installing `fastcluster` may give better performance.
+  warnings.warn(msg)
+/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/seaborn/matrix.py:560: UserWarning: Clustering large matrix with scipy. Installing `fastcluster` may give better performance.
+  warnings.warn(msg)
 Traceback (most recent call last):
-  File "02_find_LR.py", line 112, in <module>
-    sdm.weight_matrix(adata, l=75, cutoff=0.2, single_cell=False) # weight_matrix by rbf kernel
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/spatialdm/main.py", line 41, in weight_matrix
-    spatial_W, KNN_connect = rbfweight(X_loc, l=l, cutoff=cutoff, 
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/spatialdm/stats.py", line 79, in rbfweight
-    nbr_d = nnbrs.kneighbors_graph(X_loc, mode='distance')
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/sklearn/neighbors/_base.py", line 986, in kneighbors_graph
-    A_data, A_ind = self.kneighbors(X, n_neighbors, return_distance=True)
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/sklearn/neighbors/_base.py", line 808, in kneighbors
-    raise ValueError(
-ValueError: Expected n_neighbors <= n_samples,  but n_samples = 158, n_neighbors = 186
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/utils.py", line 246, in func_wrapper
+    return func(*args, **kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/specs/registry.py", line 297, in write_elem
+    self.registry.get_writer(dest_type, t, modifiers),
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/specs/registry.py", line 112, in get_writer
+    raise IORegistryError._from_write_parts(dest_type, src_type, modifiers)
+anndata._io.specs.registry.IORegistryError: No method registered for writing <class 'pandas.core.series.Series'> into <class 'h5py._hl.group.Group'>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "02_find_LR.py", line 190, in <module>
+    concat.write(res_fname)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py", line 1959, in write_h5ad
+    _write_h5ad(
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/h5ad.py", line 99, in write_h5ad
+    write_elem(f, "uns", dict(adata.uns), dataset_kwargs=dataset_kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/specs/registry.py", line 353, in write_elem
+    Writer(_REGISTRY).write_elem(store, k, elem, dataset_kwargs=dataset_kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/utils.py", line 248, in func_wrapper
+    re_raise_error(e, elem, key)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/utils.py", line 246, in func_wrapper
+    return func(*args, **kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/specs/registry.py", line 311, in write_elem
+    return write_func(store, k, elem, dataset_kwargs=dataset_kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/specs/registry.py", line 52, in wrapper
+    result = func(g, k, *args, **kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/specs/methods.py", line 281, in write_mapping
+    _writer.write_elem(g, sub_k, sub_v, dataset_kwargs=dataset_kwargs)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/utils.py", line 248, in func_wrapper
+    re_raise_error(e, elem, key)
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/utils.py", line 229, in re_raise_error
+    raise type(e)(
+anndata._io.specs.registry.IORegistryError: No method registered for writing <class 'pandas.core.series.Series'> into <class 'h5py._hl.group.Group'>
+
+Above error raised while writing key 'diff' of <class 'h5py._hl.group.Group'> to /
 **** Job ends ****
-Mon Sep 22 03:38:30 PM EDT 2025
+Tue Sep 23 12:44:25 PM EDT 2025

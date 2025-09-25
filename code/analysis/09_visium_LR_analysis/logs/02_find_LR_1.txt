@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Sep 22 03:28:22 PM EDT 2025
+Tue Sep 23 11:58:12 AM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22687260
+Job id: 22696920
 Job name: 02_find_LR
 Hostname: jhpce3
 Task id: 1
@@ -16,23 +16,63 @@ Currently Loaded Modules:
 
 neuropil
 neuropil
-file exists, reading it in
-/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
-  utils.warn_names_duplicates("var")
-/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
-  utils.warn_names_duplicates("var")
-Traceback (most recent call last):
-  File "02_find_LR.py", line 104, in <module>
-    concat = sc.read_h5ad(res_fname)
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_io/h5ad.py", line 219, in read_h5ad
-    with h5py.File(filename, "r") as f:
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/h5py/_hl/files.py", line 562, in __init__
-    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
-  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/h5py/_hl/files.py", line 235, in make_fid
-    fid = h5f.open(name, flags, fapl=fapl)
-  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
-  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
-  File "h5py/h5f.pyx", line 102, in h5py.h5f.open
-OSError: Unable to synchronously open file (truncated file: eof = 96, sblock->base_addr = 0, stored_eof = 2048)
+slurmstepd: error: *** JOB 22696907 ON compute-153 CANCELLED AT 2025-09-23T11:58:20 ***
+file does not exist, running spatialDM
+AnnData object with n_obs × n_vars = 147965 × 36601
+    obs: 'sample_id', 'in_tissue', 'array_row', 'array_col', 'X10x_graphclust', 'X10x_kmeans_10_clusters', 'X10x_kmeans_2_clusters', 'X10x_kmeans_3_clusters', 'X10x_kmeans_4_clusters', 'X10x_kmeans_5_clusters', 'X10x_kmeans_6_clusters', 'X10x_kmeans_7_clusters', 'X10x_kmeans_8_clusters', 'X10x_kmeans_9_clusters', 'key', 'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio', 'spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI', 'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA', 'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5', 'spg_CNClaudin5', 'BrNumbr', 'dx', 'DX', 'sex', 'age', 'rin', 'slide_id', 'lot_num', 'brnum', 'sample_label', 'outlier_cat', 'removed_spots', 'PRECAST_02', 'PRECAST_03', 'PRECAST_04', 'PRECAST_05', 'PRECAST_06', 'PRECAST_07', 'PRECAST_08', 'PRECAST_09', 'PRECAST_10', 'PRECAST_11', 'PRECAST_12', 'PRECAST_13', 'PRECAST_14', 'PRECAST_15', 'PRECAST_16', 'fnl_spd', 'spd_label', 'pnn_pos', 'neuropil_pos', 'neun_pos', 'vasc_pos', 'sizeFactor', 'spot_type', 'coord_x', 'coord_y', 'batch'
+    uns: 'ligand', 'receptor', 'geneInter', 'method', 'p_df', 'tf_df', 'zscore_df'
+    obsm: '10x_pca', '10x_tsne', '10x_umap', 'spatial'
+    layers: 'logcounts'
+AnnData object with n_obs × n_vars = 147965 × 36601
+    obs: 'sample_id', 'in_tissue', 'array_row', 'array_col', 'X10x_graphclust', 'X10x_kmeans_10_clusters', 'X10x_kmeans_2_clusters', 'X10x_kmeans_3_clusters', 'X10x_kmeans_4_clusters', 'X10x_kmeans_5_clusters', 'X10x_kmeans_6_clusters', 'X10x_kmeans_7_clusters', 'X10x_kmeans_8_clusters', 'X10x_kmeans_9_clusters', 'key', 'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio', 'spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI', 'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA', 'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5', 'spg_CNClaudin5', 'BrNumbr', 'dx', 'DX', 'sex', 'age', 'rin', 'slide_id', 'lot_num', 'brnum', 'sample_label', 'outlier_cat', 'removed_spots', 'PRECAST_02', 'PRECAST_03', 'PRECAST_04', 'PRECAST_05', 'PRECAST_06', 'PRECAST_07', 'PRECAST_08', 'PRECAST_09', 'PRECAST_10', 'PRECAST_11', 'PRECAST_12', 'PRECAST_13', 'PRECAST_14', 'PRECAST_15', 'PRECAST_16', 'fnl_spd', 'spd_label', 'pnn_pos', 'neuropil_pos', 'neun_pos', 'vasc_pos', 'sizeFactor', 'spot_type', 'coord_x', 'coord_y', 'batch'
+    uns: 'ligand', 'receptor', 'geneInter', 'method', 'p_df', 'tf_df', 'zscore_df'
+    obsm: '10x_pca', '10x_tsne', '10x_umap', 'spatial'
+    layers: 'logcounts'
+             Br5746_scz  Br5928_scz  ...  Br1092_ntc  Br1113_ntc
+VSIR_IGSF11    0.841686    0.833230  ...    0.315690    0.075973
+EFNA5_EPHA7    0.230503    0.131607  ...    0.013740    0.743244
+EFNA5_EPHA8    0.400135    1.000000  ...    0.076588    0.220073
+EFNA5_EPHB2    0.960135    0.362588  ...    0.523575    0.554933
+EFNB1_EPHA4    0.371224    0.453650  ...    0.871968    0.993245
+
+[5 rows x 63 columns]
+             Br5746_scz  Br5928_scz  ...  Br1092_ntc  Br1113_ntc
+VSIR_IGSF11       False       False  ...       False       False
+EFNA5_EPHA7       False       False  ...       False       False
+EFNA5_EPHA8       False       False  ...       False       False
+EFNA5_EPHB2       False       False  ...       False       False
+EFNB1_EPHA4       False       False  ...       False       False
+
+[5 rows x 63 columns]
+             Br5746_scz  Br5928_scz  ...  Br1092_ntc  Br1113_ntc
+VSIR_IGSF11   -1.001410   -0.967010  ...    0.479785    1.432690
+EFNA5_EPHA7    0.737191    1.118829  ...    2.204635   -0.653380
+EFNA5_EPHA8    0.252999    0.000000  ...    1.428401    0.771947
+EFNA5_EPHB2   -1.752253    0.351549  ...   -0.059128   -0.138134
+EFNB1_EPHA4    0.328614    0.116444  ...   -1.135741   -2.470059
+
+[5 rows x 63 columns]
+[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+['Br5746_scz', 'Br5928_scz', 'Br2627_scz', 'Br2421_scz', 'Br6032_scz', 'Br1139_scz', 'Br8772_scz', 'Br6560_scz', 'Br6437_scz', 'Br5888_scz', 'Br5588_scz', 'Br6496_scz', 'Br6369_scz', 'Br5973_scz', 'Br5573_scz', 'Br1923_scz', 'Br1682_scz', 'Br2470_scz', 'Br1578_scz', 'Br8207_scz', 'Br5224_scz', 'Br8514_scz', 'Br1958_scz', 'Br2039_scz', 'Br5590_scz', 'Br2378_scz', 'Br5636_scz', 'Br5373_scz', 'Br5789_scz', 'Br8537_scz', 'Br2242_scz', 'Br1526_scz', 'Br8433_ntc', 'Br8667_ntc', 'Br2719_ntc', 'Br5276_ntc', 'Br5472_ntc', 'Br6432_ntc', 'Br8406_ntc', 'Br5182_ntc', 'Br5228_ntc', 'Br1214_ntc', 'Br8218_ntc', 'Br5367_ntc', 'Br1204_ntc', 'Br8492_ntc', 'Br6389_ntc', 'Br5599_ntc', 'Br6257_ntc', 'Br5622_ntc', 'Br5314_ntc', 'Br5639_ntc', 'Br2720_ntc', 'Br5400_ntc', 'Br6297_ntc', 'Br5395_ntc', 'Br5436_ntc', 'Br1753_ntc', 'Br5931_ntc', 'Br8325_ntc', 'Br8042_ntc', 'Br1092_ntc', 'Br1113_ntc']
+VSIR_IGSF11             0.379090
+EFNA5_EPHA7             0.498457
+EFNA5_EPHA8             0.287588
+EFNA5_EPHB2             0.122668
+EFNB1_EPHA4            -0.149162
+                          ...   
+IL17AF_IL17RA_IL17RC    0.000000
+IL17F_IL17RA_IL17RC     0.000000
+GH_PRLR                 0.000000
+GH_GHR                  0.000000
+GH1_GHR                 0.000000
+Length: 1569, dtype: float64
+AnnData object with n_obs × n_vars = 147965 × 36601
+    obs: 'sample_id', 'in_tissue', 'array_row', 'array_col', 'X10x_graphclust', 'X10x_kmeans_10_clusters', 'X10x_kmeans_2_clusters', 'X10x_kmeans_3_clusters', 'X10x_kmeans_4_clusters', 'X10x_kmeans_5_clusters', 'X10x_kmeans_6_clusters', 'X10x_kmeans_7_clusters', 'X10x_kmeans_8_clusters', 'X10x_kmeans_9_clusters', 'key', 'sum_umi', 'sum_gene', 'expr_chrM', 'expr_chrM_ratio', 'spg_NDAPI', 'spg_PDAPI', 'spg_IDAPI', 'spg_CNDAPI', 'spg_NNeuN', 'spg_PNeuN', 'spg_INeuN', 'spg_CNNeuN', 'spg_NWFA', 'spg_PWFA', 'spg_IWFA', 'spg_CNWFA', 'spg_NClaudin5', 'spg_PClaudin5', 'spg_IClaudin5', 'spg_CNClaudin5', 'BrNumbr', 'dx', 'DX', 'sex', 'age', 'rin', 'slide_id', 'lot_num', 'brnum', 'sample_label', 'outlier_cat', 'removed_spots', 'PRECAST_02', 'PRECAST_03', 'PRECAST_04', 'PRECAST_05', 'PRECAST_06', 'PRECAST_07', 'PRECAST_08', 'PRECAST_09', 'PRECAST_10', 'PRECAST_11', 'PRECAST_12', 'PRECAST_13', 'PRECAST_14', 'PRECAST_15', 'PRECAST_16', 'fnl_spd', 'spd_label', 'pnn_pos', 'neuropil_pos', 'neun_pos', 'vasc_pos', 'sizeFactor', 'spot_type', 'coord_x', 'coord_y', 'batch'
+    uns: 'ligand', 'receptor', 'geneInter', 'method', 'p_df', 'tf_df', 'zscore_df', 'subset', 'conditions', 'n_sub', 'p_val', 'diff', 'diff_fdr', 'q1', 'q2', 'fdr_co', 'scz_specific', 'ntc_specific', 'scz_only', 'ntc_only'
+    obsm: '10x_pca', '10x_tsne', '10x_umap', 'spatial'
+    layers: 'logcounts'
+/var/spool/slurm/d/job22696920/slurm_script: line 31: 3178173 Killed                  python3 02_find_LR.py --microenv ${ARGS[$SLURM_ARRAY_TASK_ID]}
 **** Job ends ****
-Mon Sep 22 03:30:45 PM EDT 2025
+Tue Sep 23 01:31:49 PM EDT 2025
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=22696920.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.

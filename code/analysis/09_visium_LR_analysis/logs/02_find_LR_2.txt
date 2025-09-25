@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Sep 22 03:28:22 PM EDT 2025
+Tue Sep 23 11:58:12 AM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22687261
+Job id: 22696921
 Job name: 02_find_LR
 Hostname: jhpce3
 Task id: 2
@@ -22,8 +22,8 @@ pnn
   utils.warn_names_duplicates("var")
 file does not exist, running spatialDM
 Traceback (most recent call last):
-  File "02_find_LR.py", line 112, in <module>
-    sdm.weight_matrix(adata, l=75, cutoff=0.2, single_cell=False) # weight_matrix by rbf kernel
+  File "02_find_LR.py", line 113, in <module>
+    sdm.weight_matrix(adata, l=75, n_neighbors=6, single_cell=False)
   File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/spatialdm/main.py", line 41, in weight_matrix
     spatial_W, KNN_connect = rbfweight(X_loc, l=l, cutoff=cutoff, 
   File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/spatialdm/stats.py", line 79, in rbfweight
@@ -32,6 +32,6 @@ Traceback (most recent call last):
     A_data, A_ind = self.kneighbors(X, n_neighbors, return_distance=True)
   File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/sklearn/neighbors/_base.py", line 808, in kneighbors
     raise ValueError(
-ValueError: Expected n_neighbors <= n_samples,  but n_samples = 166, n_neighbors = 186
+ValueError: Expected n_neighbors <= n_samples,  but n_samples = 3, n_neighbors = 6
 **** Job ends ****
-Mon Sep 22 03:30:05 PM EDT 2025
+Tue Sep 23 12:16:48 PM EDT 2025

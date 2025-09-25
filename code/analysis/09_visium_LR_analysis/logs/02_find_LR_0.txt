@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Sep 22 03:28:22 PM EDT 2025
+Tue Sep 23 11:58:12 AM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22687259
+Job id: 22696919
 Job name: 02_find_LR
 Hostname: jhpce3
 Task id: 0
@@ -91,7 +91,7 @@ anndata._io.specs.registry.IORegistryError: No method registered for writing <cl
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "02_find_LR.py", line 189, in <module>
+  File "02_find_LR.py", line 190, in <module>
     concat.write(res_fname)
   File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py", line 1959, in write_h5ad
     _write_h5ad(
@@ -117,4 +117,4 @@ anndata._io.specs.registry.IORegistryError: No method registered for writing <cl
 
 Above error raised while writing key 'diff' of <class 'h5py._hl.group.Group'> to /
 **** Job ends ****
-Mon Sep 22 05:41:06 PM EDT 2025
+Tue Sep 23 01:21:18 PM EDT 2025
