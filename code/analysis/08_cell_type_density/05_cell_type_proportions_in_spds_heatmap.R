@@ -78,7 +78,7 @@ col_ha <- HeatmapAnnotation(
   col = list(Dx = c("NTC" = "blue", "SCZ" = "red")),
   annotation_name_gp = gpar(fontsize = 18),
   annotation_legend_param = list(
-    title = "Condition",
+    title = "Diagnosis",
     at = c("NTC", "SCZ"),
     labels = c("NTC", "SCZ"),
     title_gp = gpar(fontsize = 18),
