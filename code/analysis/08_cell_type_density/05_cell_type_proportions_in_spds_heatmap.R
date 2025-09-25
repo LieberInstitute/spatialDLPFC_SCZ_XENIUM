@@ -75,14 +75,16 @@ all_tab_plot <- all_tab_plot[, order(colnames(all_tab_plot))] # sort the columns
 column_condition <- ifelse(grepl("NTC$", colnames(all_tab_plot)), "NTC", "SCZ")
 col_ha <- HeatmapAnnotation(
   Dx = column_condition,
-  col = list(Dx = c("NTC" = "skyblue", "SCZ" = "tomato")),
+  col = list(Dx = c("NTC" = "blue", "SCZ" = "red")),
   annotation_name_gp = gpar(fontsize = 18),
   annotation_legend_param = list(
     title = "Condition",
     at = c("NTC", "SCZ"),
     labels = c("NTC", "SCZ"),
     title_gp = gpar(fontsize = 18),
-    labels_gp = gpar(fontsize = 18)
+    labels_gp = gpar(fontsize = 18),
+    legend.position="bottom",
+    nrow=1
   )
 )
 
@@ -92,7 +94,7 @@ col_fun <- colorRamp2(c(0, 0.5, 1), c("blue","white", "red"))
 pdf(here("plots", "07_cell_type_de", "cell_type_props_in_spds_heatmap.pdf"), height=10, width=15)
 
 
-Heatmap(all_tab_plot, 
+ht <- Heatmap(all_tab_plot, 
           bottom_annotation = col_ha,
           cluster_columns = FALSE,
           cluster_rows=FALSE,
@@ -105,8 +107,11 @@ Heatmap(all_tab_plot,
             at = c(0, 0.5, 1),
             labels = c("0", "0.5", "1"),
             title_gp = gpar(fontsize = 18),
-            labels_gp = gpar(fontsize = 18)
+            labels_gp = gpar(fontsize = 18),
+            direction="horizontal"
           )
 )
+draw(ht, heatmap_legend_side="bottom",
+  annotation_legend_side="bottom", merge_legend=TRUE)
 dev.off()
 
