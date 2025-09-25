@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Sep 22 08:15:08 PM EDT 2025
+Mon Sep 22 08:26:00 PM EDT 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22691346
+Job id: 22691363
 Job name: 02_assess_spd_composition
 Hostname: jhpce3
 Task id: 
@@ -143,3 +143,16 @@ The following objects are masked from ‘package:matrixStats’:
 
     anyMissing, rowMedians
 
+[1] "L2/3" "L1"   "L2/3" "L1"   "L1"   "L1"  
+Warning message:
+In data.frame(gg1$all, df_to_plot[, -reddim_cols]) :
+  row names were found from a short variable and have been discarded
+Scale for colour is already present.
+Adding another scale for colour, which will replace the existing scale.
+Warning message:
+In data.frame(gg1$all, df_to_plot[, -reddim_cols]) :
+  row names were found from a short variable and have been discarded
+null device 
+          1 
+**** Job ends ****
+Mon Sep 22 08:27:16 PM EDT 2025
