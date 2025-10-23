@@ -1,0 +1,39 @@
+**** Job starts ****
+Fri Sep 26 10:18:30 AM EDT 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 22766490
+Job name: 02_find_LR
+Hostname: jhpce3
+Task id: 2
+Loading conda_R/4.3.x
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+pnn
+pnn
+/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+  utils.warn_names_duplicates("var")
+/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/anndata/_core/anndata.py:1840: UserWarning: Variable names are not unique. To make them unique, call `.var_names_make_unique`.
+  utils.warn_names_duplicates("var")
+file does not exist, running spatialDM
+Traceback (most recent call last):
+  File "02_find_LR.py", line 117, in <module>
+    adata.uns['global_res'].to_csv("/dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/09_visium_LR_analysis/" + me + "/global_res_" + adata.obs['BrNumbr'][0] + "_" + me + ".csv", sep="\t")
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/pandas/core/generic.py", line 3772, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/pandas/io/formats/format.py", line 1186, in to_csv
+    csv_formatter.save()
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/pandas/io/formats/csvs.py", line 240, in save
+    with get_handle(
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/pandas/io/common.py", line 737, in get_handle
+    check_parent_directory(str(handle))
+  File "/users/xzhifang/mambaforge/envs/scSLAT/lib/python3.8/site-packages/pandas/io/common.py", line 600, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '/dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/09_visium_LR_analysis/pnn'
+**** Job ends ****
+Fri Sep 26 10:19:40 AM EDT 2025
