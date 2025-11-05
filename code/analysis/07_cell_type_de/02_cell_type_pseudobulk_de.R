@@ -79,8 +79,8 @@ pdf(here("plots", "07_cell_type_de", sprintf("donor_cell_type_level_pseudobulk_D
     
     sig_gene_df <- dx_res |>
         filter(fdr_SCZ <= 0.1) |>
-        filter(gene %in% c("FKBP5","SERPINA3","GSTM5","HIF3A","CHI3L1", "MBP", "XRRA1",
-          "IFITM3", "NPTX2", "TNFSF10", "KLF2", "SLC44A1")) %>%
+        filter(gene %in% c("FKBP5","SERPINA3","GSTM5", "UQCRFS1", "MBP", "XRRA1",
+        "NPTX2", "RPS26", "ARPP19", "BCAS1", "GFAP", "KCNK1", "VGF", "COX5A")) %>%
         mutate(
           Direction = case_when(
             fdr_SCZ >= 0.1 ~ "N.S. (FDR > 0.1)",
