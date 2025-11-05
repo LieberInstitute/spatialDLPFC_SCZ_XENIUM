@@ -98,41 +98,61 @@ for(i in 1:length(cell_types)){
         select(ensembl, gene, ends_with("SCZ"))
         
     sig_gene_df <- dx_res |>
-        arrange(fdr_SCZ) |>
-        slice_head(n=10)
-        #filter(fdr_SCZ <= 0.1) |>
-        #select(ensembl, gene, ends_with("SCZ"))
+        filter(fdr_SCZ <= 0.1) |>
+        filter(gene %in% c("BDNF", "ADCYAP1", "CALB2", "KLF2", "ABCG2")) %>%
+        mutate(
+          Direction = case_when(
+            fdr_SCZ >= 0.1 ~ "N.S. (FDR > 0.1)",
+            logFC_SCZ > 0 & fdr_SCZ < 0.1 ~ "Upregulated",
+            logFC_SCZ < 0 & fdr_SCZ < 0.1 ~ "Downregulated"
+        )) %>%
+        select(ensembl, gene, ends_with("SCZ"), Direction)
 
     print(sig_gene_df)
     n_sig_gene <- dx_res |>
         filter(fdr_SCZ <= 0.1) |>
         nrow()
 
-    
+    dx_res <- dx_res %>%
+    mutate(
+        Direction = case_when(
+        fdr_SCZ >= 0.1 ~ "N.S. (FDR > 0.1)",
+        logFC_SCZ > 0 & fdr_SCZ < 0.1 ~ "Upregulated",
+        logFC_SCZ < 0 & fdr_SCZ < 0.1 ~ "Downregulated"
+        )
+    )
 
     p <-  ggplot(
         dx_res,
         aes(
             x = logFC_SCZ, y = -log10(fdr_SCZ),
-            color = fdr_SCZ <= 0.1
+            color = Direction
         )
         ) +
-        geom_point(alpha = 0.8) +
+        geom_point(alpha = 0.8, show.legend=TRUE) +
         geom_label_repel(size=6,
             data = sig_gene_df,
             aes(label = gene),
             force = 2,
-            nudge_y = 0.1
+            nudge_y = 0.1, show.legend=FALSE
         ) +
         labs(
             title = paste0(cell_type_use, 
             " Donor-cell type level analysis by Dx")
-        ) +theme_minimal()+
-         theme(axis.text.x=element_text(size=16),
-            axis.text.y=element_text(size=16),
-            axis.title.x=element_text(size=16),
-            axis.title.y=element_text(size=16),
-            plot.title = element_text(hjust = 0.5, size=20))
+        ) +
+      scale_color_manual(values=c("Upregulated"="red",
+               "Downregulated"="blue", "N.S. (FDR > 0.1)"="grey"),
+               guide = guide_legend(
+              override.aes = list(size = 8)  # legend points size
+         )) +
+    theme_minimal()+
+    theme(axis.text.x=element_text(size=18),
+                axis.text.y=element_text(size=18),
+                axis.title.x=element_text(size=20),
+                axis.title.y=element_text(size=20),
+                legend.title=element_text(size=18),
+                plot.title=element_text(size=22),
+                legend.position="bottom", legend.direction="horizontal")
     
     print(p)
 
