@@ -69,39 +69,54 @@ pdf(here("plots", "05_differential_expression", "donor_domain_level_pseudobulk_D
     
     sig_gene_df <- dx_res |>
         filter(fdr_SCZ <= 0.1) |>
-        select(ensembl, gene, ends_with("SCZ"))
+        filter(gene %in% c("FKBP5","SERPINA3","GSTM5", "HIF3A", "CHI3L1",
+          "MBP", "XRRA1", "IFITM3", "NPTX2", "TNFSF10", "KLF2", "SLC44A1")) %>%
+        mutate(
+          Direction = case_when(
+            fdr_SCZ >= 0.1 ~ "N.S. (FDR > 0.1)",
+            logFC_SCZ > 0 & fdr_SCZ < 0.1 ~ "Upregulated",
+            logFC_SCZ < 0 & fdr_SCZ < 0.1 ~ "Downregulated"
+        )) %>%
+        select(ensembl, gene, ends_with("SCZ"), Direction)
 
   n_sig_gene <- dx_res |>
     filter(fdr_SCZ <= 0.1) |>
     nrow()
-
+ dx_res <- dx_res %>%
+  mutate(
+    Direction = case_when(
+      fdr_SCZ >= 0.1 ~ "N.S. (FDR > 0.1)",
+      logFC_SCZ > 0 & fdr_SCZ < 0.1 ~ "Upregulated",
+      logFC_SCZ < 0 & fdr_SCZ < 0.1 ~ "Downregulated"
+    ))
   print(
     ggplot(
       dx_res,
       aes(
         x = logFC_SCZ, y = -log10(fdr_SCZ),
-        color = fdr_SCZ <= 0.1
+        color = Direction
       )
     ) +
-      geom_point(alpha = 0.8) +
+      geom_point(alpha = 0.8, show.legend=TRUE) +
       geom_label_repel(size=6,
         data = sig_gene_df,
         aes(label = gene),
         force = 2,
-        nudge_y = 0.1
+        nudge_y = 0.1, show.legend=FALSE
       ) +
-    #   geom_label_repel(
-    #     data = out_gene_df,
-    #     aes(label = gene),
-    #     force = 2,
-    #     nudge_y = -0.1
-    #   ) +
+      scale_color_manual(values=c("Upregulated"="red",
+               "Downregulated"="blue", "N.S. (FDR > 0.1)"="grey"),
+               guide = guide_legend(
+              override.aes = list(size = 8)  # legend points size
+         )) +
      theme_minimal()+
-    theme(axis.text.x=element_text(size=16),
-            axis.text.y=element_text(size=16),
-            axis.title.x=element_text(size=18),
-            axis.title.y=element_text(size=18),
-            legend.title=element_text(size=16))
+     theme(axis.text.x=element_text(size=18),
+            axis.text.y=element_text(size=18),
+            axis.title.x=element_text(size=20),
+            axis.title.y=element_text(size=20),
+            legend.title=element_text(size=18),
+            legend.position="bottom", legend.direction="horizontal")
+    
   )
 dev.off()
 
