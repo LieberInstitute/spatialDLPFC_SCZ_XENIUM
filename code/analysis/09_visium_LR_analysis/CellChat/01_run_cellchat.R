@@ -80,7 +80,7 @@ for (j in 1:length(microenvs)){
 
     write.csv(comm_df,
       file = here::here(
-        "results",
+        "processed-data",
         "09_visium_LR_analysis",
         "CellChat",
         sprintf("cellchat_communications_BrNumbr_%s_microenv_%s.csv",
