@@ -72,7 +72,10 @@ props <- props %>%
 p <- ggplot(props, aes(x=BrNum, y=proportion, fill=Dx))+
   geom_bar(stat="identity")+
   ggtitle("Proportion of cells in L2/3 that are L6 Ex")+
+  scale_fill_manual(values=c("NTC"="steelblue", "SCZ"="firebrick"))+
+  theme_minimal()+
   theme(axis.text.x=element_text(angle=45, hjust=1))
+  
 print(p)
 
 dev.off()
