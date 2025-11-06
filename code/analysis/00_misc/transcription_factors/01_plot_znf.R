@@ -48,8 +48,8 @@ clusts <- clusts %>% as.data.frame() %>%
                           V1 %in% c(2) ~ "L2/3 Ex",
                           V1 %in% c(17, 16, 4) ~ "Ast",
                           V1 %in% c(5, 13, 3) ~ "Endo",
-                          V1 %in% c(12) ~ "In: VIP, LAMP5",
-                          V1 %in% c(9) ~ "In: SST, PVALB",
+                          V1 %in% c(12) ~ "CGE",
+                          V1 %in% c(9) ~ "MGE",
                        TRUE ~ "NA")) %>%
     mutate(annots_combined = paste(annots, V1, sep="."))
   
@@ -68,7 +68,7 @@ colData(spe)$predictions_smooth <- factor(spds$predictions_smooth)
 # map spd style labels to actual annotations
 domain_annotations <- colData(spe) %>%
   as.data.frame() %>%
-  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1",
+  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1/M",
                                         predictions_smooth == "spd06" ~ "L2/3",
                                         predictions_smooth == "spd02" ~ "L3/4",
                                         predictions_smooth == "spd05" ~ "L5",
@@ -89,7 +89,7 @@ spe$run_date <- run_date
 gene_plot <- "ZNF804A"
 brnums <- unique(spe$BrNum)
 
-spe$is_neuron <- ifelse(spe$annots %in% c("L2/3 Ex", "L4/5 Ex", "L5 Ex", "L6 Ex", "In: SST, PVALB", "In: VIP, LAMP5"), TRUE, FALSE)
+spe$is_neuron <- ifelse(spe$annots %in% c("L2/3 Ex", "L4/5 Ex", "L5 Ex", "L6 Ex", "MGE", "CGE"), TRUE, FALSE)
 
 # pdf(here("plots", "00_misc", "transcription_factors", "ZNF804A_counts_logcounts.pdf"), 
 #             width=24, height=18)
@@ -193,7 +193,7 @@ plot_heatmap <- function(spe, gene){
 
 
   # Desired spatial domain order
-  domain_levels <- c("WMtz", "L3/4", "L6", "WM", "L5", "L2/3", "L1")
+  domain_levels <- c("L1/M", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM")
   domain_vec <- factor(domain_vec, levels = domain_levels)
 
   # Diagnosis order
@@ -209,8 +209,18 @@ plot_heatmap <- function(spe, gene){
 
   # # create colour palette to annotate spds 
   # spatial_domain_vec <- sapply(strsplit(colnames(heatmap_matrix), "_"), `[`, 2)
-  domain_colors <- set_names(Polychrome::palette36.colors(7)[seq.int(7)],
-  domain_levels)
+  #domain_colors <- set_names(Polychrome::palette36.colors(7)[seq.int(7)],
+  #domain_levels)
+
+  domain_colors <- c(
+    "L1/M" = "#FEAF16",
+    "L2/3" = "#3283FE",
+    "L3/4" = "#E4E1E3",
+    "L5"   = "#16FF32",
+    "L6"   = "#F6222E",
+    "WMtz" = "#5A5156",
+    "WM"   = "#FE00FA"
+)
 
   diagnosis_colors <- c("NTC" = "steelblue", "SCZ" = "firebrick")
 
