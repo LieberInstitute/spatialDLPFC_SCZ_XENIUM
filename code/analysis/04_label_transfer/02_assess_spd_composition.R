@@ -78,7 +78,7 @@ colData(spe_all)$predictions_smooth <- factor(spds$predictions_smooth)
 # map spd style labels to actual annotations
 domain_annotations <- colData(spe_all) %>%
   as.data.frame() %>%
-  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1",
+  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1/M",
                                         predictions_smooth == "spd06" ~ "L2/3",
                                         predictions_smooth == "spd02" ~ "L3/4",
                                         predictions_smooth == "spd05" ~ "L5",
@@ -91,6 +91,11 @@ colData(spe_all)$domain_annotations <- domain_annotations$domain_annotations
 print(head(spe_all$domain_annotations))
 colData(spe_all)$domain_annotations <- domain_annotations$domain_annotations
 
+domain_levels <- c("L1/M", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM")
+colData(spe_all)$domain_annotations <- factor(colData(spe_all)$domain_annotations, levels = domain_levels)
+
+
+
 spe_pseudo <- scuttle::aggregateAcrossCells(spe_all, 
       ids=DataFrame(domain_annotations=spe_all$domain_annotations, Dx=spe_all$sample_id))
 
@@ -98,18 +103,27 @@ spe_pseudo <- scuttle::logNormCounts(spe_pseudo, size.factors = NULL)
 set.seed(1515)
 spe_pseudo <- scater::runPCA(spe_pseudo, ncomponents=10)
 
+
+domain_colors <- c(
+    "L1/M" = "#FEAF16",
+    "L2/3" = "#3283FE",
+    "L3/4" = "#E4E1E3",
+    "L5"   = "#16FF32",
+    "L6"   = "#F6222E",
+    "WMtz" = "#5A5156",
+    "WM"   = "#FE00FA"
+)
 pdf(here("plots", "04_label_transfer", "pseudobulk_label_transfer_N24_k50.pdf"), width = 10, height = 10)
 scater::plotPCA(spe_pseudo, colour_by = "Dx", ncomponents=4)
 scater::plotPCA(spe_pseudo, colour_by = "domain_annotations", ncomponents=4, shape_by="Dx")+
            scale_colour_manual(
               name = "Spatial Domain",
-              values = set_names(
-                Polychrome::palette36.colors(7)[seq.int(7)],
-                unique(spe_pseudo$domain_annotations) |> sort()
-              ),
+              values = domain_colors,
               guide = guide_legend(override.aes = list(size = 7))
             ) 
 dev.off()
  
+
+
 
 
