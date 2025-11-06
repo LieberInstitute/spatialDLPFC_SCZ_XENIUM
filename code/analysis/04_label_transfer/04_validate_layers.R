@@ -75,9 +75,9 @@ manual_cor <- layer_stat_cor(
     top_n = NULL
   )
 # reorder to get things to be diagonal
-manual_cor <- manual_cor[c("L1", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"),]
+manual_cor <- manual_cor[c("L1/M", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"),]
 cor_annot <- annotate_registered_clusters(manual_cor, confidence_threshold = 0.25)
-cor_annot$layer_label <- factor(cor_annot$layer_label, levels = c("L1", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"))
+cor_annot$layer_label <- factor(cor_annot$layer_label, levels = c("L1/M", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"))
 # map the layer labels that start with L to "LayerX"
 cor_annot$layer_label <- gsub("^L", "Layer", cor_annot$layer_label)
 cor_annot$layer_label <- gsub("\\/", "/Layer", cor_annot$layer_label)
@@ -192,7 +192,7 @@ layer_stat_cor_plot <- function(cor_stats_layer,
                 bottom_annotation = ref_col_annotation,
                 right_annotation = query_row_annotation,
                 cell_fun = function(j, i, x, y, width, height, fill) {
-                    grid.text(anno_matrix[i, j], x, y, gp = gpar(fontsize = 10))
+                    grid.text(anno_matrix[i, j], x, y, gp = gpar(fontsize = 18))
                 },
                 ...
             )
@@ -207,6 +207,8 @@ layer_stat_cor_plot <- function(cor_stats_layer,
             name = "Cor",
             bottom_annotation = ref_col_annotation,
             right_annotation = query_row_annotation,
+            column_names_gp = grid::gpar(fontsize=16),
+            row_names_gp = grid::gpar(fontsize=16),
             ...
         )
     )
@@ -221,8 +223,8 @@ ht <- layer_stat_cor_plot(
 
 draw(ht, row_title = "Xenium predicted domains", 
     column_title = "Manual annotations (Maynard, Collado-Torres et al)",
-    row_title_gp = grid::gpar(fontsize = 16, fontface = "bold"),
-    column_title_gp = grid::gpar(fontsize = 16, fontface = "bold")
+    row_title_gp = grid::gpar(fontsize = 18, fontface = "bold"),
+    column_title_gp = grid::gpar(fontsize = 18, fontface = "bold")
     )
 dev.off()
 
