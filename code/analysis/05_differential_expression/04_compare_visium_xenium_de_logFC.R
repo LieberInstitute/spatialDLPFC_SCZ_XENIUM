@@ -2,6 +2,7 @@ library(tidyverse)
 library(here)
 library(ggplot2)
 library(ggrepel)
+library(ggpubr)
 
 
 vis_de <- read.csv(here("/dcs04/lieber/marmaypag/spatialDLPFC_SCZ_LIBD4100", 
@@ -51,7 +52,7 @@ xen_de <- xen_de %>%
 all_de <- merge(vis_de, xen_de, by="gene", all=TRUE, suffixes=c("_vis", "_xen"))
 all_de <- all_de %>%
   mutate(
-    direction = case_when(
+    Direction = case_when(
       logFC_SCZ_vis > 0 & logFC_SCZ_xen > 0 ~ "both upregulated",
       logFC_SCZ_vis < 0 & logFC_SCZ_xen  < 0 ~ "both downregulated",
       TRUE ~ "mixed"
@@ -64,7 +65,7 @@ xen_de_sig <- all_de %>%
 print(xen_de_sig)
 
 pdf(here("plots", "05_differential_expression", "visium_xenium_de_logFC.pdf"))
-ggplot(all_de, aes(x=logFC_SCZ_vis, y=logFC_SCZ_xen, colour=direction)) +
+ggplot(all_de, aes(x=logFC_SCZ_vis, y=logFC_SCZ_xen, colour=Direction)) +
     geom_point() +
     geom_abline(intercept=0, slope=1, color="red") +
     scale_color_manual(values = c("both upregulated" = "red", "both downregulated" = "blue", "mixed" = "grey"))+
@@ -73,8 +74,11 @@ ggplot(all_de, aes(x=logFC_SCZ_vis, y=logFC_SCZ_xen, colour=direction)) +
         data = xen_de_sig,
         aes(label = gene),
         force = 4,
-        nudge_y = 0.2
+        nudge_y = 0.2, show.legend=FALSE
       )+
+      stat_cor(method = "pearson", aes(label = ..r.label..), 
+                    label.x = -0.5, label.y = 1.25, color="black",
+                    r.digits=3)+
       theme_minimal() +
       theme(axis.text.x=element_text(size=16),
             axis.text.y=element_text(size=16),
