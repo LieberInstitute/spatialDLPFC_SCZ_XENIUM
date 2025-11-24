@@ -31,7 +31,7 @@ layers <- unique(spe$domain_annotations)
 
 # Reference for creating new Cacoa object: https://github.com/kharchenkolab/cacoa
 # Create a Cacoa object
-pdf(here("plots", "08_cell_type_density", "whole_tissue_cacoa_cell_loadings.png"))
+pdf(here("plots", "08_cell_type_density", "whole_tissue_cacoa_cell_loadings.pdf"))
 sample.groups <- colData(spe)[["Dx"]]
 names(sample.groups) <- colData(spe)[["BrNum"]]
 
