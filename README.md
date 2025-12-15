@@ -1,8 +1,8 @@
 # spatialDLPFC_SCZ_XENIUM
 
-## Goal: Study spatial gene expression of perineuronal nets in DLPFC of neurotypical control and schizophrenia donors.
+## Goal: Mapping spatially organized molecular and genetic signatures of schizophrenia across multiple scales in the human prefrontal cortex.
 
-![Experimental Overview](./raw-data/images/PNN_Xenium_Schematics.png)  
+![Experimental Overview](./raw-data/images/PNN_Xenium_Schematics_ver2_white_background.png)  
 
 ## Study Design  
 
