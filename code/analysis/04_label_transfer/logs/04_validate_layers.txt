@@ -1,0 +1,55 @@
+**** Job starts ****
+Thu Nov  6 08:22:34 AM EST 2025
+**** JHPCE info ****
+User: xzhifang
+Job id: 23984611
+Job name: 04_validate_layers
+Hostname: jhpce3
+Task id: 
+Loading conda_R/4.3.x
+
+Currently Loaded Modules:
+  1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
+  2) JHPCE_tools/3.0            4) conda_R/4.3.x
+
+ 
+
+2025-11-06 08:23:03.250923 create model matrix
+2025-11-06 08:23:03.399203 run duplicateCorrelation()
+2025-11-06 08:23:04.453311 The estimated correlation is: 0.610916866256659
+2025-11-06 08:23:04.482085 computing enrichment statistics
+2025-11-06 08:23:05.365793 extract and reformat enrichment results
+2025-11-06 08:23:06.822408 loading file /users/xzhifang/.cache/R/BiocFileCache/2945e73b3e5a0b_Human_DLPFC_Visium_modeling_results.Rdata%3Fdl%3D1
+[1] "good"
+[1] "X"
+[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[1] "good"
+[1] "X"
+[1] FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+[1] "good"
+[1] "X"
+[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[1] "good"
+[1] "X"
+[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[1] "good"
+[1] "X"
+[1] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+[1] "good"
+[1] "X"
+[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[1] "good"
+[1] "X"
+[1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+     WM  Layer6 Layer5 Layer4 Layer3 Layer2 Layer1
+L1/M ""  ""     ""     ""     ""     ""     ""    
+L2/3 ""  ""     ""     ""     "X"    "X"    ""    
+L3/4 ""  ""     ""     ""     ""     ""     ""    
+L5   ""  ""     ""     ""     ""     ""     ""    
+L6   ""  "X"    ""     ""     ""     ""     ""    
+WMtz "X" ""     ""     ""     ""     ""     ""    
+WM   "X" ""     ""     ""     ""     ""     ""    
+null device 
+          1 
+**** Job ends ****
+Thu Nov  6 08:23:10 AM EST 2025

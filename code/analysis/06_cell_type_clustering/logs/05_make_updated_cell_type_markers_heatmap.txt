@@ -1,9 +1,9 @@
 **** Job starts ****
-Thu Nov  6 01:30:27 PM EST 2025
+Thu Nov  6 01:19:57 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 24026597
-Job name: 02_cell_type_markers
+Job id: 24026319
+Job name: 05_make_updated_cell_type_markers_heatmap
 Hostname: jhpce3
 Task id: 
 Loading conda_R/4.3.x
@@ -216,20 +216,9 @@ imgData names(1): sample_id
 4 4  3 Br1113_4
 5 5  7 Br1113_5
 6 6  3 Br1113_6
-Warning message:
-In data.frame(gg1$all, df_to_plot[, -reddim_cols]) :
-  row names were found from a short variable and have been discarded
-Warning message:
-In data.frame(gg1$all, df_to_plot[, -reddim_cols]) :
-  row names were found from a short variable and have been discarded
-Warning message:
-In data.frame(gg1$all, df_to_plot[, -reddim_cols]) :
-  row names were found from a short variable and have been discarded
-null device 
-          1 
 New names:
 • `` -> `...1`
 null device 
           1 
 **** Job ends ****
-Thu Nov  6 01:31:47 PM EST 2025
+Thu Nov  6 01:20:49 PM EST 2025

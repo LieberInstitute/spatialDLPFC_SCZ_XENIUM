@@ -1,8 +1,8 @@
 **** Job starts ****
-Mon Sep  8 08:38:42 PM EDT 2025
+Thu Nov  6 01:12:57 PM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22139059
+Job id: 24026117
 Job name: 04_explore_cacoa_results
 Hostname: jhpce3
 Task id: 
@@ -46,4 +46,4 @@ null device
 [1] "Min proportion of L6 Ex cells in L2/3 for SCZ donors: 0.0168403616536683"
 [1] "Max proportion of L6 Ex cells in L2/3 for SCZ donors: 0.0425556452542959"
 **** Job ends ****
-Mon Sep  8 08:40:01 PM EDT 2025
+Thu Nov  6 01:13:53 PM EST 2025

@@ -1,14 +1,12 @@
 **** Job starts ****
-Sun May 18 10:15:46 AM EDT 2025
+Thu Nov  6 08:07:45 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 16645768
+Job id: 23984605
 Job name: 01_create_pseudobulk_spe
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
-environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -16,17 +14,17 @@ Currently Loaded Modules:
 
  
 
-[1] "L2/3" "L1"   "L2/3" "L1"   "L1"   "L1"  
-2025-05-18 10:16:35.147658 make pseudobulk object
-2025-05-18 10:16:46.473945 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-05-18 10:16:46.500708 drop lowly expressed genes
-2025-05-18 10:16:46.669728 normalize expression
-2025-05-18 10:16:46.768044 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds
-2025-05-18 10:16:46.842484 make pseudobulk object
-2025-05-18 10:16:52.977098 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
-2025-05-18 10:16:52.999406 drop lowly expressed genes
-2025-05-18 10:16:53.059824 normalize expression
-2025-05-18 10:16:53.11886 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_spaTransfer_k50_smoothed_predictions.rds
+[1] "L2/3" "L1/M" "L2/3" "L1/M" "L1/M" "L1/M"
+2025-11-06 08:08:34.478664 make pseudobulk object
+2025-11-06 08:08:46.421412 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-11-06 08:08:46.45347 drop lowly expressed genes
+2025-11-06 08:08:46.665872 normalize expression
+2025-11-06 08:08:46.785625 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_domain_spaTransfer_k50_smoothed_predictions.rds
+2025-11-06 08:08:46.874886 make pseudobulk object
+2025-11-06 08:08:53.57526 dropping 0 pseudo-bulked samples that are below 'min_ncells'.
+2025-11-06 08:08:53.598392 drop lowly expressed genes
+2025-11-06 08:08:53.666099 normalize expression
+2025-11-06 08:08:53.730369 saving sce_pseudo to /dcs05/lieber/marmaypag/spatialDLPFC_SCZ_XENIUM_LIBD4100/spatialDLPFC_SCZ_XENIUM/processed-data/05_differential_expression/spe_pseudo_donor_spaTransfer_k50_smoothed_predictions.rds
 Scale for fill is already present.
 Adding another scale for fill, which will replace the existing scale.
 Scale for fill is already present.
@@ -78,4 +76,4 @@ Adding another scale for fill, which will replace the existing scale.
 null device 
           1 
 **** Job ends ****
-Sun May 18 10:17:38 AM EDT 2025
+Thu Nov  6 08:09:42 AM EST 2025

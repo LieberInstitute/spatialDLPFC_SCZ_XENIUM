@@ -1,14 +1,12 @@
 **** Job starts ****
-Tue Jul 15 03:13:35 PM EDT 2025
+Thu Nov  6 11:05:26 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 19930787
+Job id: 24024958
 Job name: 03_compositional_analysis
 Hostname: jhpce3
 Task id: 
-Unloading conda_R/4.3.x
 Loading conda_R/4.3.x
-environment: line 5: __conda_exe: command not found
 
 Currently Loaded Modules:
   1) JHPCE_ROCKY9_DEFAULT_ENV   3) conda/3-23.3.1
@@ -20,20 +18,62 @@ Warning message:
 replacing previous import ‘ape::where’ by ‘dplyr::where’ when loading ‘cacoa’ 
 [1] "L2/3"
 Interpreting data.object as a raw count matrix
-[1] "L1"
+        L6 Ex         L5 Ex       L4/5 Ex   Ambig/Oligo         Oligo 
+  0.001998002   0.127872128   0.107892108   0.435564436   0.063936064 
+         Endo           MGE           CGE Ambig/In/Endo           Mic 
+  0.095904096   0.809190809   0.521478521   0.577422577   0.673326673 
+      L2/3 Ex           Ast 
+  0.611388611   0.869130869 
+[1] "L1/M"
 Interpreting data.object as a raw count matrix
+  Ambig/Oligo         Oligo         L6 Ex         L5 Ex           Ast 
+   0.02997003    0.32167832    0.36363636    0.24175824    0.19580420 
+      L2/3 Ex          Endo       L4/5 Ex           CGE           Mic 
+   0.32967033    0.57142857    0.55744256    0.53746254    0.85714286 
+          MGE Ambig/In/Endo 
+   0.88511489    0.91108891 
 [1] "L5"
 Interpreting data.object as a raw count matrix
+  Ambig/Oligo         L6 Ex         Oligo           Mic       L4/5 Ex 
+   0.02597403    0.03996004    0.12387612    0.36163836    0.53146853 
+         Endo           CGE Ambig/In/Endo           MGE         L5 Ex 
+   0.55144855    0.76323676    0.90909091    0.93306693    0.91508492 
+          Ast       L2/3 Ex 
+   0.92707293    0.93906094 
 [1] "WM"
 Interpreting data.object as a raw count matrix
+        L6 Ex       L4/5 Ex         L5 Ex       L2/3 Ex          Endo 
+    0.1178821     0.1218781     0.1598402     0.2177822     0.2897103 
+  Ambig/Oligo           Mic           CGE Ambig/In/Endo           MGE 
+    0.2757243     0.6513487     0.5954046     0.7372627     0.9710290 
+          Ast         Oligo 
+    0.9330669     0.9170829 
 [1] "L6"
 Interpreting data.object as a raw count matrix
+  Ambig/Oligo       L4/5 Ex           Mic         L5 Ex           MGE 
+   0.00999001    0.27372627    0.37762238    0.41958042    0.49150849 
+        Oligo Ambig/In/Endo       L2/3 Ex           CGE         L6 Ex 
+   0.47752248    0.65534466    0.74525475    0.70129870    0.74525475 
+         Endo           Ast 
+   0.73526474    0.73926074 
 [1] "L3/4"
 Interpreting data.object as a raw count matrix
+  Ambig/Oligo         L6 Ex       L4/5 Ex         L5 Ex           CGE 
+   0.03996004    0.04195804    0.05394605    0.29970030    0.08791209 
+      L2/3 Ex           MGE          Endo Ambig/In/Endo         Oligo 
+   0.62937063    0.31168831    0.56743257    0.67332667    0.75124875 
+          Ast           Mic 
+   0.86913087    0.83716284 
 [1] "WMtz"
 Interpreting data.object as a raw count matrix
+      L4/5 Ex   Ambig/Oligo           Ast         L5 Ex          Endo 
+   0.01198801    0.09390609    0.15784216    0.26773227    0.19180819 
+          CGE           Mic Ambig/In/Endo           MGE       L2/3 Ex 
+   0.37962038    0.34365634    0.38361638    0.43356643    0.55344655 
+        L6 Ex         Oligo 
+   0.78721279    0.81918082 
 There were 50 or more warnings (use warnings() to see the first 50)
 null device 
           1 
 **** Job ends ****
-Tue Jul 15 03:16:16 PM EDT 2025
+Thu Nov  6 11:10:34 AM EST 2025

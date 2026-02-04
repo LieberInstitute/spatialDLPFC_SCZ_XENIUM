@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Sep  3 07:52:50 PM EDT 2025
+Wed Nov  5 10:50:36 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 21808881
+Job id: 23963776
 Job name: 02_pseudobulk_de
 Hostname: jhpce3
 Task id: 
@@ -14,36 +14,27 @@ Currently Loaded Modules:
 
  
 
-2025-09-03 19:53:05.058731 create model matrix
-2025-09-03 19:53:05.128814 run duplicateCorrelation()
-2025-09-03 19:53:05.616936 The estimated correlation is: 0.59847653853245
-2025-09-03 19:53:05.620197 computing enrichment statistics
-2025-09-03 19:53:05.729191 extract and reformat enrichment results
-Warning message:
-ggrepel: 12 unlabeled data points (too many overlaps). Consider increasing max.overlaps 
+2025-11-05 10:51:07.339333 create model matrix
+2025-11-05 10:51:07.498122 run duplicateCorrelation()
+2025-11-05 10:51:08.724484 The estimated correlation is: 0.59847653853245
+2025-11-05 10:51:08.731122 computing enrichment statistics
+2025-11-05 10:51:09.002825 extract and reformat enrichment results
 null device 
           1 
 New names:
 • `` -> `...1`
    Row.names      dx_deg xenium_direction cell_type_updated layer_marker
-1      ABCG2 Dx_DEG_Down             down              Endo           NA
-2       ANLN Dx_DEG_Down             down             Oligo           NA
-3     CHI3L1   Dx_DEG_Up               up              <NA>           NA
-4      ENPP2 Dx_DEG_Down             down              <NA>           NA
-5      EVI2A Dx_DEG_Down             down              <NA>           NA
-6      FKBP5   Dx_DEG_Up               up              <NA>           NA
-7      GSTM5   Dx_DEG_Up               up              <NA>           NA
-8      HIF3A   Dx_DEG_Up               up              <NA>           NA
-9     IFITM3   Dx_DEG_Up             down        Mic_immune           NA
-10      KLF2          NA             down              Endo           NA
-11       MBP          NA               up             Oligo Layer marker
-12     NPTX2 Dx_DEG_Down             down                In           NA
-13    RNASE1 Dx_DEG_Down             down              <NA>           NA
-14     RPS26 Dx_DEG_Down             down              <NA>           NA
-15      SCG3 Dx_DEG_Down             down              <NA>           NA
-16  SERPINA3   Dx_DEG_Up               up              <NA> Layer marker
-17   SLC44A1          NA             down              <NA> Layer marker
-18   TNFSF10 Dx_DEG_Down             down              <NA>           NA
-19     XRRA1 Dx_DEG_Down             down              <NA>           NA
+1     CHI3L1   Dx_DEG_Up               up              <NA>           NA
+2      FKBP5   Dx_DEG_Up               up              <NA>           NA
+3      GSTM5   Dx_DEG_Up               up              <NA>           NA
+4      HIF3A   Dx_DEG_Up               up              <NA>           NA
+5     IFITM3   Dx_DEG_Up             down        Mic_immune           NA
+6       KLF2          NA             down              Endo           NA
+7        MBP          NA               up             Oligo Layer marker
+8      NPTX2 Dx_DEG_Down             down                In           NA
+9   SERPINA3   Dx_DEG_Up               up              <NA> Layer marker
+10   SLC44A1          NA             down              <NA> Layer marker
+11   TNFSF10 Dx_DEG_Down             down              <NA>           NA
+12     XRRA1 Dx_DEG_Down             down              <NA>           NA
 **** Job ends ****
-Wed Sep  3 07:53:06 PM EDT 2025
+Wed Nov  5 10:51:10 AM EST 2025
