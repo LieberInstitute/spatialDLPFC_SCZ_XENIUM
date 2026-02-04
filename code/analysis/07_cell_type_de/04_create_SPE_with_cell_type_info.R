@@ -45,8 +45,8 @@ clusts <- clusts %>% as.data.frame() %>%
                           V1 %in% c(2) ~ "L2/3 Ex",
                           V1 %in% c(17, 16, 4) ~ "Ast",
                           V1 %in% c(5, 13, 3) ~ "Endo",
-                          V1 %in% c(12) ~ "In: VIP, LAMP5",
-                          V1 %in% c(9) ~ "In: SST, PVALB",
+                          V1 %in% c(12) ~ "CGE",
+                          V1 %in% c(9) ~ "MGE",
                        TRUE ~ "NA"))
 
 cell_types_name <- sprintf("Banksy-%s-cell-types", cnm)
@@ -83,7 +83,7 @@ print(spe)
 # map spd style labels to actual annotations
 domain_annotations <- colData(spe) %>%
   as.data.frame() %>%
-  mutate(domain_annotations = case_when(spatransfer_k50_predictions_smooth == "spd07" ~ "L1",
+  mutate(domain_annotations = case_when(spatransfer_k50_predictions_smooth == "spd07" ~ "L1/M",
                                           spatransfer_k50_predictions_smooth == "spd06" ~ "L2/3",
                                           spatransfer_k50_predictions_smooth == "spd02" ~ "L3/4",
                                           spatransfer_k50_predictions_smooth == "spd05" ~ "L5",

@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Sep 24 07:41:35 PM EDT 2025
+Thu Nov  6 08:50:20 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 22740910
+Job id: 23984621
 Job name: 05_cell_type_proportions_in_spds
 Hostname: jhpce3
 Task id: 
@@ -15,11 +15,14 @@ Currently Loaded Modules:
  
 
            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells 10997639 587.4   20421907 1090.7  14444992  771.5
-Vcells 31561251 240.8  353053271 2693.6 295061107 2251.2
+Ncells 11279794 602.5   20562241 1098.2  15046080  803.6
+Vcells 32011472 244.3  353715194 2698.7 296515490 2262.3
+Warning messages:
+1: Position guide is perpendicular to the intended axis.
+ℹ Did you mean to specify a different guide `position`? 
+2: Removed 1176 rows containing missing values or values outside the scale range
+(`geom_bar()`). 
 null device 
           1 
-Error in f() : could not find function "f"
-Execution halted
 **** Job ends ****
-Wed Sep 24 07:42:48 PM EDT 2025
+Thu Nov  6 08:52:54 AM EST 2025

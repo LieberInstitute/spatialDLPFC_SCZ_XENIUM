@@ -1,8 +1,8 @@
 **** Job starts ****
-Wed Sep  3 07:45:43 PM EDT 2025
+Wed Nov  5 10:38:22 AM EST 2025
 **** JHPCE info ****
 User: xzhifang
-Job id: 21808876
+Job id: 23963746
 Job name: 02_cell_type_pseudobulk_de
 Hostname: jhpce3
 Task id: 
@@ -14,14 +14,11 @@ Currently Loaded Modules:
 
  
 
-2025-09-03 19:45:57.341232 create model matrix
-2025-09-03 19:45:57.404174 run duplicateCorrelation()
-2025-09-03 19:45:58.258712 The estimated correlation is: 0.516133899964504
-2025-09-03 19:45:58.261841 computing enrichment statistics
-2025-09-03 19:45:58.372825 extract and reformat enrichment results
-Warning message:
-In sprintf("donor_cell_type_level_pseudobulk_Dx_DEGs_.csv", cnm) :
-  one argument not used by format 'donor_cell_type_level_pseudobulk_Dx_DEGs_.csv'
+2025-11-05 10:38:34.495968 create model matrix
+2025-11-05 10:38:34.575142 run duplicateCorrelation()
+2025-11-05 10:38:35.918162 The estimated correlation is: 0.516133899964504
+2025-11-05 10:38:35.920923 computing enrichment statistics
+2025-11-05 10:38:36.066833 extract and reformat enrichment results
                  ensembl     gene t_stat_SCZ  p_value_SCZ      fdr_SCZ
 ARPP19   ENSG00000128989   ARPP19  -3.120348 2.002788e-03 0.0600836545
 BCAS1    ENSG00000064787    BCAS1   3.731547 2.321329e-04 0.0139279768
@@ -29,7 +26,6 @@ COX5A    ENSG00000178741    COX5A  -2.854132 4.650869e-03 0.0978982974
 FKBP5    ENSG00000096060    FKBP5   3.246319 1.317056e-03 0.0493896158
 GFAP     ENSG00000131095     GFAP   3.203628 1.520305e-03 0.0506768358
 GSTM5    ENSG00000134201    GSTM5   4.132519 4.795074e-05 0.0035963053
-IFITM3   ENSG00000142089   IFITM3  -2.916892 3.833380e-03 0.0884626078
 KCNK1    ENSG00000135750    KCNK1  -3.575795 4.137782e-04 0.0206889102
 MBP      ENSG00000197971      MBP   4.985583 1.107790e-06 0.0003323369
 NPTX2    ENSG00000106236    NPTX2  -3.319914 1.024779e-03 0.0439190962
@@ -38,22 +34,21 @@ SERPINA3 ENSG00000196136 SERPINA3   4.566219 7.562258e-06 0.0007562258
 UQCRFS1  ENSG00000169021  UQCRFS1  -2.837347 4.894915e-03 0.0978982974
 VGF      ENSG00000128564      VGF  -2.921716 3.776324e-03 0.0884626078
 XRRA1    ENSG00000166435    XRRA1  -4.764075 3.105417e-06 0.0004658126
-          logFC_SCZ
-ARPP19   -0.2793584
-BCAS1     0.3446098
-COX5A    -0.2259377
-FKBP5     0.4964598
-GFAP      0.4080197
-GSTM5     0.6172381
-IFITM3   -0.6020843
-KCNK1    -0.2917818
-MBP       0.4199682
-NPTX2    -0.4950454
-RPS26    -0.2743684
-SERPINA3  1.0804574
-UQCRFS1  -0.1837842
-VGF      -0.4289276
-XRRA1    -0.3733331
+          logFC_SCZ     Direction
+ARPP19   -0.2793584 Downregulated
+BCAS1     0.3446098   Upregulated
+COX5A    -0.2259377 Downregulated
+FKBP5     0.4964598   Upregulated
+GFAP      0.4080197   Upregulated
+GSTM5     0.6172381   Upregulated
+KCNK1    -0.2917818 Downregulated
+MBP       0.4199682   Upregulated
+NPTX2    -0.4950454 Downregulated
+RPS26    -0.2743684 Downregulated
+SERPINA3  1.0804574   Upregulated
+UQCRFS1  -0.1837842 Downregulated
+VGF      -0.4289276 Downregulated
+XRRA1    -0.3733331 Downregulated
 Warning message:
 Duplicated aesthetics after name standardisation: size 
 null device 
@@ -67,14 +62,13 @@ New names:
 4      FKBP5   Dx_DEG_Up               up              <NA>           NA
 5       GFAP   Dx_DEG_Up               up               Ast           NA
 6      GSTM5   Dx_DEG_Up               up              <NA>           NA
-7     IFITM3   Dx_DEG_Up             down        Mic_immune           NA
-8      KCNK1 Dx_DEG_Down             down              <NA>           NA
-9        MBP          NA               up             Oligo Layer marker
-10     NPTX2 Dx_DEG_Down             down                In           NA
-11     RPS26 Dx_DEG_Down             down              <NA>           NA
-12  SERPINA3   Dx_DEG_Up               up              <NA> Layer marker
-13   UQCRFS1 Dx_DEG_Down             down              <NA>           NA
-14       VGF Dx_DEG_Down             down              <NA>           NA
-15     XRRA1 Dx_DEG_Down             down              <NA>           NA
+7      KCNK1 Dx_DEG_Down             down              <NA>           NA
+8        MBP          NA               up             Oligo Layer marker
+9      NPTX2 Dx_DEG_Down             down                In           NA
+10     RPS26 Dx_DEG_Down             down              <NA>           NA
+11  SERPINA3   Dx_DEG_Up               up              <NA> Layer marker
+12   UQCRFS1 Dx_DEG_Down             down              <NA>           NA
+13       VGF Dx_DEG_Down             down              <NA>           NA
+14     XRRA1 Dx_DEG_Down             down              <NA>           NA
 **** Job ends ****
-Wed Sep  3 07:45:58 PM EDT 2025
+Wed Nov  5 10:38:36 AM EST 2025

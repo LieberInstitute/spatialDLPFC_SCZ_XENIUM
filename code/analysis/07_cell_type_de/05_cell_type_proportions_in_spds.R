@@ -24,6 +24,8 @@ all_tabs <- list()
 for (i in 1:length(brnums)){
     br_use <- brnums[[i]]
     spe_use <- spe[, spe$BrNum == br_use]
+    spe_use$cell_types <- factor(spe_use$cell_types, levels=c("L1/M", 
+                        "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"))
 
 
     # number of cell types in each spatial domain
