@@ -8,6 +8,9 @@ suppressPackageStartupMessages({
   library(sessioninfo)
   library(escheR)
   library(patchwork)
+  library(cowplot)
+  library(ggplot2)
+  library(ggpubr)
 })
 
 spe <- readRDS(here("processed-data", "01_build_spe", "raw_spe_N24.RDS"))
@@ -45,8 +48,8 @@ clusts <- clusts %>% as.data.frame() %>%
                           V1 %in% c(2) ~ "L2/3 Ex",
                           V1 %in% c(17, 16, 4) ~ "Ast",
                           V1 %in% c(5, 13, 3) ~ "Endo",
-                          V1 %in% c(12) ~ "In: VIP, LAMP5",
-                          V1 %in% c(9) ~ "In: SST, PVALB",
+                          V1 %in% c(12) ~ "CGE",
+                          V1 %in% c(9) ~ "MGE",
                        TRUE ~ "NA")) %>%
     mutate(annots_combined = paste(annots, V1, sep="."))
   
@@ -54,7 +57,7 @@ colData(spe)[["annots"]] <- clusts$annots
 colData(spe)[["annots_combined"]] <- clusts$annots
 
 
-brs_use <- c("Br5973", "Br8667")
+brs_use <- c("Br8667", "Br5973")
 plist <- list()
 for(i in 1:length(brs_use)){
     br_plt <- brs_use[i]
@@ -64,13 +67,28 @@ for(i in 1:length(brs_use)){
         add_fill("annots")+ 
         ggtitle(paste(brs_use[i], unique(spe_use$Dx), sep=" "))+
         scale_fill_discrete()+
-        labs(fill = "Cell Type")
+        labs(fill = "Cell Type")+
+        theme(legend.direction = "horizontal")+
+        guides(fill = guide_legend(override.aes = list(size = 7)))
 
     plist[[i]] <- p
 }
 
 png(here("plots", "06_cell_type_clustering", "cell_types_on_tissue.png"),
-     width=3500, height=2000, res=300)
-wrap_plots(plist, ncol=2)+
-    plot_layout(guides="collect")
+     width=2000, height=3500, res=300)
+wrap_plots(plist, ncol=1)+
+    plot_layout(guides="collect") & theme(legend.position="none")
 dev.off()
+
+
+# plot the legend separately
+p_legend <- get_legend(plist[[1]])
+legend_plot <- as_ggplot(p_legend)
+
+pdf(here("plots", "06_cell_type_clustering", "cell_types_on_tissue_legend.pdf"),
+     width=8, height=4)
+print(legend_plot)
+dev.off()
+
+
+

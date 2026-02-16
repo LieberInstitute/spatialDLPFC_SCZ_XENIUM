@@ -68,15 +68,7 @@ markers_plot <- panel_markers %>%
 markers_plot <- markers_plot[order(markers_plot$cell_type_updated),]
 
 pdf(here::here("plots", "06_cell_type_clustering", sprintf("banksy_lambda%s_res%s_cell_types_markers.pdf", lambda, res)),
-            height=15, width=28)
-plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% top_markers,])
-plot_counts <- plot_counts[top_markers,]
-plot_counts <- t(scale(t(plot_counts)))
-dend = cluster_between_groups(plot_counts, spe_pseudo$Banksy)
-
-ha = HeatmapAnnotation(Banksy_label = anno_text(spe_pseudo$Banksy))
-ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=ha, 
-            cluster_columns = dend, row_names_gp = gpar(fontsize = 16))
+            height=20, width=30)
 
 plot_counts <- as.matrix(logcounts(spe_pseudo)[rownames(spe_pseudo) %in% markers_plot$Gene,])
 colnames(plot_counts) <- paste(spe_pseudo$BrNum, spe_pseudo$Dx, sep="_")
@@ -99,20 +91,29 @@ Dx_group <- ifelse(grepl("NTC$", colnames(plot_counts)), "NTC", "SCZ")
 Dx_group <- factor(Dx_group, levels = c("NTC", "SCZ"))
 
 # 3. Define colors
-dx_colors <- c("NTC" = "skyblue", "SCZ" = "salmon")
+dx_colors <- c("NTC" = "steelblue", "SCZ" = "firebrick")
 
 # 4. Create bottom annotation
 col_ha_bottom <- HeatmapAnnotation(
   Dx = Dx_group,
-  col = list(Dx = dx_colors),
-  annotation_name_side = "left"
+  col = list(Dx= dx_colors),
+  annotation_name_side = "left",
+  annotation_legend_param=list(Dx=list(nrow=1,
+    labels_gp=gpar(fontsize=20),
+    title_gp=gpar(fontsize=22)))
 )
 
 # 5. Draw heatmap with bottom annotation
-ComplexHeatmap::Heatmap(plot_counts, name="counts", bottom_annotation=col_ha_bottom, 
+ht <- ComplexHeatmap::Heatmap(plot_counts, name="Logcounts", bottom_annotation=col_ha_bottom, 
             cluster_columns = dend, row_names_gp = gpar(fontsize = 16),
-            right_annotation = row_annotation, cluster_rows=FALSE)
+            right_annotation = row_annotation, cluster_rows=FALSE,
+            heatmap_legend_param = list(direction="horizontal",
+            labels_gp=gpar(fontsize=20),
+            title_gp=gpar(fontsize=22)),
+            show_column_names=FALSE, top_annotation = ha)
 
+draw(ht, merge_legend=TRUE, heatmap_legend_side="bottom",
+    annotation_legend_side="bottom")
 dev.off()
 
 
