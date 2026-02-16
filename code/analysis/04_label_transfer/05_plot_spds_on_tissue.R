@@ -8,6 +8,9 @@ suppressPackageStartupMessages({
   library(sessioninfo)
   library(escheR)
   library(patchwork)
+  library(cowplot)
+  library(ggplot2)
+  library(ggpubr)
 })
 
 ####################################################################################################
@@ -35,7 +38,7 @@ spe <- spe[,spe$BrNum %in% brs_use]
 # map spd style labels to actual annotations
 domain_annotations <- colData(spe) %>%
   as.data.frame() %>%
-  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1",
+  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1/M",
                                         predictions_smooth == "spd06" ~ "L2/3",
                                         predictions_smooth == "spd02" ~ "L3/4",
                                         predictions_smooth == "spd05" ~ "L5",
@@ -45,7 +48,7 @@ domain_annotations <- colData(spe) %>%
                                           TRUE ~ NA))
 
 pal <- set_names(Polychrome::palette36.colors(7)[seq.int(7)],
-c("WMtz", "L3/4", "L6", "WM", "L5", "L2/3", "L1"))
+c("WMtz", "L3/4", "L6", "WM", "L5", "L2/3", "L1/M"))
 
 colData(spe)$domain_annotations <- domain_annotations$domain_annotations
 
@@ -59,7 +62,8 @@ for (i in 1:length(brs_use)){
         scale_fill_manual(
         name = "Spatial Domain",
         values = pal,
-        guide = guide_legend(override.aes = list(size = 7)))
+        guide = guide_legend(override.aes = list(size = 7)))+
+        theme(legend.direction = "horizontal")
          
 
     plist[[i]] <- p
@@ -67,8 +71,25 @@ for (i in 1:length(brs_use)){
 }
 
 png(here("plots", "04_label_transfer", "transferred_spds_on_tissue.png"),
-     width=3500, height=2000, res=300)
-wrap_plots(plist, ncol=2)+
-    plot_layout(guides="collect")
+     width=2000, height=3500, res=300)
+wrap_plots(plist, ncol=1)+
+    plot_layout(guides="collect")&
+    theme(legend.position="none")
 dev.off()
+
+
+# plot the legend separately
+p_legend <- get_legend(plist[[1]])
+legend_plot <- as_ggplot(p_legend)
+
+pdf(here("plots", "04_label_transfer", "transferred_spds_on_tissue_legend.pdf"),
+     width=8, height=4)
+print(legend_plot)
+dev.off()
+
+
+
+
+
+
 
