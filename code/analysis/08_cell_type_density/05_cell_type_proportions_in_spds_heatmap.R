@@ -20,6 +20,7 @@ spe <- readRDS(here("processed-data", "07_cell_type_de",
 
 spe$cell_types <- colData(spe)[["Banksy-clust_M0_lam0.1_k50_res0.7-cell-types"]]
 
+spe$domain_annotations <- factor(spe$domain_annotations, levels= c("L1/M", "L2/3", "L3/4", "L5", "L6", "WMtz", "WM"))
 brnums <- unique(spe$BrNum)
 diags <- unique(spe$Dx)
 
@@ -75,7 +76,7 @@ all_tab_plot <- all_tab_plot[, order(colnames(all_tab_plot))] # sort the columns
 column_condition <- ifelse(grepl("NTC$", colnames(all_tab_plot)), "NTC", "SCZ")
 col_ha <- HeatmapAnnotation(
   Dx = column_condition,
-  col = list(Dx = c("NTC" = "blue", "SCZ" = "red")),
+  col = list(Dx = c("NTC" = "steelblue", "SCZ" = "firebrick")),
   annotation_name_gp = gpar(fontsize = 18),
   annotation_legend_param = list(
     title = "Diagnosis",

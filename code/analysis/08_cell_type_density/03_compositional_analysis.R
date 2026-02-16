@@ -56,6 +56,8 @@ for(i in 1:length(layers)){
 
 
     cao$estimateCellLoadings()
+
+    print(cao$test.results$coda$pval)
     p <- cao$plotCellLoadings(show.pvals=TRUE)
 
     title <- ggdraw() + 
