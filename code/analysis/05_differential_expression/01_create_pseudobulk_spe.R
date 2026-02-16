@@ -29,7 +29,7 @@ colData(spe)$predictions_smooth <- factor(spds$predictions_smooth)
 # map spd style labels to actual annotations
 domain_annotations <- colData(spe) %>%
   as.data.frame() %>%
-  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1",
+  mutate(domain_annotations = case_when(predictions_smooth == "spd07" ~ "L1/M",
                                         predictions_smooth == "spd06" ~ "L2/3",
                                         predictions_smooth == "spd02" ~ "L3/4",
                                         predictions_smooth == "spd05" ~ "L5",
