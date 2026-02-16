@@ -77,6 +77,9 @@ for (j in 1:length(microenvs)){
 
     print(head(comm_df))
 
+    comm_df$BrNum <- br_use
+    comm_df$Dx <- unique(spe_use$dx)
+
 
     write.csv(comm_df,
       file = here::here(

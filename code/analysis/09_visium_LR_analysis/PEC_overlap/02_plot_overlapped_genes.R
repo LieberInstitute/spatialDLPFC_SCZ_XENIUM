@@ -29,7 +29,7 @@ for(microenv in microenvs){
         select(genesymbol_intercell_source, genesymbol_intercell_target)
     
     pdf(here("plots", 
-            "09_visium_LR_analysis", 
+            "09_visium_LR_analysis", "PEC_overlap",
             sprintf("PEC_LR_overlap_with_%s_DEGs_expression_patterns.pdf", microenv)
             ),height=6, width=15)
     
@@ -62,22 +62,22 @@ for(microenv in microenvs){
             add_fill("expression_pattern") %>%
             add_ground(sprintf("%s_pos", microenv))+
             ggtitle(sprintf("%s: %s - %s", unique(spe_ntc$BrNumbr), ligand, receptor))+
-            scale_fill_manual(values=c("Both"="purple", "Receptor only"="lightblue", 
-                        "Ligand only"="lightpink", "Neither"="lightgrey"))+
+            scale_fill_manual(values=c("Both"="red", "Receptor only"="lightblue", 
+                        "Ligand only"="#7879cc", "Neither"="lightgrey"), name="")+
             scale_color_manual(
-                    name = "", # turn off legend name for ground
-                    values = c("TRUE" = "red", "FALSE" = "transparent")
+                    name = microenv, # turn off legend name for ground
+                    values = c("TRUE" = "grey40", "FALSE" = "transparent")
                 )
 
         p2 <- make_escheR(spe_scz) %>%
             add_fill("expression_pattern")%>%
             add_ground(sprintf("%s_pos", microenv))+
             ggtitle(sprintf("%s: %s - %s", unique(spe_scz$BrNumbr), ligand, receptor))+
-            scale_fill_manual(values=c("Both"="purple", "Receptor only"="lightblue", 
-                        "Ligand only"="lightpink", "Neither"="lightgrey"))+
+            scale_fill_manual(values=c("Both"="red", "Receptor only"="lightblue", 
+                        "Ligand only"="#7879cc", "Neither"="lightgrey"), name="")+
             scale_color_manual(
-                    name = "", # turn off legend name for ground
-                    values = c("TRUE" = "red", "FALSE" = "transparent")
+                    name = microenv, # turn off legend name for ground
+                    values = c("TRUE" = "grey40", "FALSE" = "transparent")
                 )
 
         print(p1 + p2)
